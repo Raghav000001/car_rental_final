@@ -1,0 +1,766 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - link "+88 01682648101" [ref=e6] [cursor=pointer]:
+          - /url: tel:+8801682648101
+          - img [ref=e8]
+          - generic [ref=e10]: +88 01682648101
+        - link "info@example.com" [ref=e11] [cursor=pointer]:
+          - /url: mailto:info@example.com
+          - img [ref=e13]
+          - generic [ref=e15]: info@example.com
+        - generic [ref=e18]: Open 24/7
+      - generic [ref=e19]:
+        - generic [ref=e20]: "Follow Us:"
+        - link "Facebook" [ref=e21] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e22]
+        - link "Twitter" [ref=e24] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e25]
+        - link "Instagram" [ref=e27] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e28]
+        - link "LinkedIn" [ref=e30] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e31]
+    - generic [ref=e33]:
+      - generic [ref=e35]:
+        - link "C CAROLA" [ref=e36] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e39]: C
+          - generic [ref=e41]: CAROLA
+        - navigation [ref=e42]:
+          - button "Home" [ref=e44] [cursor=pointer]:
+            - text: Home
+            - img [ref=e45]
+          - button "Car Fleet" [ref=e48] [cursor=pointer]:
+            - text: Car Fleet
+            - img [ref=e49]
+          - button "Pages" [ref=e52] [cursor=pointer]:
+            - text: Pages
+            - img [ref=e53]
+          - button "News" [ref=e56] [cursor=pointer]:
+            - text: News
+            - img [ref=e57]
+          - button "Contact" [ref=e60] [cursor=pointer]: Contact
+        - generic [ref=e61]:
+          - button "Search" [ref=e62] [cursor=pointer]:
+            - img [ref=e63]
+          - link "Booking Now" [ref=e66] [cursor=pointer]:
+            - /url: /checkout
+            - generic [ref=e67]:
+              - text: Booking Now
+              - img [ref=e68]
+      - generic [ref=e71]:
+        - img [ref=e72]
+        - textbox "Search cars, brands, locations..." [ref=e74]
+        - button "Close search" [ref=e75] [cursor=pointer]:
+          - img [ref=e76]
+    - generic [ref=e78]:
+      - generic [ref=e87]:
+        - generic [ref=e90]: Premium Car Rental
+        - heading "Find Affordable Dream Cars for Rental" [level=1] [ref=e91]:
+          - generic [ref=e92]: Find
+          - generic [ref=e93]: Affordable
+          - generic [ref=e94]: Dream
+          - generic [ref=e95]: Cars
+          - generic [ref=e96]: for
+          - generic [ref=e97]: Rental
+        - paragraph [ref=e98]: Fulfill your automotive fantasies without breaking the bank. Check our affordable car rentals for an opulent yet economical ride.
+        - generic [ref=e99]:
+          - link "Explore Cars" [ref=e100] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e101]: Explore Cars
+            - img [ref=e102]
+          - link "Watch Video" [ref=e104] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e105]
+            - text: Watch Video
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: 500+
+            - generic [ref=e111]: Premium Cars
+          - generic [ref=e113]:
+            - generic [ref=e114]: 24/7
+            - generic [ref=e115]: Support
+          - generic [ref=e117]:
+            - generic [ref=e118]: 32+
+            - generic [ref=e119]: Locations
+      - generic [ref=e121]:
+        - button "Go to slide 1" [ref=e122] [cursor=pointer]
+        - button "Go to slide 2" [ref=e125] [cursor=pointer]
+        - button "Go to slide 3" [ref=e127] [cursor=pointer]
+    - generic [ref=e133]:
+      - generic [ref=e135]:
+        - img [ref=e136]
+        - generic [ref=e138]: Find Your Perfect Ride
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - generic [ref=e141]:
+            - img [ref=e143]
+            - generic [ref=e146]: Your Destination
+          - button "Where to go?" [ref=e147] [cursor=pointer]:
+            - generic [ref=e148]: Where to go?
+            - img [ref=e149]
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - img [ref=e154]
+            - generic [ref=e156]: Pick-up Date
+          - textbox [ref=e157] [cursor=pointer]
+        - generic [ref=e158]:
+          - generic [ref=e159]:
+            - img [ref=e161]
+            - generic [ref=e163]: Return Date
+          - textbox [ref=e164] [cursor=pointer]
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - img [ref=e168]
+            - generic [ref=e170]: Passengers
+          - button "1 Person" [ref=e171] [cursor=pointer]:
+            - generic [ref=e172]: 1 Person
+            - img [ref=e173]
+        - button "Search" [ref=e176] [cursor=pointer]:
+          - generic [ref=e177]:
+            - text: Search
+            - img [ref=e178]
+    - generic [ref=e184]:
+      - generic [ref=e185]:
+        - generic [ref=e188]: Simple Steps
+        - heading "How It Works" [level=2] [ref=e190]
+        - paragraph [ref=e191]: Get behind the wheel of your dream car in just four simple steps.
+      - generic [ref=e196]:
+        - generic [ref=e198]:
+          - generic [ref=e199]:
+            - generic [ref=e200]: "01"
+            - img [ref=e202]
+          - generic [ref=e205]:
+            - heading "Sign up Account" [level=3] [ref=e206]
+            - paragraph [ref=e207]: Create your free account in seconds and unlock exclusive member benefits.
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - generic [ref=e213]: "02"
+            - img [ref=e215]
+          - generic [ref=e218]:
+            - heading "Search your Vehicle" [level=3] [ref=e219]
+            - paragraph [ref=e220]: Browse our curated fleet and find the perfect car for your journey.
+        - generic [ref=e224]:
+          - generic [ref=e225]:
+            - generic [ref=e226]: "03"
+            - img [ref=e228]
+          - generic [ref=e231]:
+            - heading "Pay the Car Rent" [level=3] [ref=e232]
+            - paragraph [ref=e233]: Secure payment with multiple options. No hidden fees, ever.
+        - generic [ref=e237]:
+          - generic [ref=e238]:
+            - generic [ref=e239]: "04"
+            - img [ref=e241]
+          - generic [ref=e244]:
+            - heading "Take Car to Road" [level=3] [ref=e245]
+            - paragraph [ref=e246]: Pick up your car and start your adventure. Drive in style.
+      - link "Get Started Now" [ref=e248] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e249]: Get Started Now
+        - img [ref=e250]
+    - generic [ref=e254]:
+      - generic [ref=e255]:
+        - generic [ref=e258]: Special Offers
+        - heading "Today's Best Deals" [level=2] [ref=e260]
+      - generic [ref=e261]:
+        - generic [ref=e262] [cursor=pointer]:
+          - generic [ref=e266]:
+            - generic [ref=e267]: Discount up to
+            - generic [ref=e268]: Limited Time
+          - img [ref=e271]
+          - generic [ref=e273]:
+            - heading "40%" [level=3] [ref=e274]
+            - paragraph [ref=e275]: For First-time Order
+            - link "View Details" [ref=e276]:
+              - /url: "#"
+              - generic [ref=e277]: View Details
+              - img [ref=e279]
+        - generic [ref=e282] [cursor=pointer]:
+          - generic [ref=e286]:
+            - generic [ref=e287]: Exclusive Deal
+            - generic [ref=e288]: Best Seller
+          - img [ref=e291]
+          - generic [ref=e293]:
+            - heading "Get Luxury Cars" [level=3] [ref=e294]
+            - paragraph [ref=e295]: Starting from cheap Pricing
+            - link "View Details" [ref=e296]:
+              - /url: "#"
+              - generic [ref=e297]: View Details
+              - img [ref=e299]
+        - generic [ref=e302] [cursor=pointer]:
+          - generic [ref=e306]:
+            - generic [ref=e307]: Get Secure Fleet
+            - generic [ref=e308]: VIP Service
+          - img [ref=e311]
+          - generic [ref=e313]:
+            - heading "Armored Cars" [level=3] [ref=e314]
+            - paragraph [ref=e315]: With Security Guards
+            - link "View Details" [ref=e316]:
+              - /url: "#"
+              - generic [ref=e317]: View Details
+              - img [ref=e319]
+    - generic [ref=e324]:
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - generic [ref=e329]: Categories
+          - heading "Explore Car Types" [level=2] [ref=e330]
+          - paragraph [ref=e331]: Choose from our diverse fleet, tailored to fit every journey and lifestyle.
+        - link "View All Types" [ref=e332] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e333]: View All Types
+          - img [ref=e335]
+      - generic [ref=e337]:
+        - generic [ref=e338] [cursor=pointer]:
+          - generic [ref=e341]:
+            - img "Truck" [ref=e342]
+            - generic [ref=e344]: "18"
+          - heading "Truck" [level=3] [ref=e346]
+          - paragraph [ref=e348]: 18 Vehicles
+        - generic [ref=e349] [cursor=pointer]:
+          - generic [ref=e352]:
+            - img "Luxury Sedan" [ref=e353]
+            - generic [ref=e355]: "24"
+          - heading "Luxury Sedan" [level=3] [ref=e357]
+          - paragraph [ref=e359]: 24 Vehicles
+        - generic [ref=e360] [cursor=pointer]:
+          - generic [ref=e363]:
+            - img "Sedan" [ref=e364]
+            - generic [ref=e366]: "32"
+          - heading "Sedan" [level=3] [ref=e368]
+          - paragraph [ref=e370]: 32 Vehicles
+        - generic [ref=e371] [cursor=pointer]:
+          - generic [ref=e374]:
+            - img "Sports Car" [ref=e375]
+            - generic [ref=e377]: "15"
+          - heading "Sports Car" [level=3] [ref=e379]
+          - paragraph [ref=e381]: 15 Vehicles
+        - generic [ref=e382] [cursor=pointer]:
+          - generic [ref=e385]:
+            - img "Hatchback" [ref=e386]
+            - generic [ref=e388]: "20"
+          - heading "Hatchback" [level=3] [ref=e390]
+          - paragraph [ref=e392]: 20 Vehicles
+        - generic [ref=e393] [cursor=pointer]:
+          - generic [ref=e396]:
+            - img "SUV" [ref=e397]
+            - generic [ref=e399]: "28"
+          - heading "SUV" [level=3] [ref=e401]
+          - paragraph [ref=e403]: 28 Vehicles
+    - generic [ref=e407]:
+      - generic [ref=e408]:
+        - generic [ref=e409]:
+          - generic [ref=e412]: Our Cars
+          - heading "Our Car Fleet" [level=2] [ref=e413]
+          - paragraph [ref=e414]: Premium vehicles curated for your comfort, performance, and style.
+        - generic [ref=e415]:
+          - generic [ref=e418]: 6 Available Now
+          - link "View All Cars" [ref=e419] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e420]: View All Cars
+            - img [ref=e422]
+      - generic [ref=e424]:
+        - generic [ref=e425]:
+          - generic [ref=e426]:
+            - img "Jeep Wagner" [ref=e427]
+            - generic [ref=e430]: Popular
+            - button "Add to wishlist" [ref=e432] [cursor=pointer]:
+              - img [ref=e433]
+            - generic [ref=e435]:
+              - img [ref=e436]
+              - generic [ref=e438]: "4.8"
+              - generic [ref=e439]: (124)
+          - generic [ref=e440]:
+            - generic [ref=e441]:
+              - heading "Jeep Wagner" [level=3] [ref=e442]
+              - generic [ref=e444]:
+                - generic [ref=e445]: $49
+                - generic [ref=e446]: /Day
+            - paragraph [ref=e447]: Three-row SUV with a modern design, upscale interior, and a plethora of safety
+            - generic [ref=e448]:
+              - generic [ref=e449]:
+                - img [ref=e450]
+                - generic [ref=e452]: 2 Doors
+              - generic [ref=e453]:
+                - img [ref=e454]
+                - generic [ref=e456]: 1 Large, 2 Small
+              - generic [ref=e457]:
+                - img [ref=e458]
+                - generic [ref=e460]: 06 Seats
+            - generic [ref=e461]:
+              - button "Rent Now" [ref=e462] [cursor=pointer]:
+                - generic [ref=e463]: Rent Now
+                - img [ref=e464]
+              - button "Quick view" [ref=e466] [cursor=pointer]:
+                - img [ref=e467]
+        - generic [ref=e470]:
+          - generic [ref=e471]:
+            - img "BMW 740L Series" [ref=e472]
+            - generic [ref=e475]: Luxury
+            - button "Add to wishlist" [ref=e477] [cursor=pointer]:
+              - img [ref=e478]
+            - generic [ref=e480]:
+              - img [ref=e481]
+              - generic [ref=e483]: "4.8"
+              - generic [ref=e484]: (124)
+          - generic [ref=e485]:
+            - generic [ref=e486]:
+              - heading "BMW 740L Series" [level=3] [ref=e487]
+              - generic [ref=e489]:
+                - generic [ref=e490]: $89
+                - generic [ref=e491]: /Day
+            - paragraph [ref=e492]: Three-row SUV with a modern design, upscale interior, and a plethora of safety
+            - generic [ref=e493]:
+              - generic [ref=e494]:
+                - img [ref=e495]
+                - generic [ref=e497]: 2 Doors
+              - generic [ref=e498]:
+                - img [ref=e499]
+                - generic [ref=e501]: 1 Large, 2 Small
+              - generic [ref=e502]:
+                - img [ref=e503]
+                - generic [ref=e505]: 06 Seats
+            - generic [ref=e506]:
+              - button "Rent Now" [ref=e507] [cursor=pointer]:
+                - generic [ref=e508]: Rent Now
+                - img [ref=e509]
+              - button "Quick view" [ref=e511] [cursor=pointer]:
+                - img [ref=e512]
+        - generic [ref=e515]:
+          - generic [ref=e516]:
+            - img "BMW M5 Competition" [ref=e517]
+            - generic [ref=e520]: Premium
+            - button "Add to wishlist" [ref=e522] [cursor=pointer]:
+              - img [ref=e523]
+            - generic [ref=e525]:
+              - img [ref=e526]
+              - generic [ref=e528]: "4.8"
+              - generic [ref=e529]: (124)
+          - generic [ref=e530]:
+            - generic [ref=e531]:
+              - heading "BMW M5 Competition" [level=3] [ref=e532]
+              - generic [ref=e534]:
+                - generic [ref=e535]: $129
+                - generic [ref=e536]: /Day
+            - paragraph [ref=e537]: Three-row SUV with a modern design, upscale interior, and a plethora of safety
+            - generic [ref=e538]:
+              - generic [ref=e539]:
+                - img [ref=e540]
+                - generic [ref=e542]: 2 Doors
+              - generic [ref=e543]:
+                - img [ref=e544]
+                - generic [ref=e546]: 1 Large, 2 Small
+              - generic [ref=e547]:
+                - img [ref=e548]
+                - generic [ref=e550]: 06 Seats
+            - generic [ref=e551]:
+              - button "Rent Now" [ref=e552] [cursor=pointer]:
+                - generic [ref=e553]: Rent Now
+                - img [ref=e554]
+              - button "Quick view" [ref=e556] [cursor=pointer]:
+                - img [ref=e557]
+        - generic [ref=e560]:
+          - generic [ref=e561]:
+            - img "Jeep Wagner" [ref=e562]
+            - generic [ref=e565]: Best Value
+            - button "Add to wishlist" [ref=e567] [cursor=pointer]:
+              - img [ref=e568]
+            - generic [ref=e570]:
+              - img [ref=e571]
+              - generic [ref=e573]: "4.8"
+              - generic [ref=e574]: (124)
+          - generic [ref=e575]:
+            - generic [ref=e576]:
+              - heading "Jeep Wagner" [level=3] [ref=e577]
+              - generic [ref=e579]:
+                - generic [ref=e580]: $59
+                - generic [ref=e581]: /Day
+            - paragraph [ref=e582]: Three-row SUV with a modern design, upscale interior, and a plethora of safety
+            - generic [ref=e583]:
+              - generic [ref=e584]:
+                - img [ref=e585]
+                - generic [ref=e587]: 2 Doors
+              - generic [ref=e588]:
+                - img [ref=e589]
+                - generic [ref=e591]: 1 Large, 2 Small
+              - generic [ref=e592]:
+                - img [ref=e593]
+                - generic [ref=e595]: 06 Seats
+            - generic [ref=e596]:
+              - button "Rent Now" [ref=e597] [cursor=pointer]:
+                - generic [ref=e598]: Rent Now
+                - img [ref=e599]
+              - button "Quick view" [ref=e601] [cursor=pointer]:
+                - img [ref=e602]
+        - generic [ref=e605]:
+          - generic [ref=e606]:
+            - img "BMW 740L Series" [ref=e607]
+            - generic [ref=e610]: New
+            - button "Add to wishlist" [ref=e612] [cursor=pointer]:
+              - img [ref=e613]
+            - generic [ref=e615]:
+              - img [ref=e616]
+              - generic [ref=e618]: "4.8"
+              - generic [ref=e619]: (124)
+          - generic [ref=e620]:
+            - generic [ref=e621]:
+              - heading "BMW 740L Series" [level=3] [ref=e622]
+              - generic [ref=e624]:
+                - generic [ref=e625]: $79
+                - generic [ref=e626]: /Day
+            - paragraph [ref=e627]: Three-row SUV with a modern design, upscale interior, and a plethora of safety
+            - generic [ref=e628]:
+              - generic [ref=e629]:
+                - img [ref=e630]
+                - generic [ref=e632]: 2 Doors
+              - generic [ref=e633]:
+                - img [ref=e634]
+                - generic [ref=e636]: 1 Large, 2 Small
+              - generic [ref=e637]:
+                - img [ref=e638]
+                - generic [ref=e640]: 06 Seats
+            - generic [ref=e641]:
+              - button "Rent Now" [ref=e642] [cursor=pointer]:
+                - generic [ref=e643]: Rent Now
+                - img [ref=e644]
+              - button "Quick view" [ref=e646] [cursor=pointer]:
+                - img [ref=e647]
+        - generic [ref=e650]:
+          - generic [ref=e651]:
+            - img "BMW M5 Competition" [ref=e652]
+            - generic [ref=e655]: Top Rated
+            - button "Add to wishlist" [ref=e657] [cursor=pointer]:
+              - img [ref=e658]
+            - generic [ref=e660]:
+              - img [ref=e661]
+              - generic [ref=e663]: "4.8"
+              - generic [ref=e664]: (124)
+          - generic [ref=e665]:
+            - generic [ref=e666]:
+              - heading "BMW M5 Competition" [level=3] [ref=e667]
+              - generic [ref=e669]:
+                - generic [ref=e670]: $99
+                - generic [ref=e671]: /Day
+            - paragraph [ref=e672]: Three-row SUV with a modern design, upscale interior, and a plethora of safety
+            - generic [ref=e673]:
+              - generic [ref=e674]:
+                - img [ref=e675]
+                - generic [ref=e677]: 2 Doors
+              - generic [ref=e678]:
+                - img [ref=e679]
+                - generic [ref=e681]: 1 Large, 2 Small
+              - generic [ref=e682]:
+                - img [ref=e683]
+                - generic [ref=e685]: 06 Seats
+            - generic [ref=e686]:
+              - button "Rent Now" [ref=e687] [cursor=pointer]:
+                - generic [ref=e688]: Rent Now
+                - img [ref=e689]
+              - button "Quick view" [ref=e691] [cursor=pointer]:
+                - img [ref=e692]
+    - generic [ref=e701]:
+      - generic [ref=e702]:
+        - button "Play video" [ref=e706] [cursor=pointer]:
+          - img [ref=e707]
+        - generic [ref=e712]: Promo Video
+        - heading "Watch Our Latest Fleet Showcase" [level=2] [ref=e714]
+        - paragraph [ref=e715]: Experience the thrill of driving premium vehicles from our exclusive collection.
+      - generic [ref=e717]:
+        - generic [ref=e718]:
+          - generic [ref=e719]: 500+
+          - generic [ref=e720]: Premium Vehicles
+        - generic [ref=e721]:
+          - generic [ref=e722]: 32+
+          - generic [ref=e723]: Locations
+        - generic [ref=e724]:
+          - generic [ref=e725]: 15+
+          - generic [ref=e726]: Years Experience
+        - generic [ref=e727]:
+          - generic [ref=e728]: 98%
+          - generic [ref=e729]: Happy Clients
+    - generic [ref=e731]:
+      - paragraph [ref=e733]: Trusted By Drivers From
+      - generic [ref=e735]:
+        - generic [ref=e738] [cursor=pointer]: Toyota
+        - generic [ref=e741] [cursor=pointer]: BMW
+        - generic [ref=e744] [cursor=pointer]: Mercedes
+        - generic [ref=e747] [cursor=pointer]: Audi
+        - generic [ref=e750] [cursor=pointer]: Ford
+        - generic [ref=e753] [cursor=pointer]: Tesla
+        - generic [ref=e756] [cursor=pointer]: Honda
+        - generic [ref=e759] [cursor=pointer]: Lamborghini
+        - generic [ref=e762] [cursor=pointer]: Toyota
+        - generic [ref=e765] [cursor=pointer]: BMW
+        - generic [ref=e768] [cursor=pointer]: Mercedes
+        - generic [ref=e771] [cursor=pointer]: Audi
+        - generic [ref=e774] [cursor=pointer]: Ford
+        - generic [ref=e777] [cursor=pointer]: Tesla
+        - generic [ref=e780] [cursor=pointer]: Honda
+        - generic [ref=e783] [cursor=pointer]: Lamborghini
+        - generic [ref=e786] [cursor=pointer]: Toyota
+        - generic [ref=e789] [cursor=pointer]: BMW
+        - generic [ref=e792] [cursor=pointer]: Mercedes
+        - generic [ref=e795] [cursor=pointer]: Audi
+        - generic [ref=e798] [cursor=pointer]: Ford
+        - generic [ref=e801] [cursor=pointer]: Tesla
+        - generic [ref=e804] [cursor=pointer]: Honda
+        - generic [ref=e807] [cursor=pointer]: Lamborghini
+    - generic [ref=e811]:
+      - generic [ref=e812]:
+        - generic [ref=e813]:
+          - generic [ref=e816]: Global Network
+          - heading "Our Service Areas" [level=2] [ref=e817]
+          - paragraph [ref=e818]: With 32+ strategic locations worldwide, we bring premium car rental to your doorstep.
+        - link "Find Location" [ref=e819] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e820]
+          - generic [ref=e823]: Find Location
+      - generic [ref=e824]:
+        - generic [ref=e825]:
+          - generic [ref=e828]:
+            - img [ref=e830]
+            - generic [ref=e833]:
+              - heading "Main Office" [level=3] [ref=e834]
+              - paragraph [ref=e835]: With a robust network spanning 32 strategic locations worldwide, we provide seamless car rental services across continents.
+              - generic [ref=e836]:
+                - generic [ref=e837]:
+                  - img "User" [ref=e839]
+                  - img "User" [ref=e841]
+                  - img "User" [ref=e843]
+                  - img "User" [ref=e845]
+                - generic [ref=e846]:
+                  - paragraph [ref=e847]: Join 50K+ Happy
+                  - paragraph [ref=e848]: Customers Worldwide
+          - generic [ref=e849]:
+            - generic [ref=e852] [cursor=pointer]:
+              - generic [ref=e853]: 32+
+              - text: Global Cities
+            - generic [ref=e856] [cursor=pointer]:
+              - generic [ref=e857]: 24/7
+              - text: Full Support
+        - generic [ref=e860]:
+          - generic:
+            - generic: Live Network
+          - generic:
+            - paragraph: Active Cities
+            - paragraph: 32+
+      - generic [ref=e862]:
+        - generic [ref=e863] [cursor=pointer]: New York
+        - generic [ref=e864] [cursor=pointer]: Los Angeles
+        - generic [ref=e865] [cursor=pointer]: London
+        - generic [ref=e866] [cursor=pointer]: Dubai
+        - generic [ref=e867] [cursor=pointer]: Singapore
+        - generic [ref=e868] [cursor=pointer]: Tokyo
+        - generic [ref=e869] [cursor=pointer]: Paris
+        - generic [ref=e870] [cursor=pointer]: Sydney
+    - generic [ref=e871]:
+      - generic:
+        - generic: “
+        - generic: “
+      - generic [ref=e874]:
+        - generic [ref=e875]:
+          - generic [ref=e878]: Testimonials
+          - heading "What Our Clients Say" [level=2] [ref=e880]
+          - paragraph [ref=e881]: Real stories from real customers who chose Carola for their journeys.
+        - generic [ref=e882]:
+          - generic [ref=e884]:
+            - generic [ref=e888]:
+              - generic [ref=e889]:
+                - generic [ref=e890]:
+                  - img [ref=e891]
+                  - img [ref=e893]
+                  - img [ref=e895]
+                  - img [ref=e897]
+                  - img [ref=e899]
+                - img [ref=e901]
+              - paragraph [ref=e903]: Seamless Booking and Pickup! I rented car from Carola, and the process was incredibly smooth. The online booking system is user-friendly, and the pickup was quick and efficient.
+              - generic [ref=e904]:
+                - generic [ref=e905]:
+                  - img "Jonathan Blue" [ref=e906]
+                  - generic [ref=e907]: ✓
+                - generic [ref=e908]:
+                  - heading "Jonathan Blue" [level=4] [ref=e909]
+                  - paragraph [ref=e910]: Manager
+            - generic [ref=e914]:
+              - generic [ref=e915]:
+                - generic [ref=e916]:
+                  - img [ref=e917]
+                  - img [ref=e919]
+                  - img [ref=e921]
+                  - img [ref=e923]
+                  - img [ref=e925]
+                - img [ref=e927]
+              - paragraph [ref=e929]: Exceptional service and a fantastic fleet of vehicles. The staff was professional and accommodating. I highly recommend Carola for anyone looking for a hassle-free car rental experience.
+              - generic [ref=e930]:
+                - generic [ref=e931]:
+                  - img "Sarah Johnson" [ref=e932]
+                  - generic [ref=e933]: ✓
+                - generic [ref=e934]:
+                  - heading "Sarah Johnson" [level=4] [ref=e935]
+                  - paragraph [ref=e936]: Travel Blogger
+            - generic [ref=e940]:
+              - generic [ref=e941]:
+                - generic [ref=e942]:
+                  - img [ref=e943]
+                  - img [ref=e945]
+                  - img [ref=e947]
+                  - img [ref=e949]
+                  - img [ref=e951]
+                - img [ref=e953]
+              - paragraph [ref=e955]: Outstanding experience from start to finish. The luxury sedan I rented was immaculate, and the return process was just as smooth as the pickup. Will definitely use again.
+              - generic [ref=e956]:
+                - generic [ref=e957]:
+                  - img "Michael Chen" [ref=e958]
+                  - generic [ref=e959]: ✓
+                - generic [ref=e960]:
+                  - heading "Michael Chen" [level=4] [ref=e961]
+                  - paragraph [ref=e962]: Business Executive
+            - generic [ref=e966]:
+              - generic [ref=e967]:
+                - generic [ref=e968]:
+                  - img [ref=e969]
+                  - img [ref=e971]
+                  - img [ref=e973]
+                  - img [ref=e975]
+                  - img [ref=e977]
+                - img [ref=e979]
+              - paragraph [ref=e981]: I needed a reliable SUV for a cross-country road trip, and Carola delivered beyond expectations. Great rates, excellent vehicle condition, and wonderful customer support throughout my journey.
+              - generic [ref=e982]:
+                - generic [ref=e983]:
+                  - img "Emily Rodriguez" [ref=e984]
+                  - generic [ref=e985]: ✓
+                - generic [ref=e986]:
+                  - heading "Emily Rodriguez" [level=4] [ref=e987]
+                  - paragraph [ref=e988]: Freelance Photographer
+          - generic [ref=e989]:
+            - generic [ref=e990]:
+              - button "Go to testimonial 1" [ref=e991]
+              - button "Go to testimonial 2" [ref=e992]
+              - button "Go to testimonial 3" [ref=e993]
+            - generic [ref=e994]:
+              - button "Previous testimonial" [ref=e995] [cursor=pointer]:
+                - img [ref=e996]
+              - button "Next testimonial" [ref=e998] [cursor=pointer]:
+                - img [ref=e999]
+    - generic [ref=e1008]:
+      - generic [ref=e1009]:
+        - generic [ref=e1010]:
+          - img [ref=e1011]
+          - generic [ref=e1014]: Newsletter
+        - heading "Subscribe For Latest Update" [level=2] [ref=e1015]:
+          - text: Subscribe For
+          - text: Latest Update
+        - paragraph [ref=e1016]: Get exclusive offers, new arrivals, and travel tips delivered to your inbox.
+      - generic [ref=e1017]:
+        - generic [ref=e1020]:
+          - img [ref=e1022]
+          - textbox "Your email address" [ref=e1024]
+          - button "Join Now" [ref=e1025] [cursor=pointer]:
+            - generic [ref=e1026]: Join Now
+            - img [ref=e1027]
+        - paragraph [ref=e1029]: No spam, unsubscribe anytime.
+    - generic [ref=e1031]:
+      - generic [ref=e1035]:
+        - generic [ref=e1036]:
+          - link "C CAROLA" [ref=e1037] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e1040]: C
+            - generic [ref=e1042]: CAROLA
+          - paragraph [ref=e1043]: Experience the ultimate in luxury and comfort with our premium car rental services. We offer a wide range of vehicles for every occasion.
+          - generic [ref=e1045]: Follow Us
+          - generic [ref=e1047]:
+            - link "Facebook" [ref=e1048] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1049]
+            - link "Twitter" [ref=e1051] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1052]
+            - link "Instagram" [ref=e1054] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1055]
+            - link "LinkedIn" [ref=e1057] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1058]
+        - generic [ref=e1060]:
+          - heading "Quick Links" [level=3] [ref=e1061]:
+            - text: Quick
+            - generic [ref=e1063]: Links
+          - list [ref=e1064]:
+            - listitem [ref=e1065]:
+              - link "About Us" [ref=e1066] [cursor=pointer]:
+                - /url: "#"
+                - text: About Us
+            - listitem [ref=e1068]:
+              - link "Our Fleet" [ref=e1069] [cursor=pointer]:
+                - /url: "#"
+                - text: Our Fleet
+            - listitem [ref=e1071]:
+              - link "Services" [ref=e1072] [cursor=pointer]:
+                - /url: "#"
+                - text: Services
+            - listitem [ref=e1074]:
+              - link "Pricing" [ref=e1075] [cursor=pointer]:
+                - /url: "#"
+                - text: Pricing
+            - listitem [ref=e1077]:
+              - link "Contact" [ref=e1078] [cursor=pointer]:
+                - /url: "#"
+                - text: Contact
+        - generic [ref=e1080]:
+          - heading "Car Fleet" [level=3] [ref=e1081]:
+            - text: Car
+            - generic [ref=e1083]: Fleet
+          - list [ref=e1084]:
+            - listitem [ref=e1085]:
+              - link "Luxury Sedan" [ref=e1086] [cursor=pointer]:
+                - /url: "#"
+                - text: Luxury Sedan
+            - listitem [ref=e1088]:
+              - link "Sports Cars" [ref=e1089] [cursor=pointer]:
+                - /url: "#"
+                - text: Sports Cars
+            - listitem [ref=e1091]:
+              - link "SUVs" [ref=e1092] [cursor=pointer]:
+                - /url: "#"
+                - text: SUVs
+            - listitem [ref=e1094]:
+              - link "Vans" [ref=e1095] [cursor=pointer]:
+                - /url: "#"
+                - text: Vans
+            - listitem [ref=e1097]:
+              - link "Trucks" [ref=e1098] [cursor=pointer]:
+                - /url: "#"
+                - text: Trucks
+        - generic [ref=e1100]:
+          - heading "Contact Info" [level=3] [ref=e1101]:
+            - text: Contact
+            - generic [ref=e1103]: Info
+          - list [ref=e1104]:
+            - listitem [ref=e1105]:
+              - img [ref=e1107]
+              - generic [ref=e1110]:
+                - text: 57 Heold Insaf Station Road,
+                - text: Cardiff, United Kingdom
+            - listitem [ref=e1111]:
+              - img [ref=e1113]
+              - generic [ref=e1115]: info@example.com
+            - listitem [ref=e1116]:
+              - img [ref=e1118]
+              - generic [ref=e1120]: 029 2021 4012
+      - generic [ref=e1122]:
+        - paragraph [ref=e1123]: © 2026 CAROLA. All rights reserved.
+        - generic [ref=e1124]:
+          - link "Privacy Policy" [ref=e1125] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e1126]: "|"
+          - link "Terms of Service" [ref=e1127] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e1128]: "|"
+          - link "Sitemap" [ref=e1129] [cursor=pointer]:
+            - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e1135] [cursor=pointer]:
+    - img [ref=e1136]

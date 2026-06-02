@@ -1,0 +1,330 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - link "+88 01682648101" [ref=e5] [cursor=pointer]:
+        - /url: tel:+8801682648101
+        - img [ref=e7]
+        - generic [ref=e9]: +88 01682648101
+      - link "info@example.com" [ref=e10] [cursor=pointer]:
+        - /url: mailto:info@example.com
+        - img [ref=e12]
+        - generic [ref=e14]: info@example.com
+      - generic [ref=e17]: Open 24/7
+    - generic [ref=e18]:
+      - generic [ref=e19]: "Follow Us:"
+      - link "Facebook" [ref=e20] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e21]
+      - link "Twitter" [ref=e23] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e24]
+      - link "Instagram" [ref=e26] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e27]
+      - link "LinkedIn" [ref=e29] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e30]
+  - banner [ref=e32]:
+    - generic [ref=e34]:
+      - link "C CAROLA" [ref=e35] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e38]: C
+        - generic [ref=e40]: CAROLA
+      - navigation [ref=e41]:
+        - button "Home" [ref=e43] [cursor=pointer]:
+          - text: Home
+          - img [ref=e44]
+        - button "Car Fleet" [ref=e47] [cursor=pointer]:
+          - text: Car Fleet
+          - img [ref=e48]
+        - button "Pages" [ref=e51] [cursor=pointer]:
+          - text: Pages
+          - img [ref=e52]
+        - button "News" [ref=e55] [cursor=pointer]:
+          - text: News
+          - img [ref=e56]
+        - button "Contact" [ref=e59] [cursor=pointer]: Contact
+      - generic [ref=e60]:
+        - button "Search" [ref=e61] [cursor=pointer]:
+          - img [ref=e62]
+        - link "Booking Now" [ref=e65] [cursor=pointer]:
+          - /url: /checkout
+          - generic [ref=e66]:
+            - text: Booking Now
+            - img [ref=e67]
+    - generic [ref=e70]:
+      - img [ref=e71]
+      - textbox "Search cars, brands, locations..." [ref=e73]
+      - button "Close search" [ref=e74] [cursor=pointer]:
+        - img [ref=e75]
+  - main [ref=e77]:
+    - generic [ref=e84]:
+      - generic [ref=e87]: Coverage Network
+      - heading "Service Areas" [level=1] [ref=e88]:
+        - generic [ref=e89]: Service
+        - text: Areas
+      - paragraph [ref=e90]: From our headquarters in Rohtak, Carola serves 32+ cities across North India with premium vehicles, 24/7 support, and lightning-fast delivery.
+      - navigation "Breadcrumb" [ref=e91]:
+        - link "Home" [ref=e92] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e93]:
+          - generic [ref=e94]: /
+          - generic [ref=e95]: Service Areas
+    - generic [ref=e99]:
+      - generic [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e361]:
+            - region "Map" [ref=e362]
+            - button "Map marker" [ref=e363]:
+              - button "Open Rohtak office details" [ref=e365] [cursor=pointer]:
+                - img [ref=e368]
+          - group [ref=e371]:
+            - generic "Toggle attribution" [ref=e372] [cursor=pointer]
+            - generic [ref=e373]:
+              - text: ©
+              - link "CARTO" [ref=e374] [cursor=pointer]:
+                - /url: https://carto.com/about-carto/
+              - text: ", ©"
+              - link "OpenStreetMap" [ref=e375] [cursor=pointer]:
+                - /url: http://www.openstreetmap.org/about/
+              - text: contributors
+          - generic [ref=e376]:
+            - button "Zoom in" [ref=e377]:
+              - img [ref=e378]
+            - button "Zoom out" [ref=e379]:
+              - img [ref=e380]
+            - button "Locate me" [ref=e381]:
+              - img [ref=e382]
+            - button "Enter fullscreen" [ref=e384]:
+              - img [ref=e385]
+          - generic [ref=e390]:
+            - button "Close popup" [active] [ref=e391] [cursor=pointer]: ×
+            - generic [ref=e392]:
+              - paragraph [ref=e395]: Main Office
+              - heading "Rohtak, Haryana" [level=4] [ref=e396]
+              - paragraph [ref=e397]:
+                - text: Sector 14, Near Bus Stand
+                - text: Rohtak, Haryana 124001, India
+              - generic [ref=e398]:
+                - generic [ref=e399]: Open 24/7
+                - link "Get Directions →" [ref=e400] [cursor=pointer]:
+                  - /url: https://www.openstreetmap.org/?mlat=28.8955&mlon=76.6066#map=13/28.8955/76.6066
+        - generic:
+          - generic: Live Network
+        - generic:
+          - paragraph: Active Cities
+          - paragraph: 32+
+      - generic [ref=e103]:
+        - generic [ref=e104]: Headquarters
+        - heading "Rohtak Haryana, India" [level=2] [ref=e105]:
+          - text: Rohtak
+          - text: Haryana, India
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: Address
+            - paragraph [ref=e110]:
+              - text: Sector 14, Near Bus Stand
+              - text: Rohtak, Haryana 124001
+          - generic [ref=e111]:
+            - paragraph [ref=e112]: Hours
+            - paragraph [ref=e113]: Open 24/7
+          - generic [ref=e114]:
+            - paragraph [ref=e115]: Fleet at HQ
+            - paragraph [ref=e116]: 240+
+        - link "Get Directions" [ref=e117] [cursor=pointer]:
+          - /url: https://www.openstreetmap.org/?mlat=28.8955&mlon=76.6066#map=13/28.8955/76.6066
+      - generic [ref=e118]:
+        - generic [ref=e121]: T1
+        - generic [ref=e122]:
+          - paragraph [ref=e123]: Gurugram
+          - paragraph [ref=e124]: Haryana
+        - generic [ref=e126]: Tier 1
+      - generic [ref=e127]:
+        - generic [ref=e130]: T1
+        - generic [ref=e131]:
+          - paragraph [ref=e132]: Panchkula
+          - paragraph [ref=e133]: Haryana
+        - generic [ref=e135]: Tier 1
+      - generic [ref=e136]:
+        - generic [ref=e139]: T2
+        - generic [ref=e140]:
+          - paragraph [ref=e141]: Karnal
+          - paragraph [ref=e142]: Haryana
+        - generic [ref=e144]: Tier 2
+      - generic [ref=e145]:
+        - generic [ref=e148]: T2
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: Ambala
+          - paragraph [ref=e151]: Haryana
+        - generic [ref=e153]: Tier 2
+      - generic [ref=e154]:
+        - generic [ref=e157]: T2
+        - generic [ref=e158]:
+          - paragraph [ref=e159]: Hisar
+          - paragraph [ref=e160]: Haryana
+        - generic [ref=e162]: Tier 2
+      - generic [ref=e163]:
+        - generic [ref=e166]: T2
+        - generic [ref=e167]:
+          - paragraph [ref=e168]: Sonipat
+          - paragraph [ref=e169]: Haryana
+        - generic [ref=e171]: Tier 2
+      - generic [ref=e172]:
+        - generic [ref=e175]: T2
+        - generic [ref=e176]:
+          - paragraph [ref=e177]: Panipat
+          - paragraph [ref=e178]: Haryana
+        - generic [ref=e180]: Tier 2
+      - generic [ref=e181]:
+        - generic [ref=e184]: T1
+        - generic [ref=e185]:
+          - paragraph [ref=e186]: Chandigarh
+          - paragraph [ref=e187]: Chandigarh (UT)
+        - generic [ref=e189]: Tier 1
+      - generic [ref=e190]:
+        - generic [ref=e193]: T1
+        - generic [ref=e194]:
+          - paragraph [ref=e195]: Delhi NCR
+          - paragraph [ref=e196]: Delhi
+        - generic [ref=e198]: Tier 1
+      - generic [ref=e199]:
+        - generic [ref=e202]: T2
+        - generic [ref=e203]:
+          - paragraph [ref=e204]: Noida
+          - paragraph [ref=e205]: Uttar Pradesh
+        - generic [ref=e207]: Tier 2
+      - generic [ref=e208]:
+        - generic [ref=e211]: T3
+        - generic [ref=e212]:
+          - paragraph [ref=e213]: Shimla
+          - paragraph [ref=e214]: Himachal Pradesh
+        - generic [ref=e216]: Tier 3
+      - generic [ref=e217]:
+        - generic [ref=e220]: TR
+        - generic [ref=e221]:
+          - paragraph [ref=e222]: Manali
+          - paragraph [ref=e223]: Himachal Pradesh
+        - generic [ref=e225]: Tourist
+      - generic [ref=e226]:
+        - generic [ref=e229]: T2
+        - generic [ref=e230]:
+          - paragraph [ref=e231]: Jaipur
+          - paragraph [ref=e232]: Rajasthan
+        - generic [ref=e234]: Tier 2
+      - generic [ref=e235]:
+        - generic [ref=e238]: T2
+        - generic [ref=e239]:
+          - paragraph [ref=e240]: Amritsar
+          - paragraph [ref=e241]: Punjab
+        - generic [ref=e243]: Tier 2
+    - generic [ref=e246]:
+      - generic [ref=e247]: Expansion
+      - heading "Don't See Your City?" [level=2] [ref=e248]
+      - paragraph [ref=e249]: We add 4-6 new cities every quarter. Tell us where you need Carola and we'll be there within 60 days.
+      - generic [ref=e250]:
+        - link "Request A City" [ref=e251] [cursor=pointer]:
+          - /url: /checkout
+        - link "Call Us" [ref=e252] [cursor=pointer]:
+          - /url: tel:+919999999999
+  - contentinfo [ref=e253]:
+    - generic [ref=e257]:
+      - generic [ref=e258]:
+        - link "C CAROLA" [ref=e259] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e262]: C
+          - generic [ref=e264]: CAROLA
+        - paragraph [ref=e265]: Experience the ultimate in luxury and comfort with our premium car rental services. We offer a wide range of vehicles for every occasion.
+        - generic [ref=e267]: Follow Us
+        - generic [ref=e269]:
+          - link "Facebook" [ref=e270] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e271]
+          - link "Twitter" [ref=e273] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e274]
+          - link "Instagram" [ref=e276] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e277]
+          - link "LinkedIn" [ref=e279] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e280]
+      - generic [ref=e282]:
+        - heading "Quick Links" [level=3] [ref=e283]:
+          - text: Quick
+          - generic [ref=e285]: Links
+        - list [ref=e286]:
+          - listitem [ref=e287]:
+            - link "About Us" [ref=e288] [cursor=pointer]:
+              - /url: "#"
+              - text: About Us
+          - listitem [ref=e290]:
+            - link "Our Fleet" [ref=e291] [cursor=pointer]:
+              - /url: "#"
+              - text: Our Fleet
+          - listitem [ref=e293]:
+            - link "Services" [ref=e294] [cursor=pointer]:
+              - /url: "#"
+              - text: Services
+          - listitem [ref=e296]:
+            - link "Pricing" [ref=e297] [cursor=pointer]:
+              - /url: "#"
+              - text: Pricing
+          - listitem [ref=e299]:
+            - link "Contact" [ref=e300] [cursor=pointer]:
+              - /url: "#"
+              - text: Contact
+      - generic [ref=e302]:
+        - heading "Car Fleet" [level=3] [ref=e303]:
+          - text: Car
+          - generic [ref=e305]: Fleet
+        - list [ref=e306]:
+          - listitem [ref=e307]:
+            - link "Luxury Sedan" [ref=e308] [cursor=pointer]:
+              - /url: "#"
+              - text: Luxury Sedan
+          - listitem [ref=e310]:
+            - link "Sports Cars" [ref=e311] [cursor=pointer]:
+              - /url: "#"
+              - text: Sports Cars
+          - listitem [ref=e313]:
+            - link "SUVs" [ref=e314] [cursor=pointer]:
+              - /url: "#"
+              - text: SUVs
+          - listitem [ref=e316]:
+            - link "Vans" [ref=e317] [cursor=pointer]:
+              - /url: "#"
+              - text: Vans
+          - listitem [ref=e319]:
+            - link "Trucks" [ref=e320] [cursor=pointer]:
+              - /url: "#"
+              - text: Trucks
+      - generic [ref=e322]:
+        - heading "Contact Info" [level=3] [ref=e323]:
+          - text: Contact
+          - generic [ref=e325]: Info
+        - list [ref=e326]:
+          - listitem [ref=e327]:
+            - img [ref=e329]
+            - generic [ref=e332]:
+              - text: 57 Heold Insaf Station Road,
+              - text: Cardiff, United Kingdom
+          - listitem [ref=e333]:
+            - img [ref=e335]
+            - generic [ref=e337]: info@example.com
+          - listitem [ref=e338]:
+            - img [ref=e340]
+            - generic [ref=e342]: 029 2021 4012
+    - generic [ref=e344]:
+      - paragraph [ref=e345]: © 2026 CAROLA. All rights reserved.
+      - generic [ref=e346]:
+        - link "Privacy Policy" [ref=e347] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e348]: "|"
+        - link "Terms of Service" [ref=e349] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e350]: "|"
+        - link "Sitemap" [ref=e351] [cursor=pointer]:
+          - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e357] [cursor=pointer]:
+    - img [ref=e358]
+  - alert [ref=e401]

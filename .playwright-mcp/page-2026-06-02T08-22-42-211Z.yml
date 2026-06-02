@@ -1,0 +1,318 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - link "+88 01682648101" [ref=e5] [cursor=pointer]:
+        - /url: tel:+8801682648101
+        - img [ref=e7]
+        - generic [ref=e9]: +88 01682648101
+      - link "info@example.com" [ref=e10] [cursor=pointer]:
+        - /url: mailto:info@example.com
+        - img [ref=e12]
+        - generic [ref=e14]: info@example.com
+      - generic [ref=e17]: Open 24/7
+    - generic [ref=e18]:
+      - generic [ref=e19]: "Follow Us:"
+      - link "Facebook" [ref=e20] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e21]
+      - link "Twitter" [ref=e23] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e24]
+      - link "Instagram" [ref=e26] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e27]
+      - link "LinkedIn" [ref=e29] [cursor=pointer]:
+        - /url: "#"
+        - img [ref=e30]
+  - banner [ref=e32]:
+    - generic [ref=e34]:
+      - link "C CAROLA" [ref=e35] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e38]: C
+        - generic [ref=e40]: CAROLA
+      - navigation [ref=e41]:
+        - button "Home" [ref=e43] [cursor=pointer]:
+          - text: Home
+          - img [ref=e44]
+        - button "Car Fleet" [ref=e47] [cursor=pointer]:
+          - text: Car Fleet
+          - img [ref=e48]
+        - button "Pages" [ref=e51] [cursor=pointer]:
+          - text: Pages
+          - img [ref=e52]
+        - button "News" [ref=e55] [cursor=pointer]:
+          - text: News
+          - img [ref=e56]
+        - button "Contact" [ref=e59] [cursor=pointer]: Contact
+      - generic [ref=e60]:
+        - button "Search" [ref=e61] [cursor=pointer]:
+          - img [ref=e62]
+        - link "Booking Now" [ref=e65] [cursor=pointer]:
+          - /url: /checkout
+          - generic [ref=e66]:
+            - text: Booking Now
+            - img [ref=e67]
+    - generic [ref=e70]:
+      - img [ref=e71]
+      - textbox "Search cars, brands, locations..." [ref=e73]
+      - button "Close search" [ref=e74] [cursor=pointer]:
+        - img [ref=e75]
+  - main [ref=e77]:
+    - generic [ref=e84]:
+      - generic [ref=e87]: Transparent Pricing
+      - heading "Pricing Plans" [level=1] [ref=e88]:
+        - generic [ref=e89]: Pricing
+        - text: Plans
+      - paragraph [ref=e90]: Choose the rental cycle that fits your journey. All plans include insurance, 24/7 support, and our 850+ premium vehicles.
+      - navigation "Breadcrumb" [ref=e91]:
+        - link "Home" [ref=e92] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e93]:
+          - generic [ref=e94]: /
+          - generic [ref=e95]: Pricing
+    - generic [ref=e98]:
+      - generic [ref=e99]:
+        - button "Hourly" [ref=e100]
+        - button "Daily" [ref=e101]
+        - button "Weekly" [ref=e102]
+        - button "Monthly" [active] [ref=e103]
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e107]: Tier /01
+          - generic [ref=e109]:
+            - heading "Economy" [level=3] [ref=e110]
+            - paragraph [ref=e111]: Swift, Wagon R, Alto
+          - generic [ref=e112]:
+            - generic [ref=e113]: ₹
+            - generic [ref=e114]: 29,999
+            - generic [ref=e115]: /mo
+          - list [ref=e117]:
+            - listitem [ref=e414]:
+              - img [ref=e416]
+              - generic [ref=e418]: 6,000 km/month
+            - listitem [ref=e123]:
+              - img [ref=e125]
+              - generic [ref=e127]: Basic insurance
+            - listitem [ref=e128]:
+              - img [ref=e130]
+              - generic [ref=e132]: Pickup & drop
+            - listitem [ref=e133]:
+              - img [ref=e135]
+              - generic [ref=e137]: 24/7 support
+          - link "Choose Economy" [ref=e138] [cursor=pointer]:
+            - /url: /checkout
+        - generic [ref=e139]:
+          - generic [ref=e141]: Most Popular
+          - generic [ref=e143]: Tier /02
+          - generic [ref=e145]:
+            - heading "Premium" [level=3] [ref=e146]
+            - paragraph [ref=e147]: Creta, Seltos, Innova
+          - generic [ref=e148]:
+            - generic [ref=e149]: ₹
+            - generic [ref=e150]: 74,999
+            - generic [ref=e151]: /mo
+          - list [ref=e153]:
+            - listitem [ref=e419]:
+              - img [ref=e421]
+              - generic [ref=e423]: 12,000 km/month
+            - listitem [ref=e159]:
+              - img [ref=e161]
+              - generic [ref=e163]: Premium insurance
+            - listitem [ref=e424]:
+              - img [ref=e426]
+              - generic [ref=e428]: Free delivery
+            - listitem [ref=e169]:
+              - img [ref=e171]
+              - generic [ref=e173]: Priority support
+            - listitem [ref=e429]:
+              - img [ref=e431]
+              - generic [ref=e433]: Vehicle swap available
+          - link "Choose Premium" [ref=e179] [cursor=pointer]:
+            - /url: /checkout
+        - generic [ref=e180]:
+          - generic [ref=e182]: Tier /03
+          - generic [ref=e184]:
+            - heading "Luxury" [level=3] [ref=e185]
+            - paragraph [ref=e186]: Fortuner, Audi, BMW
+          - generic [ref=e187]:
+            - generic [ref=e188]: ₹
+            - generic [ref=e189]: 1,99,999
+            - generic [ref=e190]: /mo
+          - list [ref=e192]:
+            - listitem [ref=e193]:
+              - img [ref=e195]
+              - generic [ref=e197]: Unlimited km
+            - listitem [ref=e198]:
+              - img [ref=e200]
+              - generic [ref=e202]: Comprehensive insurance
+            - listitem [ref=e203]:
+              - img [ref=e205]
+              - generic [ref=e207]: Chauffeur option
+            - listitem [ref=e208]:
+              - img [ref=e210]
+              - generic [ref=e212]: VIP support
+            - listitem [ref=e434]:
+              - img [ref=e436]
+              - generic [ref=e438]: Vehicle swap available
+          - link "Choose Luxury" [ref=e223] [cursor=pointer]:
+            - /url: /checkout
+    - generic [ref=e225]:
+      - generic [ref=e226]:
+        - generic [ref=e227]:
+          - generic [ref=e228]: Extras
+          - heading "Add-Ons & Upgrades" [level=2] [ref=e229]
+        - paragraph [ref=e230]: Tailor your ride with optional services designed for comfort, safety, and convenience.
+      - generic [ref=e231]:
+        - generic [ref=e232]:
+          - generic [ref=e233]:
+            - img [ref=e235]
+            - paragraph [ref=e237]: Zero-Dep Insurance
+          - paragraph [ref=e238]: ₹299/day
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - img [ref=e242]
+            - paragraph [ref=e244]: Additional Driver
+          - paragraph [ref=e245]: ₹199/day
+        - generic [ref=e246]:
+          - generic [ref=e247]:
+            - img [ref=e249]
+            - paragraph [ref=e251]: Child Seat
+          - paragraph [ref=e252]: ₹149/day
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - img [ref=e256]
+            - paragraph [ref=e258]: 4G WiFi Hotspot
+          - paragraph [ref=e259]: ₹99/day
+        - generic [ref=e260]:
+          - generic [ref=e261]:
+            - img [ref=e263]
+            - paragraph [ref=e265]: GPS Navigation
+          - paragraph [ref=e266]: ₹149/day
+        - generic [ref=e267]:
+          - generic [ref=e268]:
+            - img [ref=e270]
+            - paragraph [ref=e272]: Roof Carrier
+          - paragraph [ref=e273]: ₹249/day
+    - generic [ref=e275]:
+      - generic [ref=e277]:
+        - generic [ref=e278]: Common Questions
+        - heading "Frequently Asked" [level=2] [ref=e279]
+      - generic [ref=e280]:
+        - group [ref=e281]:
+          - generic "Are taxes included in the prices?" [ref=e282] [cursor=pointer]:
+            - generic [ref=e283]: Are taxes included in the prices?
+            - img [ref=e285]
+        - group [ref=e287]:
+          - generic "Can I switch plans mid-rental?" [ref=e288] [cursor=pointer]:
+            - generic [ref=e289]: Can I switch plans mid-rental?
+            - img [ref=e291]
+        - group [ref=e293]:
+          - generic "What if I exceed the km limit?" [ref=e294] [cursor=pointer]:
+            - generic [ref=e295]: What if I exceed the km limit?
+            - img [ref=e297]
+        - group [ref=e299]:
+          - generic "Is fuel included?" [ref=e300] [cursor=pointer]:
+            - generic [ref=e301]: Is fuel included?
+            - img [ref=e303]
+  - contentinfo [ref=e305]:
+    - generic [ref=e309]:
+      - generic [ref=e310]:
+        - link "C CAROLA" [ref=e311] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e314]: C
+          - generic [ref=e316]: CAROLA
+        - paragraph [ref=e317]: Experience the ultimate in luxury and comfort with our premium car rental services. We offer a wide range of vehicles for every occasion.
+        - generic [ref=e319]: Follow Us
+        - generic [ref=e321]:
+          - link "Facebook" [ref=e322] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e323]
+          - link "Twitter" [ref=e325] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e326]
+          - link "Instagram" [ref=e328] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e329]
+          - link "LinkedIn" [ref=e331] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e332]
+      - generic [ref=e334]:
+        - heading "Quick Links" [level=3] [ref=e335]:
+          - text: Quick
+          - generic [ref=e337]: Links
+        - list [ref=e338]:
+          - listitem [ref=e339]:
+            - link "About Us" [ref=e340] [cursor=pointer]:
+              - /url: "#"
+              - text: About Us
+          - listitem [ref=e342]:
+            - link "Our Fleet" [ref=e343] [cursor=pointer]:
+              - /url: "#"
+              - text: Our Fleet
+          - listitem [ref=e345]:
+            - link "Services" [ref=e346] [cursor=pointer]:
+              - /url: "#"
+              - text: Services
+          - listitem [ref=e348]:
+            - link "Pricing" [ref=e349] [cursor=pointer]:
+              - /url: "#"
+              - text: Pricing
+          - listitem [ref=e351]:
+            - link "Contact" [ref=e352] [cursor=pointer]:
+              - /url: "#"
+              - text: Contact
+      - generic [ref=e354]:
+        - heading "Car Fleet" [level=3] [ref=e355]:
+          - text: Car
+          - generic [ref=e357]: Fleet
+        - list [ref=e358]:
+          - listitem [ref=e359]:
+            - link "Luxury Sedan" [ref=e360] [cursor=pointer]:
+              - /url: "#"
+              - text: Luxury Sedan
+          - listitem [ref=e362]:
+            - link "Sports Cars" [ref=e363] [cursor=pointer]:
+              - /url: "#"
+              - text: Sports Cars
+          - listitem [ref=e365]:
+            - link "SUVs" [ref=e366] [cursor=pointer]:
+              - /url: "#"
+              - text: SUVs
+          - listitem [ref=e368]:
+            - link "Vans" [ref=e369] [cursor=pointer]:
+              - /url: "#"
+              - text: Vans
+          - listitem [ref=e371]:
+            - link "Trucks" [ref=e372] [cursor=pointer]:
+              - /url: "#"
+              - text: Trucks
+      - generic [ref=e374]:
+        - heading "Contact Info" [level=3] [ref=e375]:
+          - text: Contact
+          - generic [ref=e377]: Info
+        - list [ref=e378]:
+          - listitem [ref=e379]:
+            - img [ref=e381]
+            - generic [ref=e384]:
+              - text: 57 Heold Insaf Station Road,
+              - text: Cardiff, United Kingdom
+          - listitem [ref=e385]:
+            - img [ref=e387]
+            - generic [ref=e389]: info@example.com
+          - listitem [ref=e390]:
+            - img [ref=e392]
+            - generic [ref=e394]: 029 2021 4012
+    - generic [ref=e396]:
+      - paragraph [ref=e397]: © 2026 CAROLA. All rights reserved.
+      - generic [ref=e398]:
+        - link "Privacy Policy" [ref=e399] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e400]: "|"
+        - link "Terms of Service" [ref=e401] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e402]: "|"
+        - link "Sitemap" [ref=e403] [cursor=pointer]:
+          - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e409] [cursor=pointer]:
+    - img [ref=e410]
+  - alert [ref=e413]

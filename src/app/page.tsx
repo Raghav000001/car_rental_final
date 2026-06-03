@@ -26,7 +26,7 @@ export default function Home() {
 
       <ScrollReveal direction="up"><SearchBar /></ScrollReveal>
       <ScrollReveal direction="right" stagger staggerDelay={0.15}><AboutSection /></ScrollReveal>
-      <ScrollReveal direction="up" stagger staggerDelay={0.12}><HowItWorks /></ScrollReveal>
+      <ScrollReveal direction="up" stagger staggerDelay={0.1}><HowItWorks /></ScrollReveal>
       <ScrollReveal direction="up" stagger staggerDelay={0.1}><PromoBanners /></ScrollReveal>
       <ScrollReveal direction="up" stagger staggerDelay={0.08}><CarTypes /></ScrollReveal>
       <ScrollReveal direction="scale" stagger staggerDelay={0.1}><CarFleet /></ScrollReveal>

@@ -2,31 +2,31 @@ import { StaggerItem } from "@/components/ScrollReveal";
 
 const steps = [
   {
-    number: "1",
+    number: "01",
     title: "Sign up Account",
-    bgColor: "bg-[#FFB185]",
+    text: "Create your account in seconds and get access to our entire fleet of premium vehicles with exclusive member benefits.",
     icon: (
-      <svg className="w-8 h-8 text-[#1A1A1A]" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
       </svg>
     ),
   },
   {
-    number: "2",
+    number: "02",
     title: "Search your Vehicle",
-    bgColor: "bg-[#9181F4]",
+    text: "Browse our fleet of 19 premium Indian vehicles with detailed specs, real photos, and transparent pricing.",
     icon: (
-      <svg className="w-8 h-8 text-[#1A1A1A]" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
         <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
       </svg>
     ),
   },
   {
-    number: "3",
+    number: "03",
     title: "Pay the Car Rent",
-    bgColor: "bg-[#87DAB3]",
+    text: "Secure payment with multiple options — credit card, UPI, or net banking. No hidden charges, complete transparency.",
     icon: (
-      <svg className="w-8 h-8 text-[#1A1A1A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
         <path d="M16 8l-4 4-2-2" />
         <path d="M12 12l4 4" />
@@ -34,11 +34,11 @@ const steps = [
     ),
   },
   {
-    number: "4",
+    number: "04",
     title: "Take Car to Road",
-    bgColor: "bg-[#FFCF7A]",
+    text: "Pick up your vehicle or have it delivered. Hit the road with 24/7 roadside assistance and complete peace of mind.",
     icon: (
-      <svg className="w-8 h-8 text-[#1A1A1A]" fill="currentColor" viewBox="0 0 24 24">
+      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
         <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z" />
       </svg>
     ),
@@ -47,43 +47,45 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 bg-[#0D0D0D] relative overflow-hidden">
-      {/* Radial Border Pattern */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[800px] pointer-events-none opacity-10">
-        <div className="absolute inset-x-0 inset-y-0 border border-white rounded-full scale-[0.4]" />
-        <div className="absolute inset-x-0 inset-y-0 border border-white rounded-full scale-[0.7]" />
-        <div className="absolute inset-x-0 inset-y-0 border border-white rounded-full scale-[1.0]" />
-        <div className="absolute inset-x-0 inset-y-0 border border-white rounded-full scale-[1.3]" />
-      </div>
-
+    <section className="py-20 lg:py-24 bg-secondary relative overflow-hidden">
+      <div className="absolute inset-0 dot-pattern opacity-20" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
       <div className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 lg:mb-20">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-[0.2em] mb-4">
-            Popular Cars
-          </div>
-          <h2 className="text-5xl md:text-6xl font-black text-white tracking-tighter">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             How It Works
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter italic leading-[0.95] pr-1">
+            Get on the Road in{" "}
+            <span className="text-gradient-primary">4 Simple Steps</span>
           </h2>
+          <p className="text-body text-sm mt-4 max-w-lg mx-auto leading-relaxed">
+            From browsing to driving — we&apos;ve made the entire process effortless.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
           {steps.map((step) => (
             <StaggerItem key={step.title} direction="up">
-            <div className="flex flex-col items-center text-center">
-              <div className="relative mb-8">
-                {/* Step Number Badge */}
-                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-white border-2 border-[#1A1A1A] flex items-center justify-center font-black text-black text-sm z-10 shadow-lg">
+              <div className="group relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 hover:border-primary/40 rounded-2xl p-6 lg:p-8 transition-all duration-500 h-full text-center">
+                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 border border-primary/30 text-[10px] font-black text-primary tracking-wider mb-5">
                   {step.number}
-                </div>
-                {/* Icon Container */}
-                <div className={`w-24 h-24 ${step.bgColor} rounded-4xl flex items-center justify-center shadow-xl transform transition-transform hover:scale-105 duration-300`}>
+                </span>
+
+                <div className="w-14 h-14 mx-auto mb-6 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-500">
                   {step.icon}
                 </div>
+
+                <h3 className="text-lg lg:text-xl font-black text-white italic tracking-tight pr-1 mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-body/70 text-sm leading-relaxed max-w-[260px] mx-auto">
+                  {step.text}
+                </p>
               </div>
-              <h3 className="text-2xl font-black text-white italic tracking-tight">
-                {step.title}
-              </h3>
-            </div>
             </StaggerItem>
           ))}
         </div>

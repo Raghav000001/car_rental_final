@@ -1,0 +1,639 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Rohit Tour & Travel" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Rohit Tour & Travel" [ref=e6]
+      - button "Open menu" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - link "Rohit Tour & Travel" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img "Rohit Tour & Travel" [ref=e13]
+      - button "Close menu" [ref=e14] [cursor=pointer]:
+        - img [ref=e15]
+    - generic [ref=e17]:
+      - button "Home" [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: Home
+        - img [ref=e21]
+      - button "Car Fleet" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]: Car Fleet
+        - img [ref=e26]
+      - button "Pages" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: Pages
+        - img [ref=e31]
+      - button "News" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: News
+        - img [ref=e36]
+      - link "Contact" [ref=e39] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e40]:
+      - heading "Contact Info" [level=4] [ref=e41]
+      - generic [ref=e42]:
+        - img [ref=e43]
+        - generic [ref=e46]: 57 Heold Insaf Station Road, Cardiff, UK
+      - generic [ref=e47]:
+        - img [ref=e48]
+        - link "+91-213-666-0027" [ref=e50] [cursor=pointer]:
+          - /url: tel:+912136660027
+      - generic [ref=e51]:
+        - img [ref=e52]
+        - link "info@example.com" [ref=e54] [cursor=pointer]:
+          - /url: mailto:info@example.com
+    - generic [ref=e55]:
+      - paragraph [ref=e56]: Follow Us On
+      - generic [ref=e57]:
+        - link "Twitter" [ref=e58] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e59]
+        - link "Facebook" [ref=e61] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e62]
+        - link "Pinterest" [ref=e64] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e65]
+        - link "Instagram" [ref=e67] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e68]
+        - link "YouTube" [ref=e70] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e71]
+      - link "Booking Now" [ref=e73] [cursor=pointer]:
+        - /url: /checkout
+  - main [ref=e74]:
+    - generic [ref=e82]:
+      - navigation "Breadcrumb" [ref=e84]:
+        - link "Home" [ref=e85] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e86]: /
+        - generic [ref=e87]: Our Fleet
+      - heading "Find the Perfect Ride for Every Journey" [level=1] [ref=e88]
+      - paragraph [ref=e89]: Explore our diverse fleet of 19 premium Indian vehicles — from compact hatchbacks to luxury sedans and spacious tempo travellers.
+      - generic [ref=e90]:
+        - link "Browse Vehicles" [ref=e91] [cursor=pointer]:
+          - /url: "#fleet-grid"
+          - generic [ref=e92]: Browse Vehicles
+          - img [ref=e93]
+        - link "Book Your Vehicle" [ref=e95] [cursor=pointer]:
+          - /url: /checkout
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - generic [ref=e103]: 0+
+        - paragraph [ref=e104]: Premium Vehicles
+      - generic [ref=e105]:
+        - generic [ref=e107]: 0+
+        - paragraph [ref=e108]: Cities Served
+      - generic [ref=e109]:
+        - generic [ref=e111]: 0+
+        - paragraph [ref=e112]: Happy Customers
+      - generic [ref=e113]:
+        - generic [ref=e115]: 0+
+        - paragraph [ref=e116]: Years of Service
+    - generic [ref=e121]:
+      - button "Filters & Sort" [ref=e123] [cursor=pointer]:
+        - generic [ref=e124]:
+          - img [ref=e125]
+          - text: Filters & Sort
+        - img [ref=e127]
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - generic [ref=e131]:
+            - generic [ref=e133]:
+              - img "Maruti Suzuki WagonR" [ref=e134]
+              - generic [ref=e137]: Hatchback
+              - button "Add to compare" [ref=e138] [cursor=pointer]:
+                - img [ref=e139]
+              - generic [ref=e141]:
+                - generic [ref=e142]:
+                  - paragraph [ref=e143]: Starting from
+                  - paragraph [ref=e144]: ₹999
+                - generic [ref=e145]:
+                  - paragraph [ref=e146]: Per km
+                  - paragraph [ref=e147]: ₹8
+            - generic [ref=e148]:
+              - generic [ref=e149]:
+                - heading "Maruti Suzuki WagonR" [level=3] [ref=e150]
+                - generic [ref=e151]:
+                  - img [ref=e152]
+                  - img [ref=e154]
+                  - img [ref=e156]
+                  - img [ref=e158]
+                  - img [ref=e160]
+                  - generic [ref=e162]: (2847)
+              - paragraph [ref=e163]: India's favourite family hatchback. Spacious, fuel-efficient, and perfect for city commutes with ample boot space.
+              - generic [ref=e164]:
+                - generic [ref=e165]:
+                  - paragraph [ref=e166]: Seats
+                  - paragraph [ref=e167]: "5"
+                - generic [ref=e168]:
+                  - paragraph [ref=e169]: Fuel
+                  - paragraph [ref=e170]: Petrol
+                - generic [ref=e171]:
+                  - paragraph [ref=e172]: Gear
+                  - paragraph [ref=e173]: Manual
+                - generic [ref=e174]:
+                  - paragraph [ref=e175]: AC
+                  - paragraph [ref=e176]: Available
+                - generic [ref=e177]:
+                  - paragraph [ref=e178]: Luggage
+                  - paragraph [ref=e179]: 240L
+                - generic [ref=e180]:
+                  - paragraph [ref=e181]: Rating
+                  - paragraph [ref=e182]: 4.3★
+              - generic [ref=e183]:
+                - generic [ref=e184]: local rental
+                - generic [ref=e185]: family trip
+              - generic [ref=e186]:
+                - link "Book Now" [ref=e187] [cursor=pointer]:
+                  - /url: /checkout
+                - button "Details" [ref=e188] [cursor=pointer]
+          - generic [ref=e189]:
+            - generic [ref=e191]:
+              - img "Maruti Suzuki Swift" [ref=e192]
+              - generic [ref=e195]: Hatchback
+              - button "Add to compare" [ref=e196] [cursor=pointer]:
+                - img [ref=e197]
+              - generic [ref=e199]:
+                - generic [ref=e200]:
+                  - paragraph [ref=e201]: Starting from
+                  - paragraph [ref=e202]: ₹1,199
+                - generic [ref=e203]:
+                  - paragraph [ref=e204]: Per km
+                  - paragraph [ref=e205]: ₹9
+            - generic [ref=e206]:
+              - generic [ref=e207]:
+                - heading "Maruti Suzuki Swift" [level=3] [ref=e208]
+                - generic [ref=e209]:
+                  - img [ref=e210]
+                  - img [ref=e212]
+                  - img [ref=e214]
+                  - img [ref=e216]
+                  - img [ref=e218]
+                  - generic [ref=e220]: (3102)
+              - paragraph [ref=e221]: The iconic Swift delivers sporty looks with peppy performance. A fun drive for daily commutes and weekend getaways.
+              - generic [ref=e222]:
+                - generic [ref=e223]:
+                  - paragraph [ref=e224]: Seats
+                  - paragraph [ref=e225]: "5"
+                - generic [ref=e226]:
+                  - paragraph [ref=e227]: Fuel
+                  - paragraph [ref=e228]: Petrol
+                - generic [ref=e229]:
+                  - paragraph [ref=e230]: Gear
+                  - paragraph [ref=e231]: Manual
+                - generic [ref=e232]:
+                  - paragraph [ref=e233]: AC
+                  - paragraph [ref=e234]: Available
+                - generic [ref=e235]:
+                  - paragraph [ref=e236]: Luggage
+                  - paragraph [ref=e237]: 268L
+                - generic [ref=e238]:
+                  - paragraph [ref=e239]: Rating
+                  - paragraph [ref=e240]: 4.4★
+              - generic [ref=e241]:
+                - generic [ref=e242]: local rental
+                - generic [ref=e243]: outstation
+              - generic [ref=e244]:
+                - link "Book Now" [ref=e245] [cursor=pointer]:
+                  - /url: /checkout
+                - button "Details" [ref=e246] [cursor=pointer]
+          - generic [ref=e247]:
+            - generic [ref=e249]:
+              - img "Maruti Suzuki Dzire" [ref=e250]
+              - generic [ref=e253]: Sedan
+              - button "Add to compare" [ref=e254] [cursor=pointer]:
+                - img [ref=e255]
+              - generic [ref=e257]:
+                - generic [ref=e258]:
+                  - paragraph [ref=e259]: Starting from
+                  - paragraph [ref=e260]: ₹1,499
+                - generic [ref=e261]:
+                  - paragraph [ref=e262]: Per km
+                  - paragraph [ref=e263]: ₹12
+            - generic [ref=e264]:
+              - generic [ref=e265]:
+                - heading "Maruti Suzuki Dzire" [level=3] [ref=e266]
+                - generic [ref=e267]:
+                  - img [ref=e268]
+                  - img [ref=e270]
+                  - img [ref=e272]
+                  - img [ref=e274]
+                  - img [ref=e276]
+                  - generic [ref=e278]: (2678)
+              - paragraph [ref=e279]: India's best-selling sedan. The Dzire combines elegance with exceptional fuel economy — ideal for long highway drives.
+              - generic [ref=e280]:
+                - generic [ref=e281]:
+                  - paragraph [ref=e282]: Seats
+                  - paragraph [ref=e283]: "5"
+                - generic [ref=e284]:
+                  - paragraph [ref=e285]: Fuel
+                  - paragraph [ref=e286]: Petrol
+                - generic [ref=e287]:
+                  - paragraph [ref=e288]: Gear
+                  - paragraph [ref=e289]: Manual
+                - generic [ref=e290]:
+                  - paragraph [ref=e291]: AC
+                  - paragraph [ref=e292]: Available
+                - generic [ref=e293]:
+                  - paragraph [ref=e294]: Luggage
+                  - paragraph [ref=e295]: 378L
+                - generic [ref=e296]:
+                  - paragraph [ref=e297]: Rating
+                  - paragraph [ref=e298]: 4.4★
+              - generic [ref=e299]:
+                - generic [ref=e300]: outstation
+                - generic [ref=e301]: corporate
+              - generic [ref=e302]:
+                - link "Book Now" [ref=e303] [cursor=pointer]:
+                  - /url: /checkout
+                - button "Details" [ref=e304] [cursor=pointer]
+          - generic [ref=e305]:
+            - generic [ref=e307]:
+              - img "Hyundai Creta" [ref=e308]
+              - generic [ref=e311]: SUV
+              - button "Add to compare" [ref=e312] [cursor=pointer]:
+                - img [ref=e313]
+              - generic [ref=e315]:
+                - generic [ref=e316]:
+                  - paragraph [ref=e317]: Starting from
+                  - paragraph [ref=e318]: ₹2,499
+                - generic [ref=e319]:
+                  - paragraph [ref=e320]: Per km
+                  - paragraph [ref=e321]: ₹18
+            - generic [ref=e322]:
+              - generic [ref=e323]:
+                - heading "Hyundai Creta" [level=3] [ref=e324]
+                - generic [ref=e325]:
+                  - img [ref=e326]
+                  - img [ref=e328]
+                  - img [ref=e330]
+                  - img [ref=e332]
+                  - img [ref=e334]
+                  - generic [ref=e336]: (4521)
+              - paragraph [ref=e337]: The king of Indian SUVs. The Creta offers commanding road presence, a plush cabin, and stellar ride comfort for all terrains.
+              - generic [ref=e338]:
+                - generic [ref=e339]:
+                  - paragraph [ref=e340]: Seats
+                  - paragraph [ref=e341]: "5"
+                - generic [ref=e342]:
+                  - paragraph [ref=e343]: Fuel
+                  - paragraph [ref=e344]: Diesel
+                - generic [ref=e345]:
+                  - paragraph [ref=e346]: Gear
+                  - paragraph [ref=e347]: Auto
+                - generic [ref=e348]:
+                  - paragraph [ref=e349]: AC
+                  - paragraph [ref=e350]: Available
+                - generic [ref=e351]:
+                  - paragraph [ref=e352]: Luggage
+                  - paragraph [ref=e353]: 433L
+                - generic [ref=e354]:
+                  - paragraph [ref=e355]: Rating
+                  - paragraph [ref=e356]: 4.6★
+              - generic [ref=e357]:
+                - generic [ref=e358]: outstation
+                - generic [ref=e359]: family trip
+                - generic [ref=e360]: airport transfer
+              - generic [ref=e361]:
+                - link "Book Now" [ref=e362] [cursor=pointer]:
+                  - /url: /checkout
+                - button "Details" [ref=e363] [cursor=pointer]
+          - generic [ref=e364]:
+            - generic [ref=e366]:
+              - img "Maruti Ertiga" [ref=e367]
+              - generic [ref=e370]: MUV
+              - button "Add to compare" [ref=e371] [cursor=pointer]:
+                - img [ref=e372]
+              - generic [ref=e374]:
+                - generic [ref=e375]:
+                  - paragraph [ref=e376]: Starting from
+                  - paragraph [ref=e377]: ₹1,999
+                - generic [ref=e378]:
+                  - paragraph [ref=e379]: Per km
+                  - paragraph [ref=e380]: ₹14
+            - generic [ref=e381]:
+              - generic [ref=e382]:
+                - heading "Maruti Ertiga" [level=3] [ref=e383]
+                - generic [ref=e384]:
+                  - img [ref=e385]
+                  - img [ref=e387]
+                  - img [ref=e389]
+                  - img [ref=e391]
+                  - img [ref=e393]
+                  - generic [ref=e395]: (3210)
+              - paragraph [ref=e396]: India's favourite family MUV. The Ertiga seats 7 comfortably with flexible seating and legendary Maruti reliability.
+              - generic [ref=e397]:
+                - generic [ref=e398]:
+                  - paragraph [ref=e399]: Seats
+                  - paragraph [ref=e400]: "7"
+                - generic [ref=e401]:
+                  - paragraph [ref=e402]: Fuel
+                  - paragraph [ref=e403]: Petrol
+                - generic [ref=e404]:
+                  - paragraph [ref=e405]: Gear
+                  - paragraph [ref=e406]: Manual
+                - generic [ref=e407]:
+                  - paragraph [ref=e408]: AC
+                  - paragraph [ref=e409]: Available
+                - generic [ref=e410]:
+                  - paragraph [ref=e411]: Luggage
+                  - paragraph [ref=e412]: 209L
+                - generic [ref=e413]:
+                  - paragraph [ref=e414]: Rating
+                  - paragraph [ref=e415]: 4.3★
+              - generic [ref=e416]:
+                - generic [ref=e417]: family trip
+                - generic [ref=e418]: outstation
+                - generic [ref=e419]: airport transfer
+              - generic [ref=e420]:
+                - link "Book Now" [ref=e421] [cursor=pointer]:
+                  - /url: /checkout
+                - button "Details" [ref=e422] [cursor=pointer]
+          - generic [ref=e423]:
+            - generic [ref=e425]:
+              - img "Maruti Suzuki Baleno" [ref=e426]
+              - generic [ref=e429]: Hatchback
+              - button "Add to compare" [ref=e430] [cursor=pointer]:
+                - img [ref=e431]
+              - generic [ref=e433]:
+                - generic [ref=e434]:
+                  - paragraph [ref=e435]: Starting from
+                  - paragraph [ref=e436]: ₹1,299
+                - generic [ref=e437]:
+                  - paragraph [ref=e438]: Per km
+                  - paragraph [ref=e439]: ₹10
+            - generic [ref=e440]:
+              - generic [ref=e441]:
+                - heading "Maruti Suzuki Baleno" [level=3] [ref=e442]
+                - generic [ref=e443]:
+                  - img [ref=e444]
+                  - img [ref=e446]
+                  - img [ref=e448]
+                  - img [ref=e450]
+                  - img [ref=e452]
+                  - generic [ref=e454]: (1956)
+              - paragraph [ref=e455]: Premium hatchback with a bold design and a spacious cabin. The Baleno offers a refined ride with class-leading features.
+              - generic [ref=e456]:
+                - generic [ref=e457]:
+                  - paragraph [ref=e458]: Seats
+                  - paragraph [ref=e459]: "5"
+                - generic [ref=e460]:
+                  - paragraph [ref=e461]: Fuel
+                  - paragraph [ref=e462]: Petrol
+                - generic [ref=e463]:
+                  - paragraph [ref=e464]: Gear
+                  - paragraph [ref=e465]: Manual
+                - generic [ref=e466]:
+                  - paragraph [ref=e467]: AC
+                  - paragraph [ref=e468]: Available
+                - generic [ref=e469]:
+                  - paragraph [ref=e470]: Luggage
+                  - paragraph [ref=e471]: 318L
+                - generic [ref=e472]:
+                  - paragraph [ref=e473]: Rating
+                  - paragraph [ref=e474]: 4.5★
+              - generic [ref=e475]:
+                - generic [ref=e476]: local rental
+                - generic [ref=e477]: family trip
+              - generic [ref=e478]:
+                - link "Book Now" [ref=e479] [cursor=pointer]:
+                  - /url: /checkout
+                - button "Details" [ref=e480] [cursor=pointer]
+        - generic [ref=e482]:
+          - paragraph [ref=e483]:
+            - text: Showing
+            - generic [ref=e484]: 1–6
+            - text: of 19 vehicles
+          - generic [ref=e485]:
+            - button "Previous page" [disabled] [ref=e486]:
+              - img [ref=e487]
+            - button "Page 1" [ref=e489] [cursor=pointer]: "1"
+            - button "Page 2" [ref=e490] [cursor=pointer]: "2"
+            - button "Page 3" [ref=e491] [cursor=pointer]: "3"
+            - button "Page 4" [ref=e492] [cursor=pointer]: "4"
+            - button "Next page" [ref=e493] [cursor=pointer]:
+              - img [ref=e494]
+    - generic [ref=e499]:
+      - generic [ref=e500]:
+        - generic [ref=e501]:
+          - generic [ref=e502]: Featured Fleet
+          - heading "Our Premium Selection" [level=2] [ref=e504]
+        - paragraph [ref=e505]: Handpicked vehicles that offer the best value, comfort, and driving experience for every occasion.
+      - generic [ref=e506]:
+        - generic [ref=e507]:
+          - generic [ref=e510]:
+            - img "Maruti Suzuki WagonR" [ref=e512]
+            - generic [ref=e513]:
+              - generic [ref=e514]: Hatchback
+              - heading "Maruti Suzuki WagonR" [level=3] [ref=e515]
+              - paragraph [ref=e516]: India's favourite family hatchback. Spacious, fuel-efficient, and perfect for city commutes with ample boot space.
+              - generic [ref=e517]:
+                - generic [ref=e518]:
+                  - paragraph [ref=e519]: Starting
+                  - paragraph [ref=e520]: ₹999
+                - generic [ref=e521]:
+                  - paragraph [ref=e522]: Per km
+                  - paragraph [ref=e523]: ₹8
+                - generic [ref=e524]:
+                  - img [ref=e525]
+                  - generic [ref=e527]: "4.3"
+              - link "Book Now" [ref=e528] [cursor=pointer]:
+                - /url: /checkout
+          - generic [ref=e531]:
+            - img "Hyundai Creta" [ref=e533]
+            - generic [ref=e534]:
+              - generic [ref=e535]: SUV
+              - heading "Hyundai Creta" [level=3] [ref=e536]
+              - paragraph [ref=e537]: The king of Indian SUVs. The Creta offers commanding road presence, a plush cabin, and stellar ride comfort for all terrains.
+              - generic [ref=e538]:
+                - generic [ref=e539]:
+                  - paragraph [ref=e540]: Starting
+                  - paragraph [ref=e541]: ₹2,499
+                - generic [ref=e542]:
+                  - paragraph [ref=e543]: Per km
+                  - paragraph [ref=e544]: ₹18
+                - generic [ref=e545]:
+                  - img [ref=e546]
+                  - generic [ref=e548]: "4.6"
+              - link "Book Now" [ref=e549] [cursor=pointer]:
+                - /url: /checkout
+        - generic [ref=e550]:
+          - button "Previous featured" [ref=e551] [cursor=pointer]:
+            - img [ref=e552]
+          - generic [ref=e554]:
+            - button "Go to featured vehicle 1" [ref=e555] [cursor=pointer]
+            - button "Go to featured vehicle 2" [ref=e556] [cursor=pointer]
+            - button "Go to featured vehicle 3" [ref=e557] [cursor=pointer]
+            - button "Go to featured vehicle 4" [ref=e558] [cursor=pointer]
+            - button "Go to featured vehicle 5" [ref=e559] [cursor=pointer]
+            - button "Go to featured vehicle 6" [ref=e560] [cursor=pointer]
+          - button "Next featured" [ref=e561] [cursor=pointer]:
+            - img [ref=e562]
+    - generic [ref=e568]:
+      - generic [ref=e569]:
+        - generic [ref=e570]: Why Choose Us
+        - heading "Why Our Fleet Stands Out" [level=2] [ref=e572]
+      - generic [ref=e573]:
+        - generic [ref=e575]:
+          - img [ref=e578]
+          - heading "Well Maintained Vehicles" [level=3] [ref=e580]
+          - paragraph [ref=e581]: Every vehicle undergoes rigorous inspection and maintenance after every trip to ensure peak performance and safety.
+        - generic [ref=e583]:
+          - img [ref=e586]
+          - heading "Sanitized After Every Trip" [level=3] [ref=e588]
+          - paragraph [ref=e589]: All vehicles are deep-cleaned and sanitized following strict hygiene protocols for a safe and healthy ride.
+        - generic [ref=e591]:
+          - img [ref=e594]
+          - heading "Experienced Drivers" [level=3] [ref=e596]
+          - paragraph [ref=e597]: Our professional drivers are thoroughly vetted, trained, and committed to providing safe, courteous service.
+        - generic [ref=e599]:
+          - img [ref=e602]
+          - heading "GPS Enabled" [level=3] [ref=e604]
+          - paragraph [ref=e605]: Every vehicle is equipped with real-time GPS tracking so you can share your location and stay safe on the road.
+        - generic [ref=e607]:
+          - img [ref=e610]
+          - heading "24x7 Support" [level=3] [ref=e612]
+          - paragraph [ref=e613]: Round-the-clock customer support ensures help is always a phone call away — anytime, anywhere, any emergency.
+        - generic [ref=e615]:
+          - img [ref=e618]
+          - heading "Transparent Pricing" [level=3] [ref=e620]
+          - paragraph [ref=e621]: No hidden charges, no surprises. You pay exactly what you see — crystal clear pricing with full breakdowns.
+    - generic [ref=e623]:
+      - generic [ref=e624]:
+        - generic [ref=e625]: Testimonials
+        - heading "Love From Clients" [level=2] [ref=e626]:
+          - text: Love From
+          - generic [ref=e627]: Clients
+        - paragraph [ref=e628]: Real stories from real customers who trusted us with their journeys.
+      - generic [ref=e630]:
+        - generic [ref=e634]:
+          - generic: "\""
+          - generic [ref=e635]:
+            - img "Jonathan Blue" [ref=e637]
+            - generic [ref=e638]:
+              - heading "Jonathan Blue" [level=4] [ref=e639]
+              - paragraph [ref=e640]: Manager
+          - generic [ref=e641]:
+            - img [ref=e642]
+            - img [ref=e644]
+            - img [ref=e646]
+            - img [ref=e648]
+            - img [ref=e650]
+          - paragraph [ref=e652]: “Seamless Booking and Pickup! I rented car from Rohit Tour & Travel, and the process was incredibly smooth. The online booking system is user-friendly, and the pickup was quick and efficient.”
+        - generic [ref=e656]:
+          - generic: "\""
+          - generic [ref=e657]:
+            - img "Sarah Johnson" [ref=e659]
+            - generic [ref=e660]:
+              - heading "Sarah Johnson" [level=4] [ref=e661]
+              - paragraph [ref=e662]: Travel Blogger
+          - generic [ref=e663]:
+            - img [ref=e664]
+            - img [ref=e666]
+            - img [ref=e668]
+            - img [ref=e670]
+            - img [ref=e672]
+          - paragraph [ref=e674]: “Exceptional service and a fantastic fleet of vehicles. The staff was professional and accommodating. I highly recommend Rohit Tour & Travel for anyone looking for a hassle-free car rental experience.”
+      - generic [ref=e675]:
+        - button "Previous testimonial" [ref=e676] [cursor=pointer]:
+          - img [ref=e677]
+        - generic [ref=e679]:
+          - button "Go to testimonial 1" [ref=e680] [cursor=pointer]
+          - button "Go to testimonial 2" [ref=e681] [cursor=pointer]
+          - button "Go to testimonial 3" [ref=e682] [cursor=pointer]
+        - button "Next testimonial" [ref=e683] [cursor=pointer]:
+          - img [ref=e684]
+    - generic [ref=e692]:
+      - generic [ref=e693]: Ready to Go?
+      - heading "Ready For Your Next Journey?" [level=2] [ref=e695]
+      - paragraph [ref=e696]: Book your perfect vehicle today and experience the Rohit Tour & Travel difference — premium service, transparent pricing, and unforgettable journeys.
+      - generic [ref=e697]:
+        - link "Book Now" [ref=e698] [cursor=pointer]:
+          - /url: /checkout
+          - generic [ref=e699]: Book Now
+          - img [ref=e700]
+        - link "Contact Us" [ref=e702] [cursor=pointer]:
+          - /url: /contact
+  - contentinfo [ref=e703]:
+    - generic [ref=e705]:
+      - generic [ref=e706]:
+        - link "Rohit Tour & Travel" [ref=e707] [cursor=pointer]:
+          - /url: /
+          - img "Rohit Tour & Travel" [ref=e708]
+        - paragraph [ref=e709]: We are a team of professional car rental experts dedicated to providing the best service for our customers.
+        - generic [ref=e710]: "Follow Us On:"
+        - generic [ref=e711]:
+          - link "Facebook" [ref=e712] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e713]
+          - link "Twitter" [ref=e715] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e716]
+          - link "LinkedIn" [ref=e718] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e719]
+          - link "Dribbble" [ref=e721] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e722]
+      - generic [ref=e724]:
+        - heading "Resources" [level=3] [ref=e725]
+        - list [ref=e726]:
+          - listitem [ref=e727]:
+            - link "About Team" [ref=e728] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e729]:
+            - link "Policies" [ref=e730] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e731]:
+            - link "Careers" [ref=e732] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e733]:
+            - link "Press" [ref=e734] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e735]:
+            - link "Open Road" [ref=e736] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e737]:
+        - heading "Community" [level=3] [ref=e738]
+        - list [ref=e739]:
+          - listitem [ref=e740]:
+            - link "Newsletter" [ref=e741] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e742]:
+            - link "Reviews" [ref=e743] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e744]:
+            - link "Testimonials" [ref=e745] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e746]:
+            - link "Social Group" [ref=e747] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e748]:
+            - link "Helpdesk" [ref=e749] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e750]:
+        - heading "Contact" [level=3] [ref=e751]
+        - list [ref=e752]:
+          - listitem [ref=e753]:
+            - img [ref=e754]
+            - generic [ref=e757]: 57 heold insaf Station Road, Cardiff, United Kingdom
+          - listitem [ref=e758]:
+            - img [ref=e759]
+            - generic [ref=e761]: info@rohittour.in
+          - listitem [ref=e762]:
+            - img [ref=e763]
+            - generic [ref=e765]: 029 2021 4012
+    - generic [ref=e767]:
+      - paragraph [ref=e768]: © 2026 ROHIT TOUR & TRAVEL. All rights reserved.
+      - generic [ref=e769]:
+        - link "Privacy Policy" [ref=e770] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e771]: "|"
+        - link "Terms of Service" [ref=e772] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e773]: "|"
+        - link "Sitemap" [ref=e774] [cursor=pointer]:
+          - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e780] [cursor=pointer]:
+    - img [ref=e781]

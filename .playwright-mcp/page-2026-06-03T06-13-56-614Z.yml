@@ -1,0 +1,778 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e5]:
+      - link "Rohit Tour & Travel" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "Rohit Tour & Travel" [ref=e7]
+      - button "Open menu" [ref=e8] [cursor=pointer]:
+        - img [ref=e9]
+    - generic [ref=e11]:
+      - generic [ref=e12]:
+        - link "Rohit Tour & Travel" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - img "Rohit Tour & Travel" [ref=e14]
+        - button "Close menu" [ref=e15] [cursor=pointer]:
+          - img [ref=e16]
+      - generic [ref=e18]:
+        - button "Home" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Home
+          - img [ref=e22]
+        - button "Car Fleet" [ref=e25] [cursor=pointer]:
+          - generic [ref=e26]: Car Fleet
+          - img [ref=e27]
+        - button "Pages" [ref=e30] [cursor=pointer]:
+          - generic [ref=e31]: Pages
+          - img [ref=e32]
+        - button "News" [ref=e35] [cursor=pointer]:
+          - generic [ref=e36]: News
+          - img [ref=e37]
+        - link "Contact" [ref=e40] [cursor=pointer]:
+          - /url: "#"
+      - generic [ref=e41]:
+        - heading "Contact Info" [level=4] [ref=e42]
+        - generic [ref=e43]:
+          - img [ref=e44]
+          - generic [ref=e47]: 57 Heold Insaf Station Road, Cardiff, UK
+        - generic [ref=e48]:
+          - img [ref=e49]
+          - link "+91-213-666-0027" [ref=e51] [cursor=pointer]:
+            - /url: tel:+912136660027
+        - generic [ref=e52]:
+          - img [ref=e53]
+          - link "info@example.com" [ref=e55] [cursor=pointer]:
+            - /url: mailto:info@example.com
+      - generic [ref=e56]:
+        - paragraph [ref=e57]: Follow Us On
+        - generic [ref=e58]:
+          - link "Twitter" [ref=e59] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e60]
+          - link "Facebook" [ref=e62] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e63]
+          - link "Pinterest" [ref=e65] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e66]
+          - link "Instagram" [ref=e68] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e69]
+          - link "YouTube" [ref=e71] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e72]
+        - link "Booking Now" [ref=e74] [cursor=pointer]:
+          - /url: /checkout
+    - generic [ref=e75]:
+      - generic [ref=e84]:
+        - generic [ref=e87]: Affordable Rentals
+        - heading "Find Budget-Friendly Cars for Every Trip" [level=1] [ref=e88]:
+          - generic [ref=e89]: Find
+          - generic [ref=e90]: Budget-Friendly
+          - generic [ref=e91]: Cars
+          - generic [ref=e92]: for
+          - generic [ref=e93]: Every
+          - generic [ref=e94]: Trip
+        - paragraph [ref=e95]: Reliable hatchbacks, sedans, and SUVs at prices that suit your pocket. Explore our wide range of Indian cars for a smooth and economical ride.
+        - generic [ref=e96]:
+          - link "Explore Cars" [ref=e97] [cursor=pointer]:
+            - /url: "#"
+            - generic [ref=e98]: Explore Cars
+            - img [ref=e99]
+          - link "Watch Video" [ref=e101] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e102]
+            - text: Watch Video
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - generic [ref=e107]: 500+
+            - generic [ref=e108]: Budget Cars
+          - generic [ref=e110]:
+            - generic [ref=e111]: 24/7
+            - generic [ref=e112]: Support
+          - generic [ref=e114]:
+            - generic [ref=e115]: 32+
+            - generic [ref=e116]: Locations
+      - generic [ref=e118]:
+        - generic [ref=e119]: 01 / 03
+        - generic [ref=e120]:
+          - button "Go to slide 1" [ref=e121] [cursor=pointer]
+          - button "Go to slide 2" [ref=e124] [cursor=pointer]
+          - button "Go to slide 3" [ref=e126] [cursor=pointer]
+    - generic [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e133]: Book Your Ride
+        - heading "Find Your Perfect Car" [level=2] [ref=e135]
+      - generic [ref=e138]:
+        - generic [ref=e140]:
+          - img [ref=e142]
+          - generic [ref=e144] [cursor=pointer]:
+            - generic [ref=e145]: Your Destination
+            - generic [ref=e146]:
+              - generic [ref=e147]: Gurugram
+              - img [ref=e148]
+        - generic [ref=e151]:
+          - img [ref=e153]
+          - generic [ref=e155]:
+            - generic [ref=e156]: When to Start
+            - textbox [ref=e158] [cursor=pointer]: 2026-06-02
+        - generic [ref=e160]:
+          - img [ref=e162]
+          - generic [ref=e164]:
+            - generic [ref=e165]: When to Finish
+            - textbox [ref=e167] [cursor=pointer]: 2026-06-20
+        - generic [ref=e169]:
+          - img [ref=e171]
+          - generic [ref=e173] [cursor=pointer]:
+            - generic [ref=e174]: People
+            - generic [ref=e175]:
+              - generic [ref=e176]: 1 Adults, 0 Child
+              - img [ref=e177]
+        - button "Search" [ref=e180] [cursor=pointer]
+    - generic [ref=e186]:
+      - img "Indian sedan car on city road" [ref=e191]
+      - generic [ref=e193]:
+        - generic [ref=e194]:
+          - generic [ref=e197]: Brands
+          - heading "Planning a trip should be very exciting adventure" [level=2] [ref=e199]:
+            - text: Planning a trip should be very
+            - text: exciting adventure
+        - generic [ref=e200]:
+          - generic [ref=e202]:
+            - img [ref=e204]
+            - generic [ref=e206]:
+              - heading "International Tours" [level=3] [ref=e207]
+              - paragraph [ref=e208]: Our team of travel professional brings a wealth of knowledge and expertise to the table.
+          - generic [ref=e210]:
+            - img [ref=e212]
+            - generic [ref=e215]:
+              - heading "Multiple Options to Choose" [level=3] [ref=e216]
+              - paragraph [ref=e217]: Planning trip should be an exciting adventure, not stressful ordeal. Let us handle the logistics
+    - generic [ref=e220]:
+      - generic [ref=e221]:
+        - generic [ref=e222]: Popular Cars
+        - heading "How It Works" [level=2] [ref=e223]
+      - generic [ref=e224]:
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228]: "1"
+            - img [ref=e230]
+          - heading "Sign up Account" [level=3] [ref=e232]
+        - generic [ref=e234]:
+          - generic [ref=e235]:
+            - generic [ref=e236]: "2"
+            - img [ref=e238]
+          - heading "Search your Vehicle" [level=3] [ref=e240]
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - generic [ref=e244]: "3"
+            - img [ref=e246]
+          - heading "Pay the Car Rent" [level=3] [ref=e250]
+        - generic [ref=e252]:
+          - generic [ref=e253]:
+            - generic [ref=e254]: "4"
+            - img [ref=e256]
+          - heading "Take Car to Road" [level=3] [ref=e258]
+    - generic [ref=e262]:
+      - generic [ref=e263]:
+        - generic [ref=e266]: Special Offers
+        - heading "Today's Best Deals" [level=2] [ref=e268]
+      - generic [ref=e269]:
+        - generic [ref=e271] [cursor=pointer]:
+          - generic [ref=e275]:
+            - generic [ref=e276]: Discount up to
+            - generic [ref=e277]: Limited Time
+          - generic [ref=e278]:
+            - heading "40%" [level=3] [ref=e279]
+            - paragraph [ref=e280]: For First-time Order
+            - link "View Details" [ref=e281]:
+              - /url: "#"
+              - generic [ref=e282]: View Details
+              - img [ref=e284]
+        - generic [ref=e288] [cursor=pointer]:
+          - generic [ref=e292]:
+            - generic [ref=e293]: Exclusive Deal
+            - generic [ref=e294]: Best Seller
+          - generic [ref=e295]:
+            - heading "Top Indian Models" [level=3] [ref=e296]
+            - paragraph [ref=e297]: Starting from cheap Pricing
+            - link "View Details" [ref=e298]:
+              - /url: "#"
+              - generic [ref=e299]: View Details
+              - img [ref=e301]
+        - generic [ref=e305] [cursor=pointer]:
+          - generic [ref=e309]:
+            - generic [ref=e310]: Get Secure Fleet
+            - generic [ref=e311]: Popular Choice
+          - generic [ref=e312]:
+            - heading "Family SUVs" [level=3] [ref=e313]
+            - paragraph [ref=e314]: With Safety Guarantee
+            - link "View Details" [ref=e315]:
+              - /url: "#"
+              - generic [ref=e316]: View Details
+              - img [ref=e318]
+    - generic [ref=e324]:
+      - generic [ref=e325]:
+        - generic [ref=e326]:
+          - generic [ref=e329]: Categories
+          - heading "Explore Car Types" [level=2] [ref=e330]
+          - paragraph [ref=e331]: Choose from our diverse fleet, tailored to fit every journey and lifestyle.
+        - link "View All Types" [ref=e332] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e333]: View All Types
+          - img [ref=e335]
+      - generic [ref=e337]:
+        - generic [ref=e339] [cursor=pointer]:
+          - generic [ref=e342]:
+            - img "Sedan" [ref=e343]
+            - generic:
+              - generic: "32"
+              - generic: Models
+          - heading "Sedan" [level=3] [ref=e346]
+          - paragraph [ref=e348]: 32 Vehicles
+        - generic [ref=e350] [cursor=pointer]:
+          - generic [ref=e353]:
+            - img "Hatchback" [ref=e354]
+            - generic:
+              - generic: "24"
+              - generic: Models
+          - heading "Hatchback" [level=3] [ref=e357]
+          - paragraph [ref=e359]: 24 Vehicles
+        - generic [ref=e361] [cursor=pointer]:
+          - generic [ref=e364]:
+            - img "SUV" [ref=e365]
+            - generic:
+              - generic: "28"
+              - generic: Models
+          - heading "SUV" [level=3] [ref=e368]
+          - paragraph [ref=e370]: 28 Vehicles
+        - generic [ref=e372] [cursor=pointer]:
+          - generic [ref=e375]:
+            - img "MPV" [ref=e376]
+            - generic:
+              - generic: "15"
+              - generic: Models
+          - heading "MPV" [level=3] [ref=e379]
+          - paragraph [ref=e381]: 15 Vehicles
+        - generic [ref=e383] [cursor=pointer]:
+          - generic [ref=e386]:
+            - img "Compact SUV" [ref=e387]
+            - generic:
+              - generic: "20"
+              - generic: Models
+          - heading "Compact SUV" [level=3] [ref=e390]
+          - paragraph [ref=e392]: 20 Vehicles
+        - generic [ref=e394] [cursor=pointer]:
+          - generic [ref=e397]:
+            - img "Electric" [ref=e398]
+            - generic:
+              - generic: "12"
+              - generic: Models
+          - heading "Electric" [level=3] [ref=e401]
+          - paragraph [ref=e403]: 12 Vehicles
+    - generic [ref=e408]:
+      - generic [ref=e409]:
+        - generic [ref=e410]:
+          - generic [ref=e413]: Our Cars
+          - heading "Our Car Fleet" [level=2] [ref=e414]
+          - paragraph [ref=e415]: India's favourite cars — from hatchbacks to SUVs — at budget-friendly prices.
+        - link "View All Cars" [ref=e417] [cursor=pointer]:
+          - /url: "#"
+          - generic [ref=e418]: View All Cars
+          - img [ref=e420]
+      - generic [ref=e422]:
+        - generic [ref=e424]:
+          - generic [ref=e425]:
+            - img "Maruti Swift" [ref=e426]
+            - generic [ref=e429]: Popular
+            - button "Add to wishlist" [ref=e431] [cursor=pointer]:
+              - img [ref=e432]
+            - generic [ref=e434]:
+              - img [ref=e435]
+              - generic [ref=e437]: "4.8"
+              - generic [ref=e438]: (124)
+          - generic [ref=e439]:
+            - generic [ref=e440]:
+              - heading "Maruti Swift" [level=3] [ref=e441]
+              - generic [ref=e443]:
+                - generic [ref=e444]: $29
+                - generic [ref=e445]: /Day
+            - paragraph [ref=e446]: India's favourite hatchback known for its peppy performance, sporty looks, and excellent fuel efficiency.
+            - generic [ref=e447]:
+              - generic [ref=e448]:
+                - img [ref=e449]
+                - generic [ref=e451]: 4 Doors
+              - generic [ref=e452]:
+                - img [ref=e453]
+                - generic [ref=e455]: 1 Large, 2 Small
+              - generic [ref=e456]:
+                - img [ref=e457]
+                - generic [ref=e459]: 05 Seats
+            - generic [ref=e460]:
+              - button "Rent Now" [ref=e461] [cursor=pointer]:
+                - generic [ref=e462]: Rent Now
+                - img [ref=e463]
+              - button "Quick view" [ref=e465] [cursor=pointer]:
+                - img [ref=e466]
+        - generic [ref=e470]:
+          - generic [ref=e471]:
+            - img "Toyota Fortuner" [ref=e472]
+            - generic [ref=e475]: SUV
+            - button "Add to wishlist" [ref=e477] [cursor=pointer]:
+              - img [ref=e478]
+            - generic [ref=e480]:
+              - img [ref=e481]
+              - generic [ref=e483]: "4.8"
+              - generic [ref=e484]: (124)
+          - generic [ref=e485]:
+            - generic [ref=e486]:
+              - heading "Toyota Fortuner" [level=3] [ref=e487]
+              - generic [ref=e489]:
+                - generic [ref=e490]: $69
+                - generic [ref=e491]: /Day
+            - paragraph [ref=e492]: India's most trusted full-size SUV with powerful engine, commanding road presence, and off-road capability.
+            - generic [ref=e493]:
+              - generic [ref=e494]:
+                - img [ref=e495]
+                - generic [ref=e497]: 4 Doors
+              - generic [ref=e498]:
+                - img [ref=e499]
+                - generic [ref=e501]: 2 Large, 2 Small
+              - generic [ref=e502]:
+                - img [ref=e503]
+                - generic [ref=e505]: 07 Seats
+            - generic [ref=e506]:
+              - button "Rent Now" [ref=e507] [cursor=pointer]:
+                - generic [ref=e508]: Rent Now
+                - img [ref=e509]
+              - button "Quick view" [ref=e511] [cursor=pointer]:
+                - img [ref=e512]
+        - generic [ref=e516]:
+          - generic [ref=e517]:
+            - img "Toyota Innova" [ref=e518]
+            - generic [ref=e521]: Family
+            - button "Add to wishlist" [ref=e523] [cursor=pointer]:
+              - img [ref=e524]
+            - generic [ref=e526]:
+              - img [ref=e527]
+              - generic [ref=e529]: "4.8"
+              - generic [ref=e530]: (124)
+          - generic [ref=e531]:
+            - generic [ref=e532]:
+              - heading "Toyota Innova" [level=3] [ref=e533]
+              - generic [ref=e535]:
+                - generic [ref=e536]: $49
+                - generic [ref=e537]: /Day
+            - paragraph [ref=e538]: The ultimate family MPV with spacious three-row seating, bulletproof reliability, and ride comfort.
+            - generic [ref=e539]:
+              - generic [ref=e540]:
+                - img [ref=e541]
+                - generic [ref=e543]: 4 Doors
+              - generic [ref=e544]:
+                - img [ref=e545]
+                - generic [ref=e547]: 2 Large, 3 Small
+              - generic [ref=e548]:
+                - img [ref=e549]
+                - generic [ref=e551]: 07 Seats
+            - generic [ref=e552]:
+              - button "Rent Now" [ref=e553] [cursor=pointer]:
+                - generic [ref=e554]: Rent Now
+                - img [ref=e555]
+              - button "Quick view" [ref=e557] [cursor=pointer]:
+                - img [ref=e558]
+        - generic [ref=e562]:
+          - generic [ref=e563]:
+            - img "Maruti Baleno" [ref=e564]
+            - generic [ref=e567]: Premium
+            - button "Add to wishlist" [ref=e569] [cursor=pointer]:
+              - img [ref=e570]
+            - generic [ref=e572]:
+              - img [ref=e573]
+              - generic [ref=e575]: "4.8"
+              - generic [ref=e576]: (124)
+          - generic [ref=e577]:
+            - generic [ref=e578]:
+              - heading "Maruti Baleno" [level=3] [ref=e579]
+              - generic [ref=e581]:
+                - generic [ref=e582]: $35
+                - generic [ref=e583]: /Day
+            - paragraph [ref=e584]: Premium hatchback with a sleek design, feature-packed cabin, and class-leading boot space for city drives.
+            - generic [ref=e585]:
+              - generic [ref=e586]:
+                - img [ref=e587]
+                - generic [ref=e589]: 4 Doors
+              - generic [ref=e590]:
+                - img [ref=e591]
+                - generic [ref=e593]: 1 Large, 2 Small
+              - generic [ref=e594]:
+                - img [ref=e595]
+                - generic [ref=e597]: 05 Seats
+            - generic [ref=e598]:
+              - button "Rent Now" [ref=e599] [cursor=pointer]:
+                - generic [ref=e600]: Rent Now
+                - img [ref=e601]
+              - button "Quick view" [ref=e603] [cursor=pointer]:
+                - img [ref=e604]
+        - generic [ref=e608]:
+          - generic [ref=e609]:
+            - img "Maruti Vitara Brezza" [ref=e610]
+            - generic [ref=e613]: Best Value
+            - button "Add to wishlist" [ref=e615] [cursor=pointer]:
+              - img [ref=e616]
+            - generic [ref=e618]:
+              - img [ref=e619]
+              - generic [ref=e621]: "4.8"
+              - generic [ref=e622]: (124)
+          - generic [ref=e623]:
+            - generic [ref=e624]:
+              - heading "Maruti Vitara Brezza" [level=3] [ref=e625]
+              - generic [ref=e627]:
+                - generic [ref=e628]: $39
+                - generic [ref=e629]: /Day
+            - paragraph [ref=e630]: India's best-selling compact SUV combining bold SUV styling with efficient engine and modern features.
+            - generic [ref=e631]:
+              - generic [ref=e632]:
+                - img [ref=e633]
+                - generic [ref=e635]: 4 Doors
+              - generic [ref=e636]:
+                - img [ref=e637]
+                - generic [ref=e639]: 1 Large, 2 Small
+              - generic [ref=e640]:
+                - img [ref=e641]
+                - generic [ref=e643]: 05 Seats
+            - generic [ref=e644]:
+              - button "Rent Now" [ref=e645] [cursor=pointer]:
+                - generic [ref=e646]: Rent Now
+                - img [ref=e647]
+              - button "Quick view" [ref=e649] [cursor=pointer]:
+                - img [ref=e650]
+        - generic [ref=e654]:
+          - generic [ref=e655]:
+            - img "Hyundai Santro" [ref=e656]
+            - generic [ref=e659]: Economy
+            - button "Add to wishlist" [ref=e661] [cursor=pointer]:
+              - img [ref=e662]
+            - generic [ref=e664]:
+              - img [ref=e665]
+              - generic [ref=e667]: "4.8"
+              - generic [ref=e668]: (124)
+          - generic [ref=e669]:
+            - generic [ref=e670]:
+              - heading "Hyundai Santro" [level=3] [ref=e671]
+              - generic [ref=e673]:
+                - generic [ref=e674]: $22
+                - generic [ref=e675]: /Day
+            - paragraph [ref=e676]: Compact city car with a tall-boy design, easy manoeuvrability, and great mileage for daily commuting.
+            - generic [ref=e677]:
+              - generic [ref=e678]:
+                - img [ref=e679]
+                - generic [ref=e681]: 4 Doors
+              - generic [ref=e682]:
+                - img [ref=e683]
+                - generic [ref=e685]: 1 Large, 1 Small
+              - generic [ref=e686]:
+                - img [ref=e687]
+                - generic [ref=e689]: 05 Seats
+            - generic [ref=e690]:
+              - button "Rent Now" [ref=e691] [cursor=pointer]:
+                - generic [ref=e692]: Rent Now
+                - img [ref=e693]
+              - button "Quick view" [ref=e695] [cursor=pointer]:
+                - img [ref=e696]
+    - generic [ref=e702]:
+      - generic [ref=e704]: Toyota
+      - generic [ref=e706]: BMW
+      - generic [ref=e708]: Mercedes
+      - generic [ref=e710]: Audi
+      - generic [ref=e712]: Ford
+      - generic [ref=e714]: Tesla
+      - generic [ref=e716]: Honda
+      - generic [ref=e718]: Lamborghini
+      - generic [ref=e720]: Toyota
+      - generic [ref=e722]: BMW
+      - generic [ref=e724]: Mercedes
+      - generic [ref=e726]: Audi
+      - generic [ref=e728]: Ford
+      - generic [ref=e730]: Tesla
+      - generic [ref=e732]: Honda
+      - generic [ref=e734]: Lamborghini
+    - generic [ref=e739]:
+      - button "Play video" [ref=e742] [cursor=pointer]:
+        - img [ref=e743]
+      - generic [ref=e745]: Promo Video
+      - heading "Watch Our Latest Fleet Showcase" [level=2] [ref=e746]
+    - generic [ref=e750]:
+      - generic [ref=e751]:
+        - generic [ref=e752]: our team
+        - heading "The amazing team behind our company" [level=2] [ref=e753]
+      - generic [ref=e754]:
+        - generic [ref=e756]:
+          - img "Alex Leeman" [ref=e758]
+          - heading "Alex Leeman" [level=5] [ref=e759]
+          - text: Director
+          - generic [ref=e760]:
+            - link "Facebook" [ref=e761] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e762]
+            - link "LinkedIn" [ref=e764] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e765]
+            - link "Behance" [ref=e767] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e768]
+        - generic [ref=e771]:
+          - img "Diago Johnson" [ref=e773]
+          - heading "Diago Johnson" [level=5] [ref=e774]
+          - text: Sales Manager
+          - generic [ref=e775]:
+            - link "Facebook" [ref=e776] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e777]
+            - link "LinkedIn" [ref=e779] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e780]
+            - link "Behance" [ref=e782] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e783]
+        - generic [ref=e786]:
+          - img "Sophia Lauren" [ref=e788]
+          - heading "Sophia Lauren" [level=5] [ref=e789]
+          - text: Co-Founder
+          - generic [ref=e790]:
+            - link "Facebook" [ref=e791] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e792]
+            - link "LinkedIn" [ref=e794] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e795]
+            - link "Behance" [ref=e797] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e798]
+        - generic [ref=e801]:
+          - img "William Henry" [ref=e803]
+          - heading "William Henry" [level=5] [ref=e804]
+          - text: Marketing
+          - generic [ref=e805]:
+            - link "Facebook" [ref=e806] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e807]
+            - link "LinkedIn" [ref=e809] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e810]
+            - link "Behance" [ref=e812] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e813]
+    - generic [ref=e819]:
+      - generic [ref=e820]:
+        - generic [ref=e821]:
+          - generic [ref=e824]: Global Network
+          - heading "Our Service Areas" [level=2] [ref=e825]
+          - paragraph [ref=e826]: With 32+ strategic locations worldwide, we bring premium car rental to your doorstep.
+        - link "Find Location" [ref=e827] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e828]
+          - generic [ref=e831]: Find Location
+      - generic [ref=e832]:
+        - generic [ref=e833]:
+          - generic [ref=e836]:
+            - img [ref=e838]
+            - generic [ref=e841]:
+              - heading "Main Office" [level=3] [ref=e842]
+              - paragraph [ref=e843]: With a robust network spanning 32 strategic locations worldwide, we provide seamless car rental services across continents.
+              - generic [ref=e844]:
+                - generic [ref=e845]:
+                  - img "User" [ref=e847]
+                  - img "User" [ref=e849]
+                  - img "User" [ref=e851]
+                  - img "User" [ref=e853]
+                - generic [ref=e854]:
+                  - paragraph [ref=e855]: Join 50K+ Happy
+                  - paragraph [ref=e856]: Customers Worldwide
+          - generic [ref=e857]:
+            - generic [ref=e860] [cursor=pointer]:
+              - generic [ref=e861]: 32+
+              - text: Global Cities
+            - generic [ref=e864] [cursor=pointer]:
+              - generic [ref=e865]: 24/7
+              - text: Full Support
+        - generic [ref=e868]:
+          - generic [ref=e869]:
+            - generic [ref=e870]:
+              - region "Map" [ref=e871]
+              - button "Map marker" [ref=e872]:
+                - button "Open Rohtak office details" [ref=e874] [cursor=pointer]:
+                  - img [ref=e877]
+            - group [ref=e880]:
+              - generic "Toggle attribution" [ref=e881] [cursor=pointer]
+              - generic [ref=e882]:
+                - text: ©
+                - link "CARTO" [ref=e883] [cursor=pointer]:
+                  - /url: https://carto.com/about-carto/
+                - text: ", ©"
+                - link "OpenStreetMap" [ref=e884] [cursor=pointer]:
+                  - /url: http://www.openstreetmap.org/about/
+                - text: contributors
+            - generic [ref=e885]:
+              - button "Zoom in" [ref=e886]:
+                - img [ref=e887]
+              - button "Zoom out" [ref=e888]:
+                - img [ref=e889]
+              - button "Locate me" [ref=e890]:
+                - img [ref=e891]
+              - button "Enter fullscreen" [ref=e893]:
+                - img [ref=e894]
+            - generic [ref=e900]:
+              - paragraph [ref=e903]: Main Office
+              - heading "Rohtak, Haryana" [level=4] [ref=e904]
+              - paragraph [ref=e905]:
+                - text: Sector 14, Near Bus Stand
+                - text: Rohtak, Haryana 124001, India
+              - generic [ref=e906]:
+                - generic [ref=e907]: Open 24/7
+                - link "Get Directions →" [ref=e908] [cursor=pointer]:
+                  - /url: https://www.openstreetmap.org/?mlat=28.8955&mlon=76.6066#map=13/28.8955/76.6066
+          - generic:
+            - generic: Live Network
+          - generic:
+            - paragraph: Active Cities
+            - paragraph: 32+
+      - generic [ref=e909]:
+        - generic [ref=e910] [cursor=pointer]: New York
+        - generic [ref=e911] [cursor=pointer]: Los Angeles
+        - generic [ref=e912] [cursor=pointer]: London
+        - generic [ref=e913] [cursor=pointer]: Dubai
+        - generic [ref=e914] [cursor=pointer]: Singapore
+        - generic [ref=e915] [cursor=pointer]: Tokyo
+        - generic [ref=e916] [cursor=pointer]: Paris
+        - generic [ref=e917] [cursor=pointer]: Sydney
+    - generic [ref=e920]:
+      - generic [ref=e921]:
+        - generic [ref=e922]: Testimonials
+        - heading "Love From Clients" [level=2] [ref=e923]:
+          - text: Love From
+          - generic [ref=e924]: Clients
+        - paragraph [ref=e925]: Real stories from real customers who trusted us with their journeys.
+      - generic [ref=e927]:
+        - generic [ref=e931]:
+          - generic: "\""
+          - generic [ref=e932]:
+            - img "Jonathan Blue" [ref=e934]
+            - generic [ref=e935]:
+              - heading "Jonathan Blue" [level=4] [ref=e936]
+              - paragraph [ref=e937]: Manager
+          - generic [ref=e938]:
+            - img [ref=e939]
+            - img [ref=e941]
+            - img [ref=e943]
+            - img [ref=e945]
+            - img [ref=e947]
+          - paragraph [ref=e949]: “Seamless Booking and Pickup! I rented car from Rohit Tour & Travel, and the process was incredibly smooth. The online booking system is user-friendly, and the pickup was quick and efficient.”
+        - generic [ref=e953]:
+          - generic: "\""
+          - generic [ref=e954]:
+            - img "Sarah Johnson" [ref=e956]
+            - generic [ref=e957]:
+              - heading "Sarah Johnson" [level=4] [ref=e958]
+              - paragraph [ref=e959]: Travel Blogger
+          - generic [ref=e960]:
+            - img [ref=e961]
+            - img [ref=e963]
+            - img [ref=e965]
+            - img [ref=e967]
+            - img [ref=e969]
+          - paragraph [ref=e971]: “Exceptional service and a fantastic fleet of vehicles. The staff was professional and accommodating. I highly recommend Rohit Tour & Travel for anyone looking for a hassle-free car rental experience.”
+      - generic [ref=e972]:
+        - button "Previous testimonial" [ref=e973] [cursor=pointer]:
+          - img [ref=e974]
+        - generic [ref=e976]:
+          - button "Go to testimonial 1" [ref=e977] [cursor=pointer]
+          - button "Go to testimonial 2" [ref=e978] [cursor=pointer]
+          - button "Go to testimonial 3" [ref=e979] [cursor=pointer]
+        - button "Next testimonial" [ref=e980] [cursor=pointer]:
+          - img [ref=e981]
+    - generic [ref=e988]:
+      - heading "Subscribe for latest update about Automobil" [level=2] [ref=e989]
+      - generic [ref=e990]:
+        - textbox "Email Address" [ref=e991]
+        - button "Subscribe" [ref=e992] [cursor=pointer]
+    - generic [ref=e993]:
+      - generic [ref=e995]:
+        - generic [ref=e996]:
+          - link "Rohit Tour & Travel" [ref=e997] [cursor=pointer]:
+            - /url: /
+            - img "Rohit Tour & Travel" [ref=e998]
+          - paragraph [ref=e999]: We are a team of professional car rental experts dedicated to providing the best service for our customers.
+          - generic [ref=e1000]: "Follow Us On:"
+          - generic [ref=e1001]:
+            - link "Facebook" [ref=e1002] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1003]
+            - link "Twitter" [ref=e1005] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1006]
+            - link "LinkedIn" [ref=e1008] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1009]
+            - link "Dribbble" [ref=e1011] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e1012]
+        - generic [ref=e1014]:
+          - heading "Resources" [level=3] [ref=e1015]
+          - list [ref=e1016]:
+            - listitem [ref=e1017]:
+              - link "About Team" [ref=e1018] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1019]:
+              - link "Policies" [ref=e1020] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1021]:
+              - link "Careers" [ref=e1022] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1023]:
+              - link "Press" [ref=e1024] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1025]:
+              - link "Open Road" [ref=e1026] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e1027]:
+          - heading "Community" [level=3] [ref=e1028]
+          - list [ref=e1029]:
+            - listitem [ref=e1030]:
+              - link "Newsletter" [ref=e1031] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1032]:
+              - link "Reviews" [ref=e1033] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1034]:
+              - link "Testimonials" [ref=e1035] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1036]:
+              - link "Social Group" [ref=e1037] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e1038]:
+              - link "Helpdesk" [ref=e1039] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e1040]:
+          - heading "Contact" [level=3] [ref=e1041]
+          - list [ref=e1042]:
+            - listitem [ref=e1043]:
+              - img [ref=e1044]
+              - generic [ref=e1047]: 57 heold insaf Station Road, Cardiff, United Kingdom
+            - listitem [ref=e1048]:
+              - img [ref=e1049]
+              - generic [ref=e1051]: info@rohittour.in
+            - listitem [ref=e1052]:
+              - img [ref=e1053]
+              - generic [ref=e1055]: 029 2021 4012
+      - generic [ref=e1057]:
+        - paragraph [ref=e1058]: © 2026 ROHIT TOUR & TRAVEL. All rights reserved.
+        - generic [ref=e1059]:
+          - link "Privacy Policy" [ref=e1060] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e1061]: "|"
+          - link "Terms of Service" [ref=e1062] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e1063]: "|"
+          - link "Sitemap" [ref=e1064] [cursor=pointer]:
+            - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e1070] [cursor=pointer]:
+    - img [ref=e1071]
+  - alert [ref=e1074]

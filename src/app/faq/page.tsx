@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 const categories = [
@@ -85,26 +86,7 @@ export default function FAQPage() {
     <>
       <Navbar />
       <main>
-        <section className="relative pt-44 pb-24 bg-secondary overflow-hidden">
-          <div className="absolute inset-0 grid-pattern opacity-20" />
-          <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-          <div className="absolute bottom-10 left-0 w-72 h-72 bg-primary/5 rounded-full blur-[100px]" />
-          <div className="relative max-w-7xl mx-auto px-4 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-[10px] font-black tracking-[0.2em] uppercase mb-6">
-              Help Center
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter italic leading-[0.9] mb-4">
-              Frequently Asked{" "}
-              <span className="text-gradient-primary">Questions</span>
-            </h1>
-            <p className="text-body text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Quick answers to the most common questions about booking, pricing,
-              documents, and more.
-            </p>
-          </div>
-        </section>
-
-        <section className="py-20 lg:py-24 bg-bg-dark relative overflow-hidden">
+        <section id="faqs" className="py-20 lg:py-24 bg-bg-dark relative overflow-hidden">
           <div className="absolute inset-0 grid-pattern opacity-[0.12]" />
           <div className="relative max-w-4xl mx-auto px-4 lg:px-8">
             <div className="flex flex-wrap justify-center gap-2.5 mb-14">
@@ -295,37 +277,7 @@ export default function FAQPage() {
           </div>
         </section>
 
-        <section className="py-20 lg:py-24 bg-bg-dark relative overflow-hidden">
-          <div className="absolute inset-0 grid-pattern opacity-[0.12]" />
-          <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[150px]" />
-          <div className="relative max-w-3xl mx-auto px-4 lg:px-8 text-center">
-            <span className="bento-chip mb-5">Stay Updated</span>
-            <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] mt-4 mb-5">
-              Subscribe to Our{" "}
-              <span className="text-gradient-primary">Newsletter</span>
-            </h2>
-            <p className="text-body leading-relaxed mb-10 max-w-xl mx-auto">
-              Get the latest updates on new vehicles, special offers, and car
-              rental tips delivered to your inbox.
-            </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white text-sm outline-none transition-all duration-300 focus:border-primary placeholder:text-body/40"
-              />
-              <button
-                type="submit"
-                className="bg-primary hover:bg-white text-white hover:text-secondary font-black px-7 py-3.5 text-sm uppercase tracking-wider transition-all duration-300 rounded-xl cursor-pointer whitespace-nowrap shine-effect overflow-hidden"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </section>
+        <Newsletter />
       </main>
       <Footer />
     </>

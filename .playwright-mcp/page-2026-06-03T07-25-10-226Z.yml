@@ -1,0 +1,218 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+      - /url: /
+      - img "Unsplash Home" [ref=e9]
+    - generic [ref=e11]:
+      - link "Log in / Sign up" [ref=e12] [cursor=pointer]:
+        - /url: /login?referrer=%2Fs%2Fphotos%2Findian-man-portrait
+        - img [ref=e13]
+      - button "Language" [ref=e15] [cursor=pointer]:
+        - img [ref=e16]
+      - button "Menu" [ref=e18] [cursor=pointer]:
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - navigation [ref=e23]:
+        - search "Find visuals sitewide" [ref=e25]:
+          - button "Search Unsplash" [ref=e26] [cursor=pointer]:
+            - img [ref=e27]
+          - combobox [ref=e29]:
+            - searchbox "Search Unsplash" [ref=e30]: indian man portrait
+            - listbox
+          - button "Clear" [ref=e31] [cursor=pointer]:
+            - img [ref=e32]
+          - button "Visual search" [ref=e36] [cursor=pointer]:
+            - img [ref=e37]
+        - button "Filters" [ref=e39] [cursor=pointer]:
+          - img [ref=e41]
+      - generic [ref=e43]:
+        - list [ref=e50]:
+          - listitem [ref=e51]:
+            - link "Photos 7.5k":
+              - /url: /s/photos/indian-man-portrait
+              - img
+              - text: Photos
+              - generic: 7.5k
+          - listitem [ref=e52]:
+            - link "Illustrations 17" [ref=e53] [cursor=pointer]:
+              - /url: /s/illustrations/indian-man-portrait
+              - img [ref=e54]
+              - text: Illustrations
+              - generic [ref=e56]: "17"
+          - listitem [ref=e57]:
+            - button "More" [ref=e58] [cursor=pointer]
+        - generic [ref=e59]:
+          - heading "Indian man portrait" [level=1] [ref=e61]
+          - generic [ref=e65]:
+            - link "indian man" [ref=e67] [cursor=pointer]:
+              - /url: /s/photos/indian-man
+            - link "indian woman portrait" [ref=e69] [cursor=pointer]:
+              - /url: /s/photos/indian-woman-portrait
+            - link "person" [ref=e71] [cursor=pointer]:
+              - /url: /s/photos/person
+            - link "portrait" [ref=e73] [cursor=pointer]:
+              - /url: /s/photos/portrait
+            - link "man" [ref=e75] [cursor=pointer]:
+              - /url: /s/photos/man
+            - link "face" [ref=e77] [cursor=pointer]:
+              - /url: /s/photos/face
+            - link "human" [ref=e79] [cursor=pointer]:
+              - /url: /s/photos/human
+            - link "grey" [ref=e81] [cursor=pointer]:
+              - /url: /s/photos/grey
+            - link "confidence" [ref=e83] [cursor=pointer]:
+              - /url: /s/photos/confidence
+            - link "portrait man" [ref=e85] [cursor=pointer]:
+              - /url: /s/photos/portrait-man
+            - link "portrait photography" [ref=e87] [cursor=pointer]:
+              - /url: /s/photos/portrait-photography
+            - link "traditional clothing" [ref=e89] [cursor=pointer]:
+              - /url: /s/photos/traditional-clothing
+        - generic [ref=e91]:
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - figure [ref=e97]:
+                - link "a man in a yellow shirt smiling at the camera" [ref=e100]:
+                  - /url: /photos/a-man-in-a-yellow-shirt-smiling-at-the-camera-ZjDbRtR_BcE
+                  - img "a man in a yellow shirt smiling at the camera" [ref=e101]
+              - figure [ref=e102]:
+                - link "a black and white photo of a man with a beard" [ref=e105]:
+                  - /url: /photos/a-black-and-white-photo-of-a-man-with-a-beard-aul0guZL1Og
+                  - img "a black and white photo of a man with a beard" [ref=e106]
+              - generic [ref=e107]:
+                - heading "Sponsored images" [level=4] [ref=e108]:
+                  - generic [ref=e109]: Sponsored images
+                  - link [ref=e110] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A&phrase=indian+man+portrait&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+                    - img [ref=e111]
+                - generic [ref=e113]:
+                  - link "Video Portrait of an Indian Man" [ref=e114] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/video-portrait-of-an-indian-man-gm2173398960-593129144?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                    - img "Video Portrait of an Indian Man" [ref=e115]
+                  - link "Portrait of a smiling man of Indian origin" [ref=e116] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/portrait-of-a-smiling-man-of-indian-origin-gm1315976553-403824623?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                    - img "Portrait of a smiling man of Indian origin" [ref=e117]
+                  - link "Portrait of confident Indian businessman wearing eyeglasses, hands in pockets, looking at camera" [ref=e118] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/portrait-of-confident-indian-businessman-wearing-eyeglasses-hands-in-pockets-looking-gm2190087290-608498247?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                    - img "Portrait of confident Indian businessman wearing eyeglasses, hands in pockets, looking at camera" [ref=e119]
+                  - link "Confident Indian Man Smiling in Stylish Formal Attire" [ref=e120] [cursor=pointer]:
+                    - /url: https://www.istockphoto.com/photo/confident-indian-man-smiling-in-stylish-formal-attire-gm2205028196-622443992?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                    - img "Confident Indian Man Smiling in Stylish Formal Attire" [ref=e121]
+                - link "Get 20% off with code UNSPLASH20" [ref=e122] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A&phrase=indian+man+portrait&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+              - figure [ref=e123]:
+                - link "a man in a red shirt looking at the camera" [ref=e126]:
+                  - /url: /photos/a-man-in-a-red-shirt-looking-at-the-camera-WpCHCjPWhgE
+                  - img "a man in a red shirt looking at the camera" [ref=e127]
+              - figure [ref=e128]:
+                - link "a man smoking a cigarette" [ref=e131]:
+                  - /url: /photos/a-man-smoking-a-cigarette-IhiyL6uyZF8
+                  - img "a man smoking a cigarette" [ref=e132]
+              - figure [ref=e133]:
+                - link "a man in a white shirt and sunglasses standing with his arms crossed" [ref=e136]:
+                  - /url: /photos/a-man-in-a-white-shirt-and-sunglasses-standing-with-his-arms-crossed-0AIRNkPV0uY
+                  - img "a man in a white shirt and sunglasses standing with his arms crossed" [ref=e137]
+              - figure [ref=e138]:
+                - link "a man riding a bike on top of a grass covered hillside" [ref=e141]:
+                  - /url: /photos/a-man-riding-a-bike-on-top-of-a-grass-covered-hillside-OM394zMEBII
+                  - img "a man riding a bike on top of a grass covered hillside" [ref=e142]
+              - figure [ref=e143]:
+                - link "a man with a beard and mustache" [ref=e146]:
+                  - /url: /photos/a-man-with-a-beard-and-mustache-vAXmZOtLfo0
+                  - img "a man with a beard and mustache" [ref=e147]
+              - figure [ref=e148]:
+                - link "Portrait of a smiling young man of Indian origin" [ref=e151]:
+                  - /url: /photos/portrait-of-a-smiling-young-man-of-indian-origin-Bq3Eo0OPS9w
+                  - img "Portrait of a smiling young man of Indian origin" [ref=e152]
+              - figure [ref=e153]:
+                - link "a man in a white turtle neck sweater" [ref=e156]:
+                  - /url: /photos/a-man-in-a-white-turtle-neck-sweater-FKLesO1D3Sk
+                  - img "a man in a white turtle neck sweater" [ref=e157]
+              - figure [ref=e158]:
+                - link "man in black and gray polo shirt wearing black sunglasses" [ref=e161]:
+                  - /url: /photos/man-in-black-and-gray-polo-shirt-wearing-black-sunglasses-iIXAUAROyqU
+                  - img "man in black and gray polo shirt wearing black sunglasses" [ref=e162]
+            - generic [ref=e163]:
+              - contentinfo [ref=e168]:
+                - generic [ref=e174]: –– ––– ––– –– ––– – ––– ––– –––– – – –– ––– – – ––– –– –– –––– ––
+              - figure [ref=e176]:
+                - link "a man standing on a balcony" [ref=e179]:
+                  - /url: /photos/a-man-standing-on-a-balcony-UuJdV0q9LgE
+                  - img "a man standing on a balcony" [ref=e180]
+              - figure [ref=e181]:
+                - link "a man wearing a hat" [ref=e184]:
+                  - /url: /photos/a-man-wearing-a-hat-qJkXg5pZwCY
+                  - img "a man wearing a hat" [ref=e185]
+              - figure [ref=e186]:
+                - link "a man in a maroon and white striped shirt is talking on a cell phone" [ref=e189]:
+                  - /url: /photos/a-man-in-a-maroon-and-white-striped-shirt-is-talking-on-a-cell-phone-gbmfEUsAA4Y
+                  - img "a man in a maroon and white striped shirt is talking on a cell phone" [ref=e190]
+              - figure [ref=e191]:
+                - link "A man standing in the middle of a dirt road" [ref=e194]:
+                  - /url: /photos/a-man-standing-in-the-middle-of-a-dirt-road-98Ilb-3YywY
+                  - img "A man standing in the middle of a dirt road" [ref=e195]
+              - figure [ref=e196]:
+                - link "A man standing in front of a wooden structure" [ref=e199]:
+                  - /url: /photos/a-man-standing-in-front-of-a-wooden-structure-Orl8HXvlfJ8
+                  - img "A man standing in front of a wooden structure" [ref=e200]
+              - figure [ref=e201]:
+                - link "a man standing in front of a waterfall" [ref=e204]:
+                  - /url: /photos/a-man-standing-in-front-of-a-waterfall-hKjVBFlB-ow
+                  - img "a man standing in front of a waterfall" [ref=e205]
+              - figure [ref=e206]:
+                - link "a man standing in front of a building with his eyes closed" [ref=e209]:
+                  - /url: /photos/a-man-standing-in-front-of-a-building-with-his-eyes-closed-FElhsR-oNRk
+                  - img "a man standing in front of a building with his eyes closed" [ref=e210]
+              - figure [ref=e211]:
+                - link "woman with red and blue face paint" [ref=e214]:
+                  - /url: /photos/woman-with-red-and-blue-face-paint-FCAZfbJl2yo
+                  - img "woman with red and blue face paint" [ref=e215]
+              - figure [ref=e216]:
+                - link "a man with glasses pointing at something" [ref=e219]:
+                  - /url: /photos/a-man-with-glasses-pointing-at-something-zMLvATSCqSM
+                  - img "a man with glasses pointing at something" [ref=e220]
+              - figure [ref=e221]:
+                - link "a man in a white shirt smiling for the camera" [ref=e224]:
+                  - /url: /photos/a-man-in-a-white-shirt-smiling-for-the-camera-a26KbF2Mz1I
+                  - img "a man in a white shirt smiling for the camera" [ref=e225]
+          - generic [ref=e228]:
+            - heading "Browse premium images on iStock | Claim your discount now" [level=2] [ref=e229]:
+              - text: Browse premium images on iStock
+              - generic [ref=e230]: "| Claim your discount now"
+            - generic [ref=e232]:
+              - link "Indian Farmer, stock photo" [ref=e233] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/indian-farmer-stock-photo-gm1367068216-437431294?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                - img "Indian Farmer, stock photo" [ref=e234]
+              - link "A handsome young man in a casual shirt poses confidently in front of a modern building." [ref=e235] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/a-handsome-young-man-in-a-casual-shirt-poses-confidently-in-front-of-a-modern-gm2241365410-655886352?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                - img "A handsome young man in a casual shirt poses confidently in front of a modern building." [ref=e236]
+              - link "Closeup portrait of happy middle aged indian man in casual cheerfully smiling at camera, showing white teeth, panorama" [ref=e237] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/closeup-portrait-of-happy-middle-aged-indian-man-in-casual-cheerfully-smiling-at-gm1788998021-547561924?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                - img "Closeup portrait of happy middle aged indian man in casual cheerfully smiling at camera, showing white teeth, panorama" [ref=e238]
+              - link "Handsome man of Indian descent" [ref=e239] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/handsome-man-of-indian-descent-gm2209252705-626365880?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                - img "Handsome man of Indian descent" [ref=e240]
+              - link "Portrait of an Indian Man" [ref=e241] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/portrait-of-an-indian-man-gm1455343282-490706583?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                - img "Portrait of an Indian Man" [ref=e242]
+              - link "Portrait of middle eastern businessman looking at camera" [ref=e243] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/portrait-of-middle-eastern-businessman-looking-at-camera-gm2187592265-606165379?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                - img "Portrait of middle eastern businessman looking at camera" [ref=e244]
+              - link "Portrait of a happy mature man of Indian ethnicity" [ref=e245] [cursor=pointer]:
+                - /url: https://www.istockphoto.com/photo/portrait-of-a-happy-mature-man-of-indian-ethnicity-gm1336230140-417564837?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                - img "Portrait of a happy mature man of Indian ethnicity" [ref=e246]
+              - generic [ref=e247]:
+                - link "Portrait of successful mid adult man arms crossed on white background" [ref=e248] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/photo/portrait-of-successful-mid-adult-man-arms-crossed-on-white-background-gm2258426104-671436285?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A
+                  - img "Portrait of successful mid adult man arms crossed on white background" [ref=e249]
+                - link "View more on iStock ↗" [ref=e250] [cursor=pointer]:
+                  - /url: https://www.istockphoto.com/search/2/image?utm_source=unsplash&utm_medium=affiliate&utm_campaign=srp_photos_bottom&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Findian-man-portrait&utm_term=indian+man+portrait%3A%3A%3A%3A&phrase=indian+man+portrait&alloweduse=availableforalluses&excludenudity=true&sort=best&mediatype=photography
+          - button "Load more" [ref=e254] [cursor=pointer]
+          - generic [ref=e255]:
+            - link [ref=e256] [cursor=pointer]:
+              - /url: /
+              - img [ref=e257]
+            - paragraph [ref=e259]: Make something awesome
+    - generic:
+      - region "Notifications"

@@ -1,0 +1,261 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Rohit Tour & Travel" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Rohit Tour & Travel" [ref=e6]
+      - button "Open menu" [ref=e7] [cursor=pointer]:
+        - img [ref=e8]
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - link "Rohit Tour & Travel" [ref=e12] [cursor=pointer]:
+        - /url: /
+        - img "Rohit Tour & Travel" [ref=e13]
+      - button "Close menu" [ref=e14] [cursor=pointer]:
+        - img [ref=e15]
+    - generic [ref=e17]:
+      - button "Home" [ref=e19] [cursor=pointer]:
+        - generic [ref=e20]: Home
+        - img [ref=e21]
+      - button "Car Fleet" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]: Car Fleet
+        - img [ref=e26]
+      - button "Pages" [ref=e29] [cursor=pointer]:
+        - generic [ref=e30]: Pages
+        - img [ref=e31]
+      - button "News" [ref=e34] [cursor=pointer]:
+        - generic [ref=e35]: News
+        - img [ref=e36]
+      - link "Contact" [ref=e39] [cursor=pointer]:
+        - /url: "#"
+    - generic [ref=e40]:
+      - heading "Contact Info" [level=4] [ref=e41]
+      - generic [ref=e42]:
+        - img [ref=e43]
+        - generic [ref=e46]: 57 Heold Insaf Station Road, Cardiff, UK
+      - generic [ref=e47]:
+        - img [ref=e48]
+        - link "+91-213-666-0027" [ref=e50] [cursor=pointer]:
+          - /url: tel:+912136660027
+      - generic [ref=e51]:
+        - img [ref=e52]
+        - link "info@example.com" [ref=e54] [cursor=pointer]:
+          - /url: mailto:info@example.com
+    - generic [ref=e55]:
+      - paragraph [ref=e56]: Follow Us On
+      - generic [ref=e57]:
+        - link "Twitter" [ref=e58] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e59]
+        - link "Facebook" [ref=e61] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e62]
+        - link "Pinterest" [ref=e64] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e65]
+        - link "Instagram" [ref=e67] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e68]
+        - link "YouTube" [ref=e70] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e71]
+      - link "Booking Now" [ref=e73] [cursor=pointer]:
+        - /url: /checkout
+  - main [ref=e74]:
+    - generic [ref=e76]:
+      - generic [ref=e82] [cursor=pointer]:
+        - img "Priya Sharma" [ref=e84]
+        - heading "“We rented 12 luxury cars for a destination wedding in Jaipur. Rohit Tour & Travel delivered every single one on time, in pristine condition. Absolutely flawless service.”" [level=3] [ref=e85]
+        - paragraph [ref=e86]: — Priya Sharma, Wedding Planner
+      - generic [ref=e87] [cursor=pointer]:
+        - img "Vikram Singh" [ref=e89]
+        - heading "“Took a Fortuner for a 5-day Himachal road trip. Car was in perfect mechanical condition and the return process was a breeze. Already planning my next booking!”" [level=3] [ref=e90]
+        - paragraph [ref=e91]: — Vikram Singh, Self-Drive Customer
+      - generic [ref=e92] [cursor=pointer]:
+        - img "Anita Desai" [ref=e94]
+        - heading "“Travelled to Manali with my family. Rohit Tour & Travel arranged a spacious Innova with a child seat — they thought of everything.”" [level=3] [ref=e95]
+        - paragraph [ref=e96]: — Anita Desai, Family Traveler
+      - generic [ref=e97] [cursor=pointer]:
+        - img "Rajesh Khanna" [ref=e99]
+        - heading "“Our company has a monthly contract for 8 vehicles. Zero downtime in 18 months. The dedicated account manager is a game-changer.”" [level=3] [ref=e100]
+        - paragraph [ref=e101]: — Rajesh Khanna, Corporate Client
+      - generic [ref=e102] [cursor=pointer]:
+        - img "Sneha Kapoor" [ref=e104]
+        - heading "“I was nervous about self-driving to Leh. Rohit Tour & Travel's team gave me a full briefing and checked in mid-trip. Felt like family.”" [level=3] [ref=e105]
+        - paragraph [ref=e106]: — Sneha Kapoor, Solo Traveler
+      - generic [ref=e107] [cursor=pointer]:
+        - img "Manoj Yadav" [ref=e109]
+        - heading "“Subscribed to the monthly plan for a Swift Dzire. Saves me 40% compared to daily rentals. Brilliant model.”" [level=3] [ref=e110]
+        - paragraph [ref=e111]: — Manoj Yadav, Monthly Subscriber
+      - generic [ref=e112] [cursor=pointer]:
+        - img "Harsh Aggarwal" [ref=e114]
+        - heading "“Booked a 4 AM airport transfer. Driver was at my door 10 minutes early, helped with luggage. Premium experience, every time.”" [level=3] [ref=e115]
+        - paragraph [ref=e116]: — Harsh Aggarwal, Delhi Traveler
+      - generic [ref=e117] [cursor=pointer]:
+        - img "Divya Reddy" [ref=e119]
+        - heading "“As a woman traveling solo, safety is non-negotiable. Their GPS tracking, verified drivers, and 24/7 support make me feel safe and cared for.”" [level=3] [ref=e120]
+        - paragraph [ref=e121]: — Divya Reddy, Solo Traveler
+      - generic [ref=e122] [cursor=pointer]:
+        - img "Karan Joshi" [ref=e124]
+        - heading "“Took an SUV for a family trip to Manali. The vehicle was pristine, spacious, and the chauffeur was incredibly courteous. Highly recommended!”" [level=3] [ref=e125]
+        - paragraph [ref=e126]: — Karan Joshi, Family Vacationer
+      - generic [ref=e314] [cursor=pointer]:
+        - img "Aakash Mehta" [ref=e316]
+        - heading "“I've been using Rohit Tour & Travel for all my Gurugram-Rohtak trips for the past 3 years. The cars are always spotless and the drivers are courteous. Truly the gold standard of car rentals in Haryana.”" [level=3] [ref=e317]
+        - paragraph [ref=e318]: — Aakash Mehta, Business Traveler
+      - generic [ref=e127]:
+        - button "Previous testimonial" [ref=e128] [cursor=pointer]:
+          - img [ref=e129]
+        - button "Next testimonial" [ref=e131] [cursor=pointer]:
+          - img [ref=e132]
+    - generic [ref=e138]:
+      - generic [ref=e139]:
+        - generic [ref=e142]: Share Your Experience
+        - heading "Give Us Your Feedback" [level=2] [ref=e143]
+        - paragraph [ref=e144]: Your feedback helps us improve and deliver the premium experience you deserve. Whether it was a weekend getaway or a corporate trip, we want to hear about it.
+        - generic [ref=e145]:
+          - generic [ref=e146]:
+            - img [ref=e148]
+            - generic [ref=e150]:
+              - paragraph [ref=e151]: Call Us
+              - link "+91 99999 99999" [ref=e152] [cursor=pointer]:
+                - /url: tel:+919999999999
+          - generic [ref=e153]:
+            - img [ref=e155]
+            - generic [ref=e157]:
+              - paragraph [ref=e158]: Email Us
+              - link "feedback@rohittour.in" [ref=e159] [cursor=pointer]:
+                - /url: mailto:feedback@rohittour.in
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e163]: Your Name *
+          - textbox "Your Name *" [ref=e164]:
+            - /placeholder: John Doe
+            - text: Test User
+        - generic [ref=e165]:
+          - generic [ref=e166]: Email Address
+          - textbox "Email Address" [ref=e167]:
+            - /placeholder: john@example.com
+        - generic [ref=e168]:
+          - generic [ref=e169]: Your Rating *
+          - generic [ref=e170]:
+            - button "Rate 1 star" [ref=e171] [cursor=pointer]:
+              - img [ref=e172]
+            - button "Rate 2 stars" [ref=e174] [cursor=pointer]:
+              - img [ref=e175]
+            - button "Rate 3 stars" [ref=e177] [cursor=pointer]:
+              - img [ref=e178]
+            - button "Rate 4 stars" [ref=e180] [cursor=pointer]:
+              - img [ref=e181]
+            - button "Rate 5 stars" [ref=e183] [cursor=pointer]:
+              - img [ref=e184]
+        - generic [ref=e186]:
+          - generic [ref=e187]: Your Review *
+          - textbox "Your Review *" [ref=e188]:
+            - /placeholder: Tell us about your experience...
+            - text: Great service!
+        - button "Submit Review" [ref=e189] [cursor=pointer]
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - img [ref=e203]
+        - generic [ref=e206]: Get 10% Off Your First Rental
+        - heading "Never Miss a Ride" [level=2] [ref=e208]
+        - paragraph [ref=e209]: Get exclusive offers, new arrival alerts, and driving tips delivered straight to your inbox. Join 2,400+ subscribers who ride with us.
+        - generic [ref=e210]:
+          - img [ref=e211]
+          - generic [ref=e216]: Join 2,400+ subscribers
+          - generic [ref=e218]: No spam, unsubscribe anytime
+      - generic [ref=e220]:
+        - paragraph [ref=e222]: Subscribe Now
+        - paragraph [ref=e223]: Enter your email and hit subscribe — it’s that simple.
+        - generic [ref=e225]:
+          - generic [ref=e226]:
+            - generic [ref=e227]: Email address
+            - textbox "Email address" [ref=e228]:
+              - /placeholder: Enter your email
+          - button "Subscribe" [ref=e229] [cursor=pointer]:
+            - text: Subscribe
+            - img [ref=e230]
+  - contentinfo [ref=e232]:
+    - generic [ref=e234]:
+      - generic [ref=e235]:
+        - link "Rohit Tour & Travel" [ref=e236] [cursor=pointer]:
+          - /url: /
+          - img "Rohit Tour & Travel" [ref=e237]
+        - paragraph [ref=e238]: We are a team of professional car rental experts dedicated to providing the best service for our customers.
+        - generic [ref=e239]: "Follow Us On:"
+        - generic [ref=e240]:
+          - link "Facebook" [ref=e241] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e242]
+          - link "Twitter" [ref=e244] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e245]
+          - link "LinkedIn" [ref=e247] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e248]
+          - link "Dribbble" [ref=e250] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e251]
+      - generic [ref=e253]:
+        - heading "Resources" [level=3] [ref=e254]
+        - list [ref=e255]:
+          - listitem [ref=e256]:
+            - link "About Team" [ref=e257] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e258]:
+            - link "Policies" [ref=e259] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e260]:
+            - link "Careers" [ref=e261] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e262]:
+            - link "Press" [ref=e263] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e264]:
+            - link "Open Road" [ref=e265] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e266]:
+        - heading "Community" [level=3] [ref=e267]
+        - list [ref=e268]:
+          - listitem [ref=e269]:
+            - link "Newsletter" [ref=e270] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e271]:
+            - link "Reviews" [ref=e272] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e273]:
+            - link "Testimonials" [ref=e274] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e275]:
+            - link "Social Group" [ref=e276] [cursor=pointer]:
+              - /url: "#"
+          - listitem [ref=e277]:
+            - link "Helpdesk" [ref=e278] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e279]:
+        - heading "Contact" [level=3] [ref=e280]
+        - list [ref=e281]:
+          - listitem [ref=e282]:
+            - img [ref=e283]
+            - generic [ref=e286]: 57 heold insaf Station Road, Cardiff, United Kingdom
+          - listitem [ref=e287]:
+            - img [ref=e288]
+            - generic [ref=e290]: info@rohittour.in
+          - listitem [ref=e291]:
+            - img [ref=e292]
+            - generic [ref=e294]: 029 2021 4012
+    - generic [ref=e296]:
+      - paragraph [ref=e297]: © 2026 ROHIT TOUR & TRAVEL. All rights reserved.
+      - generic [ref=e298]:
+        - link "Privacy Policy" [ref=e299] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e300]: "|"
+        - link "Terms of Service" [ref=e301] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e302]: "|"
+        - link "Sitemap" [ref=e303] [cursor=pointer]:
+          - /url: "#"
+  - button "Open Next.js Dev Tools" [ref=e309] [cursor=pointer]:
+    - img [ref=e310]
+  - alert [ref=e313]

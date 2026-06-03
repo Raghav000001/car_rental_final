@@ -1,0 +1,115 @@
+- generic [ref=e4]:
+  - navigation [ref=e5]:
+    - link "Unsplash Home" [ref=e8] [cursor=pointer]:
+      - /url: /
+      - img "Unsplash Home" [ref=e9]
+    - generic [ref=e11]:
+      - link "Log in / Sign up" [ref=e12] [cursor=pointer]:
+        - /url: /login?referrer=%2Fphotos%2Fportrait-of-a-smiling-young-man-of-indian-origin-Bq3Eo0OPS9w
+        - img [ref=e13]
+      - button "Language" [ref=e15] [cursor=pointer]:
+        - img [ref=e16]
+      - button "Menu" [ref=e18] [cursor=pointer]:
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - generic [ref=e22]:
+      - navigation [ref=e23]:
+        - search "Find visuals sitewide" [ref=e25]:
+          - button "Search Unsplash" [ref=e26] [cursor=pointer]:
+            - img [ref=e27]
+          - combobox [ref=e29]:
+            - searchbox "Search Unsplash" [ref=e30]
+            - listbox
+          - button "Visual search" [ref=e32] [cursor=pointer]:
+            - img [ref=e33]
+      - generic [ref=e36]:
+        - banner [ref=e38]:
+          - generic [ref=e40]:
+            - link [ref=e41] [cursor=pointer]:
+              - /url: /@gettyimages
+            - generic [ref=e44]:
+              - link "Getty Images" [ref=e45] [cursor=pointer]:
+                - /url: /@gettyimages
+              - generic [ref=e46]:
+                - text: For
+                - link "Unsplash+" [ref=e47] [cursor=pointer]:
+                  - /url: /plus?referrer=%2Fphotos%2Fportrait-of-a-smiling-young-man-of-indian-origin-Bq3Eo0OPS9w
+          - generic [ref=e48]:
+            - button "Bookmark" [ref=e49] [cursor=pointer]:
+              - img [ref=e50]
+            - button "Add to Collection" [ref=e52] [cursor=pointer]:
+              - img [ref=e53]
+            - link "Edit image" [ref=e55] [cursor=pointer]:
+              - /url: /plus?referrer=%2Fphotos%2Fportrait-of-a-smiling-young-man-of-indian-origin-Bq3Eo0OPS9w
+              - text: Edit image
+              - img [ref=e56]
+            - button "Download" [ref=e59] [cursor=pointer]:
+              - img [ref=e60]
+              - text: Download
+        - button "Zoom in on this image" [disabled] [ref=e65]:
+          - img "Portrait of a smiling young man of Indian origin" [ref=e66]
+        - generic [ref=e67]:
+          - generic [ref=e69]:
+            - button "Share this image" [ref=e70] [cursor=pointer]:
+              - img [ref=e71]
+              - generic [ref=e73]: Share
+            - button "More Actions" [ref=e74] [cursor=pointer]:
+              - img [ref=e75]
+          - generic [ref=e78]:
+            - heading "Portrait of a smiling young man of Indian origin" [level=1] [ref=e80]
+            - paragraph [ref=e84]: Download this HD photo of human, face, adult, and headshot by Getty Images (@gettyimages)
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - img [ref=e88]
+                - generic [ref=e91]:
+                  - text: Published on
+                  - time [ref=e92]: April 21, 2023 (UTC)
+              - generic [ref=e93]:
+                - img [ref=e94]
+                - generic [ref=e96]:
+                  - text: Licensed under the
+                  - link "Unsplash+ License" [ref=e97] [cursor=pointer]:
+                    - /url: /plus/license
+          - generic [ref=e99]:
+            - link "human" [ref=e100] [cursor=pointer]:
+              - /url: /s/photos/human
+            - link "face" [ref=e101] [cursor=pointer]:
+              - /url: /s/photos/face
+            - link "adult" [ref=e102] [cursor=pointer]:
+              - /url: /s/photos/adult
+            - link "headshot" [ref=e103] [cursor=pointer]:
+              - /url: /s/photos/headshot
+            - link "male" [ref=e104] [cursor=pointer]:
+              - /url: /s/photos/male
+            - link "joy" [ref=e105] [cursor=pointer]:
+              - /url: /s/photos/joy
+            - link "happiness" [ref=e106] [cursor=pointer]:
+              - /url: /s/photos/happiness
+            - link "young man" [ref=e107] [cursor=pointer]:
+              - /url: /s/photos/young-man
+            - link "confidence" [ref=e108] [cursor=pointer]:
+              - /url: /s/photos/confidence
+            - link "human face" [ref=e109] [cursor=pointer]:
+              - /url: /s/photos/human-face
+            - link "laughing" [ref=e110] [cursor=pointer]:
+              - /url: /s/photos/laughing
+            - link "smiling" [ref=e111] [cursor=pointer]:
+              - /url: /s/photos/smiling
+            - link "happy man" [ref=e112] [cursor=pointer]:
+              - /url: /s/photos/happy-man
+            - link "t-shirt" [ref=e113] [cursor=pointer]:
+              - /url: /s/photos/t--shirt
+            - link "authentic" [ref=e114] [cursor=pointer]:
+              - /url: /s/photos/authentic
+            - link "expression" [ref=e115] [cursor=pointer]:
+              - /url: /s/photos/expression
+            - link "man smiling" [ref=e116] [cursor=pointer]:
+              - /url: /s/photos/man-smiling
+            - link "hairstyle" [ref=e117] [cursor=pointer]:
+              - /url: /s/photos/hairstyle
+            - link "one person" [ref=e118] [cursor=pointer]:
+              - /url: /s/photos/one-person
+            - link "friendly" [ref=e119] [cursor=pointer]:
+              - /url: /s/photos/friendly
+    - generic:
+      - region "Notifications"

@@ -3,7 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { HowItWorks } from "@/components/ui/how-it-works";
 import BrandsCarousel from "@/components/BrandsCarousel";
+import TimeLine_01 from "@/components/ui/release-time-line";
+import Newsletter from "@/components/Newsletter";
 
 export const metadata: Metadata = {
   title: "About Us - Rohit Tour & Travel Premium Car Rental",
@@ -54,52 +57,6 @@ const values = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
-  },
-];
-
-const timeline = [
-  {
-    year: "2012",
-    title: "Founded in Rohtak",
-    text: "Rohit Tour & Travel started as a small two-car rental service in Sector 14, Rohtak. A dream, a single vehicle, and a dedication to honest service.",
-  },
-  {
-    year: "2016",
-    title: "Haryana Expansion",
-    text: "We expanded across Haryana with branches in Gurugram, Panchkula, and Karnal — becoming the region's most trusted rental brand.",
-  },
-  {
-    year: "2020",
-    title: "Premium Fleet",
-    text: "We upgraded our fleet to over 800+ premium vehicles — from luxury sedans to high-performance SUVs, all maintained in-house.",
-  },
-  {
-    year: "2025",
-    title: "32+ Cities & Beyond",
-    text: "Today, Rohit Tour & Travel serves 32+ cities across North India with 850+ vehicles, leading the premium self-drive and chauffeur-driven rental market.",
-  },
-];
-
-const workSteps = [
-  {
-    number: "01",
-    title: "Choose a Car",
-    text: "Browse our extensive fleet and pick the perfect vehicle for your journey, from economy hatchbacks to luxury SUVs.",
-  },
-  {
-    number: "02",
-    title: "Book Online",
-    text: "Reserve your ride in minutes through our seamless booking platform with real-time availability and instant confirmation.",
-  },
-  {
-    number: "03",
-    title: "Make Payment",
-    text: "Secure payment with multiple options — credit card, UPI, or net banking. No hidden charges, complete transparency.",
-  },
-  {
-    number: "04",
-    title: "Enjoy Drive",
-    text: "Pick up your vehicle or have it delivered. Hit the road with complete peace of mind and 24/7 roadside assistance.",
   },
 ];
 
@@ -210,7 +167,7 @@ export default function AboutPage() {
               <span className="text-body/30">/</span>
               <span className="text-primary font-semibold">About Us</span>
             </nav>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-[0.85]">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-[0.85] pr-1">
               About <span className="text-gradient-primary">Us</span>
             </h1>
             <p className="text-body text-base md:text-lg mt-6 max-w-xl mx-auto leading-relaxed">
@@ -238,14 +195,14 @@ export default function AboutPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/60 via-transparent to-transparent" />
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-primary/20 border border-primary/40 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-3xl font-black italic text-primary">12+</span>
+                  <span className="text-3xl font-black italic text-primary pr-1">12+</span>
                 </div>
               </div>
               <div>
                 <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
                   Our Story
                 </span>
-                <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] mb-6">
+                <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] mb-6 pr-1">
                   A Decade of <span className="text-gradient-primary">Driving</span> Excellence
                 </h2>
                 <p className="text-body text-base leading-relaxed mb-4">
@@ -307,7 +264,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center group">
-                  <p className="text-6xl md:text-7xl font-black italic tracking-tighter leading-[0.85] text-gradient-primary mb-2">
+                  <p className="text-6xl md:text-7xl font-black italic tracking-tighter leading-[0.85] text-gradient-primary mb-2 pr-1">
                     {stat.value}
                   </p>
                   <p className="text-white font-bold text-sm tracking-wide uppercase">{stat.label}</p>
@@ -319,37 +276,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 4. Work Process */}
-        <section className="py-24 bg-bg-dark relative overflow-hidden">
-          <div className="absolute inset-0 dot-pattern opacity-20" />
-          <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
-                How It Works
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95]">
-                Simple <span className="text-gradient-primary">4-Step</span> Process
-              </h2>
-              <p className="text-body text-sm mt-4 max-w-lg mx-auto">
-                From browsing to driving — we&apos;ve made the entire process effortless.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 relative">
-              <div className="hidden lg:block absolute top-16 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary/10 via-primary/40 to-primary/10" />
-              {workSteps.map((step, i) => (
-                <div key={step.number} className="text-center group relative">
-                  <div className="relative z-10 w-20 h-20 mx-auto mb-6 rounded-full bg-bg-dark border-2 border-primary/30 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-lg">
-                    <span className="text-2xl font-black text-primary group-hover:text-white transition-colors duration-500">
-                      {step.number}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-black text-white italic tracking-tight mb-3">{step.title}</h3>
-                  <p className="text-body text-sm leading-relaxed max-w-[260px] mx-auto">{step.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* 4. How It Works */}
+        <HowItWorks />
 
         {/* 5. Brands */}
         <BrandsCarousel />
@@ -377,7 +305,7 @@ export default function AboutPage() {
                 <path d="M8 5v14l11-7z" />
               </svg>
             </button>
-            <h3 className="text-2xl md:text-4xl font-black text-white italic tracking-tight leading-[1.1]">
+            <h3 className="text-2xl md:text-4xl font-black text-white italic tracking-tight leading-[1.1] pr-1">
               Experience the <span className="text-gradient-primary">Rohit Tour &amp; Travel</span> Difference
             </h3>
             <p className="text-body text-sm mt-4 max-w-md mx-auto">
@@ -394,7 +322,7 @@ export default function AboutPage() {
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
                 Our Values
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95]">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] pr-1">
                 What We <span className="text-gradient-primary">Stand For</span>
               </h2>
               <p className="text-body text-sm mt-4 max-w-lg mx-auto">
@@ -411,7 +339,7 @@ export default function AboutPage() {
                     <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
                       {v.icon}
                     </div>
-                    <h3 className="text-xl font-black text-white italic tracking-tight">{v.title}</h3>
+                    <h3 className="text-xl font-black text-white italic tracking-tight pr-1">{v.title}</h3>
                   </div>
                   <p className="text-body text-sm leading-relaxed">{v.text}</p>
                 </div>
@@ -421,53 +349,7 @@ export default function AboutPage() {
         </section>
 
         {/* 8. Timeline / Journey */}
-        <section className="py-24 bg-bg-dark relative overflow-hidden">
-          <div className="absolute inset-0 dot-pattern opacity-20" />
-          <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
-                Our Journey
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95]">
-                12+ Years of <span className="text-gradient-primary">Excellence</span>
-              </h2>
-            </div>
-            <div className="relative">
-              <div className="absolute left-6 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/40 via-primary/20 to-transparent -translate-x-1/2 hidden lg:block" />
-              <div className="space-y-12 lg:space-y-16">
-                {timeline.map((item, i) => (
-                  <div
-                    key={item.year}
-                    className={`relative flex flex-col lg:flex-row items-start gap-6 lg:gap-12 ${i % 2 === 0 ? "" : "lg:flex-row-reverse"}`}
-                  >
-                    <div className={`hidden lg:block w-1/2 ${i % 2 === 0 ? "text-right" : "text-left"}`}>
-                      <div className={`inline-block ${i % 2 === 0 ? "mr-8" : "ml-8"}`}>
-                        <p className="text-5xl font-black italic tracking-tighter leading-[0.85] text-gradient-primary mb-2">
-                          {item.year}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="relative z-10 hidden lg:flex items-center justify-center">
-                      <div className="w-5 h-5 rounded-full bg-primary border-4 border-bg-dark shadow-glow-red shrink-0" />
-                    </div>
-                    <div className="flex-1 lg:w-1/2 group">
-                      <div className="p-6 lg:p-8 bg-secondary/50 border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-glow-red">
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className="lg:hidden text-3xl font-black italic text-gradient-primary">{item.year}</span>
-                          <span className="text-[10px] font-black tracking-[0.2em] uppercase text-primary/60">
-                            Chapter /0{i + 1}
-                          </span>
-                        </div>
-                        <h3 className="text-xl font-black text-white italic tracking-tight mb-3">{item.title}</h3>
-                        <p className="text-body text-sm leading-relaxed">{item.text}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <TimeLine_01 />
 
         {/* 9. Team */}
         <section className="py-24 bg-secondary relative overflow-hidden">
@@ -477,7 +359,7 @@ export default function AboutPage() {
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
                 Our Team
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95]">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] pr-1">
                 Meet the <span className="text-gradient-primary">Drivers</span> Behind Rohit Tour &amp; Travel
               </h2>
               <p className="text-body text-sm mt-4 max-w-lg mx-auto">
@@ -509,7 +391,7 @@ export default function AboutPage() {
                       ))}
                     </div>
                   </div>
-                  <h3 className="text-lg font-black text-white italic tracking-tight">{member.name}</h3>
+                  <h3 className="text-lg font-black text-white italic tracking-tight pr-1">{member.name}</h3>
                   <p className="text-primary text-xs font-bold uppercase tracking-widest mt-1">{member.role}</p>
                 </div>
               ))}
@@ -525,7 +407,7 @@ export default function AboutPage() {
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
                 Testimonials
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95]">
+              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] pr-1">
                 What Our <span className="text-gradient-primary">Customers</span> Say
               </h2>
             </div>
@@ -564,28 +446,8 @@ export default function AboutPage() {
           <div className="absolute inset-0 pointer-events-none border-4 border-secondary" />
         </section>
 
-        {/* 12. Subscribe */}
-        <section className="py-20 bg-primary relative overflow-hidden">
-          <div className="absolute inset-0 dot-pattern opacity-10" />
-          <div className="relative max-w-7xl mx-auto px-4 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-black text-white italic tracking-tighter leading-[0.95] mb-4">
-              Stay in the Loop
-            </h2>
-            <p className="text-white/80 text-sm mb-8 max-w-md mx-auto leading-relaxed">
-              Subscribe to our newsletter for exclusive offers, new arrivals, and driving tips delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row max-w-lg mx-auto gap-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="flex-1 px-5 py-3.5 bg-white/10 border border-white/20 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-white transition-all duration-500"
-              />
-              <button className="px-8 py-3.5 bg-white text-primary font-black text-sm uppercase tracking-wider hover:bg-secondary hover:text-white transition-all duration-500 shrink-0 cursor-pointer">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </section>
+        {/* 12. Newsletter */}
+        <Newsletter />
       </main>
       <Footer />
     </>

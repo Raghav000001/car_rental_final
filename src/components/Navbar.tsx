@@ -20,7 +20,7 @@ const navItems: { label: string; links: NavLink[] }[] = [
   {
     label: "Car Fleet",
     links: [
-      { label: "Car Listing", href: "#" },
+      { label: "Car Listing", href: "/fleet" },
       { label: "Car Listing 2", href: "#" },
       { label: "Car Listing 3", href: "#" },
       { label: "Car Listing 4", href: "#" },
@@ -38,7 +38,6 @@ const navItems: { label: string; links: NavLink[] }[] = [
       { label: "Area Details", href: "#" },
       { label: "Gallery", href: "/gallery" },
       { label: "Pricing", href: "/pricing" },
-      { label: "Checkout", href: "/checkout" },
       { label: "404", href: "/not-found" },
     ],
   },
@@ -223,23 +222,8 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-[72px]">
-            <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="relative">
-                <div className="w-10 h-10 bg-primary flex items-center justify-center rotate-45 group-hover:rotate-0 transition-transform duration-500">
-                  <span className="text-white font-black text-lg -rotate-45 group-hover:rotate-0 transition-transform duration-500">
-                    R
-                  </span>
-                </div>
-                <div className="absolute -inset-1 bg-primary/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-              <div className="leading-none">
-                <span className="text-2xl font-black text-white tracking-tighter italic block leading-none">
-                  ROHIT
-                </span>
-                <span className="text-[10px] font-black text-primary tracking-[0.15em] uppercase block leading-none mt-0.5">
-                  Tour &amp; Travel
-                </span>
-              </div>
+            <Link href="/" className="flex items-center group shrink-0">
+              <img src="/logo.png" alt="Rohit Tour & Travel" className="h-12 md:h-14 w-auto object-contain" />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-0.5">
@@ -393,17 +377,8 @@ export default function Navbar() {
       {searchOpen && (
         <div className="fixed inset-0 z-[70] flex flex-col bg-black/95 backdrop-blur-xl animate-fadeIn">
           <div className="flex items-center justify-between max-w-7xl mx-auto w-full px-4 lg:px-8 py-6">
-            <Link href="/" className="flex items-center gap-2.5">
-              <div className="w-9 h-9 bg-primary flex items-center justify-center rotate-45">
-                <span className="text-white font-black -rotate-45">R</span>
-              </div>
-              <span className="font-black text-white italic leading-tight">
-                <span className="text-lg">ROHIT</span>
-                <br />
-                <span className="text-[9px] text-primary tracking-[0.12em] uppercase">
-                  Tour &amp; Travel
-                </span>
-              </span>
+            <Link href="/" className="flex items-center">
+              <img src="/logo.png" alt="Rohit Tour & Travel" className="h-11 w-auto object-contain" />
             </Link>
             <button
               onClick={() => setSearchOpen(false)}
@@ -474,15 +449,8 @@ export default function Navbar() {
         }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-white/10">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 bg-primary flex items-center justify-center rotate-45">
-              <span className="text-white font-black -rotate-45 text-sm">
-                C
-              </span>
-            </div>
-            <span className="text-xl font-extrabold text-white italic">
-              CAR<span className="text-primary">OLA</span>
-            </span>
+          <Link href="/" className="flex items-center">
+            <img src="/logo.png" alt="Rohit Tour & Travel" className="h-11 w-auto object-contain" />
           </Link>
           <button
             onClick={() => setMobileOpen(false)}
@@ -684,7 +652,7 @@ export default function Navbar() {
             ))}
           </div>
           <Link
-            href="/checkout"
+            href="#"
             onClick={() => setMobileOpen(false)}
             className="block w-full bg-primary hover:bg-primary-dark text-white text-center font-black py-3.5 uppercase tracking-wider text-sm transition-all duration-300 shine-effect overflow-hidden"
           >

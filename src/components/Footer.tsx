@@ -49,18 +49,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 lg:px-8 pt-20 pb-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-5">
-              <div className="w-11 h-11 bg-primary flex items-center justify-center shrink-0">
-                <span className="text-white font-black text-xl">R</span>
-              </div>
-              <div className="leading-tight">
-                <span className="text-2xl font-black tracking-tight italic block leading-none">
-                  ROHIT
-                </span>
-                <span className="text-[11px] font-black text-primary tracking-[0.15em] uppercase block leading-none mt-0.5">
-                  Tour &amp; Travel
-                </span>
-              </div>
+            <Link href="/" className="inline-flex items-center mb-5">
+              <img src="/logo.png" alt="Rohit Tour & Travel" className="h-14 w-auto object-contain" />
             </Link>
             <p className="text-body text-sm leading-relaxed mb-6">
               We are a team of professional car rental experts dedicated to

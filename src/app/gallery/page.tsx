@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 
 const filters = [
   { id: "all", label: "All" },
@@ -14,41 +15,43 @@ const filters = [
 ];
 
 const gallery = [
-  { src: "https://picsum.photos/seed/rohit-1/800/600", cat: "fleet", label: "Premium Sedan" },
-  { src: "https://picsum.photos/seed/rohit-2/800/800", cat: "luxury", label: "Luxury Showroom" },
-  { src: "https://picsum.photos/seed/rohit-3/800/600", cat: "suv", label: "Adventure SUV" },
-  { src: "https://picsum.photos/seed/rohit-4/800/600", cat: "fleet", label: "City Hatchback" },
-  { src: "https://picsum.photos/seed/rohit-5/800/800", cat: "luxury", label: "Premium Interior" },
-  { src: "https://picsum.photos/seed/rohit-6/800/600", cat: "sedan", label: "Executive Sedan" },
-  { src: "https://picsum.photos/seed/rohit-7/800/600", cat: "suv", label: "Family SUV" },
-  { src: "https://picsum.photos/seed/rohit-8/800/600", cat: "delivery", label: "Doorstep Delivery" },
-  { src: "https://picsum.photos/seed/rohit-9/800/800", cat: "luxury", label: "Black Edition" },
-  { src: "https://picsum.photos/seed/rohit-10/800/600", cat: "fleet", label: "Compact Choice" },
-  { src: "https://picsum.photos/seed/rohit-11/800/600", cat: "sedan", label: "Business Class" },
-  { src: "https://picsum.photos/seed/rohit-12/800/600", cat: "delivery", label: "Airport Pickup" },
+  { src: "https://images.unsplash.com/photo-1748215210950-536c6621629a?w=800&q=85", cat: "fleet", label: "Toyota Innova" },
+  { src: "https://images.unsplash.com/photo-1748215041497-fdf9c4727681?w=800&q=85", cat: "fleet", label: "Hyundai Santro" },
+  { src: "https://images.unsplash.com/photo-1715249411747-63dc11f4507b?w=800&q=85", cat: "fleet", label: "City Commute" },
+  { src: "https://images.unsplash.com/photo-1769673459558-21dc11802e3c?w=800&q=85", cat: "luxury", label: "Mercedes AMG" },
+  { src: "https://images.unsplash.com/photo-1638299638532-8795cb0440a8?w=800&q=85", cat: "luxury", label: "Toyota Fortuner" },
+  { src: "https://images.unsplash.com/photo-1747944827952-7520103c4d5c?w=800&q=85", cat: "luxury", label: "Mercedes A-Class" },
+  { src: "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=800&q=85", cat: "suv", label: "Toyota Fortuner" },
+  { src: "https://images.unsplash.com/photo-1730829633900-0d97444c2bc6?w=800&q=85", cat: "suv", label: "Mahindra Thar" },
+  { src: "https://images.unsplash.com/photo-1624190094006-510057da58df?w=800&q=85", cat: "suv", label: "Mahindra Scorpio" },
+  { src: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&q=85", cat: "sedan", label: "Mercedes C Class" },
+  { src: "https://images.unsplash.com/photo-1750834115223-f3a3c2e50c79?w=800&q=85", cat: "delivery", label: "City Transit" },
+  { src: "https://images.unsplash.com/photo-1731066549944-f0ddac578a7a?w=800&q=85", cat: "suv", label: "Mahindra Thar" },
 ];
 
 const ITEMS_PER_PAGE = 6;
 
 export default function GalleryPage() {
   const [filter, setFilter] = useState("all");
-  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [currentPage, setCurrentPage] = useState(1);
   const [activeImage, setActiveImage] = useState<number | null>(null);
 
   const filtered = filter === "all" ? gallery : gallery.filter((g) => g.cat === filter);
-  const visible = filtered.slice(0, visibleCount);
-  const hasMore = visibleCount < filtered.length;
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  const safePage = Math.min(currentPage, totalPages || 1);
+  const startIndex = (safePage - 1) * ITEMS_PER_PAGE;
+  const paginatedItems = filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   const handleFilterChange = (id: string) => {
     setFilter(id);
-    setVisibleCount(ITEMS_PER_PAGE);
+    setCurrentPage(1);
   };
 
   return (
     <>
       <Navbar />
       <main>
-        <section className="relative pt-40 pb-28 lg:pt-48 lg:pb-32 overflow-hidden">
+        {/* <section className="relative pt-40 pb-28 lg:pt-48 lg:pb-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-bg-dark via-bg-dark to-secondary" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.15)_0%,transparent_60%)]" />
           <div className="absolute inset-0 grid-pattern opacity-20" />
@@ -65,9 +68,9 @@ export default function GalleryPage() {
               A curated showcase of the vehicles, service, and moments that define the Rohit Tour & Travel experience.
             </p>
           </div>
-        </section>
+        </section> */}
 
-        <section className="py-12 bg-bg-dark border-t border-white/5">
+        <section className="py-12 mt-20 bg-bg-dark border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <div className="flex flex-wrap gap-3 justify-center">
               {filters.map((f) => (
@@ -89,13 +92,13 @@ export default function GalleryPage() {
 
         <section className="pb-24 bg-bg-dark">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
-            {visible.length === 0 ? (
+            {paginatedItems.length === 0 ? (
               <div className="text-center py-20">
                 <p className="text-body text-lg">No images found in this category.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {visible.map((item) => {
+                {paginatedItems.map((item) => {
                   const idx = gallery.indexOf(item);
                   return (
                     <div
@@ -132,58 +135,55 @@ export default function GalleryPage() {
               </div>
             )}
 
-            {hasMore && (
-              <div className="flex justify-center mt-14">
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-14">
                 <button
-                  onClick={() => setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, filtered.length))}
-                  className="group relative bg-transparent border-2 border-primary text-white font-black px-10 py-4 transition-all duration-300 text-sm uppercase tracking-wider overflow-hidden"
+                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                  disabled={safePage <= 1}
+                  className="flex items-center gap-1.5 px-4 py-2.5 bg-white/5 border border-white/10 text-white/70 hover:text-white hover:border-primary/50 disabled:opacity-30 disabled:pointer-events-none transition-all duration-200 text-sm font-bold uppercase tracking-wider rounded-lg"
                 >
-                  <span className="absolute inset-0 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                  <span className="relative z-10 flex items-center gap-2">
-                    Load More
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Prev
+                </button>
+
+                <div className="flex gap-1.5">
+                  {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                    <button
+                      key={page}
+                      onClick={() => setCurrentPage(page)}
+                      className={`w-10 h-10 rounded-lg text-sm font-bold transition-all duration-200 ${
+                        page === safePage
+                          ? "bg-primary text-white shadow-lg shadow-primary/30 scale-105"
+                          : "bg-white/5 text-body hover:bg-white/10 hover:text-white border border-white/10"
+                      }`}
+                    >
+                      {page}
+                    </button>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                  disabled={safePage >= totalPages}
+                  className="flex items-center gap-1.5 px-4 py-2.5 bg-white/5 border border-white/10 text-white/70 hover:text-white hover:border-primary/50 disabled:opacity-30 disabled:pointer-events-none transition-all duration-200 text-sm font-bold uppercase tracking-wider rounded-lg"
+                >
+                  Next
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
             )}
           </div>
         </section>
 
-        <section className="py-20 lg:py-24 bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.08)_0%,transparent_60%)]" />
-          <div className="absolute inset-0 dot-pattern opacity-30" />
-          <div className="relative max-w-3xl mx-auto px-4 lg:px-8 text-center">
-            <div className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-body/60 mb-6">
-              <span className="w-8 h-px bg-primary/60" />
-              Stay Connected
-              <span className="w-8 h-px bg-primary/60" />
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter italic leading-[0.9] mb-5">
-              Subscribe to Our <span className="text-gradient-primary">Newsletter</span>
-            </h2>
-            <p className="text-body text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-              Get the latest updates on new vehicles, exclusive offers, and rental tips delivered straight to your inbox.
-            </p>
-            <form
-              onSubmit={(e) => e.preventDefault()}
-              className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-            >
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 bg-white/5 border border-white/10 text-white px-5 py-4 text-sm focus:outline-none focus:border-primary transition-colors duration-300 placeholder-gray-500"
-              />
-              <button
-                type="submit"
-                className="bg-primary hover:bg-primary-dark text-white font-black px-8 py-4 text-sm uppercase tracking-wider transition-all duration-300 whitespace-nowrap"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </section>
+        <Newsletter
+          title="Subscribe to Our Newsletter"
+          subtitle="Get the latest updates on new vehicles, exclusive offers, and rental tips delivered straight to your inbox."
+          benefitLabel="Gallery Updates Weekly"
+        />
       </main>
       <Footer />
 

@@ -1,9 +1,12 @@
+export const runtime = "nodejs";
+
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import Mailgen from "mailgen";
 import { connect } from "net";
+import path from "path";
+import fs from "fs";
 
-// Quick TCP check — returns true if the port is open (no SMTP handshake needed)
 function tcpCheck(host: string, port: number): Promise<boolean> {
   return new Promise((resolve) => {
     const socket = connect(port, host, () => {
@@ -18,15 +21,86 @@ function tcpCheck(host: string, port: number): Promise<boolean> {
   });
 }
 
-// Use built-in theme string (avoids filesystem path issues in Vercel serverless)
-const mailGenerator = new Mailgen({
-  theme: "default",
-  product: {
-    name: "Rohit Tour & Travel",
-    link: "https://rohittour.in",
-    logo: "https://rohittour.in/logo.png",
-  },
-});
+// ── Mailgen (lazy — avoids filesystem-path issues in bundled environments) ──
+
+const PRODUCT = {
+  name: "Rohit Tour & Travel",
+  link: "https://rohittour.in",
+  logo: "https://rohittour.in/logo.png",
+};
+
+let mailGenerator: Mailgen | null = null;
+
+function getMailGenerator(): Mailgen | null {
+  if (mailGenerator) return mailGenerator;
+
+  const candidates = (() => {
+    try {
+      const pkgPath = require.resolve("mailgen/package.json");
+      const root = path.dirname(pkgPath);
+      return [
+        path.join(root, "themes/default/index.html"),
+        path.join(process.cwd(), "node_modules/mailgen/themes/default/index.html"),
+      ];
+    } catch {
+      return [path.join(process.cwd(), "node_modules/mailgen/themes/default/index.html")];
+    }
+  })();
+
+  for (const themePath of candidates) {
+    try {
+      if (fs.existsSync(themePath)) {
+        mailGenerator = new Mailgen({
+          theme: {
+            path: themePath,
+            plaintextPath: themePath.replace("index.html", "index.txt"),
+          },
+          product: PRODUCT,
+        });
+        return mailGenerator;
+      }
+    } catch {
+      /* empty */
+    }
+  }
+
+  console.warn("Mailgen theme not found — emails will use fallback HTML");
+  return null;
+}
+
+function buildAdminHtml(data: {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}): string {
+  return `<!DOCTYPE html><html><body style="font-family:sans-serif;background:#111;color:#f3f4f6;padding:40px">
+    <div style="max-width:560px;margin:auto;background:#1a1a1a;border-radius:12px;padding:32px;border:1px solid #27272a">
+    <h2 style="color:#dc2626;margin:0 0 24px">New Contact Inquiry</h2>
+    <table style="width:100%;border-collapse:collapse">
+      <tr><td style="padding:8px 0;color:#9ca3af">Name</td><td style="padding:8px 0;color:#f3f4f6">${data.name}</td></tr>
+      <tr><td style="padding:8px 0;color:#9ca3af">Email</td><td style="padding:8px 0;color:#f3f4f6">${data.email}</td></tr>
+      <tr><td style="padding:8px 0;color:#9ca3af">Phone</td><td style="padding:8px 0;color:#f3f4f6">${data.phone || "Not provided"}</td></tr>
+      <tr><td style="padding:8px 0;color:#9ca3af">Subject</td><td style="padding:8px 0;color:#f3f4f6">${data.subject}</td></tr>
+      <tr><td style="padding:8px 0;color:#9ca3af">Message</td><td style="padding:8px 0;color:#f3f4f6">${data.message}</td></tr>
+    </table>
+    <a href="mailto:${data.email}" style="display:inline-block;margin-top:24px;padding:12px 24px;background:#dc2626;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold">Reply to ${data.name}</a>
+    <p style="margin-top:32px;color:#9ca3af;font-size:12px">Rohit Tour &amp; Travel</p>
+  </div></body></html>`;
+}
+
+function buildUserHtml(name: string): string {
+  return `<!DOCTYPE html><html><body style="font-family:sans-serif;background:#111;color:#f3f4f6;padding:40px">
+    <div style="max-width:560px;margin:auto;background:#1a1a1a;border-radius:12px;padding:32px;border:1px solid #27272a">
+    <h2 style="color:#dc2626;margin:0 0 16px">Thank You for Reaching Out!</h2>
+    <p>Hi ${name},</p>
+    <p>Thank you for contacting Rohit Tour &amp; Travel. We have received your inquiry and our team will review it shortly.</p>
+    <p>We aim to respond to all inquiries within 24 hours. For urgent requests, call us at <strong>+91-213-666-0027</strong>.</p>
+    <a href="https://rohittour.in/fleet" style="display:inline-block;margin-top:16px;padding:12px 24px;background:#dc2626;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold">Browse Our Fleet</a>
+    <p style="margin-top:32px;color:#9ca3af;font-size:12px">Rohit Tour &amp; Travel</p>
+  </div></body></html>`;
+}
 
 function getTransporter() {
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
@@ -54,18 +128,6 @@ interface ContactBody {
   message: string;
 }
 
-function devModeResponse(data: { name: string; email: string; phone: string; subject: string; message: string }) {
-  console.log("=== DEV MODE: Contact Form Submission ===");
-  console.log(data);
-  console.log("=== End of Submission ===");
-
-  return NextResponse.json({
-    success: true,
-    message:
-      "Thank you for reaching out! We have received your message and will get back to you within 24 hours.",
-  });
-}
-
 function validate(body: unknown): body is ContactBody {
   if (!body || typeof body !== "object") return false;
   const b = body as Record<string, unknown>;
@@ -79,6 +141,15 @@ function validate(body: unknown): body is ContactBody {
     typeof b.message === "string" &&
     b.message.trim().length >= 10
   );
+}
+
+function devModeResponse(data: ContactBody) {
+  console.log("=== DEV MODE: Contact Form Submission ===", data);
+  return NextResponse.json({
+    success: true,
+    message:
+      "Thank you for reaching out! We have received your message and will get back to you within 24 hours.",
+  });
 }
 
 export async function POST(request: Request) {
@@ -99,89 +170,89 @@ export async function POST(request: Request) {
       return devModeResponse({ name, email, phone, subject, message });
     }
 
-    // Fast TCP pre-check before attempting SMTP handshake
     const smtpHost = process.env.SMTP_HOST || "smtp.gmail.com";
     const smtpPort = Number(process.env.SMTP_PORT) || 587;
     const portOpen = await tcpCheck(smtpHost, smtpPort);
     if (!portOpen) {
-      console.warn(`SMTP unreachable (${smtpHost}:${smtpPort}) — falling back to dev mode`);
+      console.warn(`SMTP unreachable (${smtpHost}:${smtpPort}) — dev mode`);
       return devModeResponse({ name, email, phone, subject, message });
     }
 
     const fromEmail = process.env.FROM_EMAIL || process.env.SMTP_USER!;
     const adminEmail = process.env.CONTACT_EMAIL || process.env.SMTP_USER!;
+    const mg = getMailGenerator();
 
-    // ── 1. Admin notification email ──
-    const adminEmailBody = mailGenerator.generate({
-      body: {
-        title: "New Contact Inquiry",
-        intro: `You have received a new inquiry from ${name}.`,
-        table: {
-          data: [
-            { key: "Name", value: name },
-            { key: "Email", value: email },
-            { key: "Phone", value: phone || "Not provided" },
-            { key: "Subject", value: subject },
-            { key: "Message", value: message },
-          ],
-          columns: { customWidth: { key: "120px", value: "auto" } },
-        },
-        action: {
-          instructions:
-            "Click the button below to reply to this inquiry directly.",
-          button: {
-            color: "#dc2626",
-            text: `Reply to ${name}`,
-            link: `mailto:${email}`,
+    const adminHtml = mg
+      ? mg.generate({
+          body: {
+            title: "New Contact Inquiry",
+            intro: `You have received a new inquiry from ${name}.`,
+            table: {
+              data: [
+                { key: "Name", value: name },
+                { key: "Email", value: email },
+                { key: "Phone", value: phone || "Not provided" },
+                { key: "Subject", value: subject },
+                { key: "Message", value: message },
+              ],
+              columns: { customWidth: { key: "120px", value: "auto" } },
+            },
+            action: {
+              instructions: "Click the button below to reply directly.",
+              button: {
+                color: "#dc2626",
+                text: `Reply to ${name}`,
+                link: `mailto:${email}`,
+              },
+            },
+            signature: "Best regards",
           },
-        },
-        signature: "Best regards",
-      },
-    });
+        })
+      : buildAdminHtml({ name, email, phone, subject, message });
 
     await transporter.sendMail({
       from: `"Rohit Tour & Travel" <${fromEmail}>`,
       to: adminEmail,
       subject: `New Inquiry from ${name} — ${subject}`,
-      html: adminEmailBody,
+      html: adminHtml,
     });
 
-    // ── 2. User confirmation email ──
-    const userEmailBody = mailGenerator.generate({
-      body: {
-        title: "Thank You for Reaching Out!",
-        intro: [
-          `Hi ${name},`,
-          "Thank you for contacting Rohit Tour & Travel. We have received your inquiry and our team will review it shortly.",
-          "We aim to respond to all inquiries within 24 hours. If your request is urgent, please feel free to call us directly.",
-        ],
-        table: {
-          data: [
-            { key: "Subject", value: subject },
-            { key: "Message", value: message },
-          ],
-          columns: { customWidth: { key: "100px", value: "auto" } },
-        },
-        action: {
-          instructions:
-            "While you wait, explore our fleet of premium vehicles:",
-          button: {
-            color: "#dc2626",
-            text: "Browse Our Fleet",
-            link: "https://rohittour.in/fleet",
+    const userHtml = mg
+      ? mg.generate({
+          body: {
+            title: "Thank You for Reaching Out!",
+            intro: [
+              `Hi ${name},`,
+              "Thank you for contacting Rohit Tour & Travel. We have received your inquiry and our team will review it shortly.",
+              "We aim to respond to all inquiries within 24 hours. If your request is urgent, please feel free to call us directly.",
+            ],
+            table: {
+              data: [
+                { key: "Subject", value: subject },
+                { key: "Message", value: message },
+              ],
+              columns: { customWidth: { key: "100px", value: "auto" } },
+            },
+            action: {
+              instructions: "While you wait, explore our fleet of premium vehicles:",
+              button: {
+                color: "#dc2626",
+                text: "Browse Our Fleet",
+                link: "https://rohittour.in/fleet",
+              },
+            },
+            outro:
+              "If you have any urgent queries, call us at +91-213-666-0027 or reply to this email.",
+            signature: "Best regards",
           },
-        },
-        outro:
-          "If you have any urgent queries, call us at +91-213-666-0027 or reply to this email.",
-        signature: "Best regards",
-      },
-    });
+        })
+      : buildUserHtml(name);
 
     await transporter.sendMail({
       from: `"Rohit Tour & Travel" <${fromEmail}>`,
       to: email,
       subject: "Thank You for Contacting Rohit Tour & Travel",
-      html: userEmailBody,
+      html: userHtml,
     });
 
     return NextResponse.json({

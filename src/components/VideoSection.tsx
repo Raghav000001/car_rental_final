@@ -23,7 +23,7 @@ export default function VideoSection() {
       <section
         id="video-section"
         ref={sectionRef}
-        className="relative h-[500px] lg:h-[600px] overflow-hidden group"
+        className="relative h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden group"
       >
         <motion.div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] ease-out group-hover:scale-110"
@@ -76,7 +76,7 @@ export default function VideoSection() {
           >
             <button
               onClick={() => setShowModal(false)}
-              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors text-sm cursor-pointer z-10 flex items-center gap-2 font-bold uppercase tracking-widest"
+              className="absolute -top-12 right-0 sm:-top-14 text-white hover:text-primary transition-colors text-sm cursor-pointer z-10 flex items-center gap-2 font-bold uppercase tracking-widest"
             >
               <span>Close</span>
               <span className="w-8 h-8 rounded-full border border-white/30 hover:border-primary hover:bg-primary flex items-center justify-center transition-all">

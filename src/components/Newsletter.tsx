@@ -125,7 +125,7 @@ export default function Newsletter({
             </p>
 
             {/* Social proof */}
-            <div className="flex items-center gap-2 mt-8 text-body/60 text-xs">
+            <div className="flex items-center gap-2 mt-8 text-body/60 text-xs flex-wrap">
               <Users className="w-3.5 h-3.5" />
               <span>
                 Join{" "}
@@ -170,7 +170,7 @@ export default function Newsletter({
                   <button
                     type="submit"
                     disabled={status === "loading" || status === "success"}
-                    className="px-8 py-3.5 bg-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-primary-dark transition-all duration-300 disabled:opacity-70 shrink-0 cursor-pointer rounded-lg flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-8 py-3.5 bg-primary text-white font-bold text-sm uppercase tracking-widest hover:bg-primary-dark transition-all duration-300 disabled:opacity-70 shrink-0 cursor-pointer rounded-lg flex items-center justify-center gap-2"
                   >
                     {status === "loading" ? (
                       <>

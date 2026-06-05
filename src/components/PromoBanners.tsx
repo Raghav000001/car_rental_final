@@ -30,7 +30,7 @@ export default function PromoBanners() {
             <StaggerItem key={vehicle.id} direction="fade">
             <Link href={`/fleet/${vehicle.id}`}>
             <div
-              className="group relative h-[440px] overflow-hidden cursor-pointer shadow-premium border border-white/5 hover:border-primary/30 transition-all duration-500 shine-effect"
+              className="group relative h-[360px] lg:h-[440px] overflow-hidden cursor-pointer shadow-premium border border-white/5 hover:border-primary/30 transition-all duration-500 shine-effect"
             >
               <Image
                 src={vehicle.image}

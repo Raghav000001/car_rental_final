@@ -43,7 +43,7 @@ export default function TeamSection() {
           {teamMembers.map((member) => (
             <StaggerItem key={member.name} direction="up">
             <div className="text-center group">
-              <div className="relative mb-6 mx-auto w-44 h-44 lg:w-48 lg:h-48">
+              <div className="relative mb-6 mx-auto w-36 h-36 sm:w-44 sm:h-44 lg:w-48 lg:h-48">
                 <div className="absolute inset-0 rounded-full bg-primary/10 scale-0 group-hover:scale-110 transition-transform duration-500" />
                 <Image
                   src={member.img}

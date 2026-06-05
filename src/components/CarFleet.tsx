@@ -1,7 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { StaggerItem } from "@/components/ScrollReveal";
 import { formatPrice } from "@/lib/utils";
+import BookingModal from "@/components/BookingModal";
 
 const cars = [
   {
@@ -73,8 +77,21 @@ const cars = [
 ];
 
 export default function CarFleet() {
+  const [showBooking, setShowBooking] = useState(false);
+  const [bookingSlug, setBookingSlug] = useState<string | undefined>(undefined);
+
+  const handleBook = (slug: string) => {
+    setBookingSlug(slug);
+    setShowBooking(true);
+  };
+
+  const handleCloseBooking = () => {
+    setShowBooking(false);
+    setBookingSlug(undefined);
+  };
+
   return (
-    <section className="py-24 lg:py-32 bg-bg-dark relative overflow-hidden">
+    <><section className="py-24 lg:py-32 bg-bg-dark relative overflow-hidden">
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
@@ -172,11 +189,11 @@ export default function CarFleet() {
               </div>
 
               <div className="p-7 lg:p-8">
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-1">
                   <h3 className="text-2xl font-black text-white group-hover:text-primary transition-colors duration-300">
                     {car.name}
                   </h3>
-                  <div className="text-right">
+                  <div className="text-left sm:text-right">
                     <div className="flex items-baseline gap-1">
                       <span className="text-3xl font-black text-primary">{formatPrice(car.price)}</span>
                       <span className="text-xs text-body font-bold uppercase">/Day</span>
@@ -246,7 +263,10 @@ export default function CarFleet() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <button className="group/btn relative flex-1 bg-primary hover:bg-white text-white hover:text-secondary font-black py-4 transition-all duration-300 uppercase tracking-widest text-sm flex items-center justify-center gap-2 cursor-pointer overflow-hidden">
+                  <button
+                    onClick={() => handleBook(car.slug)}
+                    className="group/btn relative flex-1 bg-primary hover:bg-white text-white hover:text-secondary font-black py-4 transition-all duration-300 uppercase tracking-widest text-sm flex items-center justify-center gap-2 cursor-pointer overflow-hidden"
+                  >
                     <span className="relative z-10">Rent Now</span>
                     <svg
                       className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover/btn:translate-x-1"
@@ -293,6 +313,13 @@ export default function CarFleet() {
           ))}
         </div>
       </div>
-    </section>
-  );
+  </section>
+
+      {showBooking && (
+        <BookingModal
+          onClose={handleCloseBooking}
+          initialVehicleId={bookingSlug}
+        />
+      )}
+  </>);
 }

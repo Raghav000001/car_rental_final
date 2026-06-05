@@ -38,14 +38,14 @@ export default function AboutSection() {
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-heading tracking-tighter">
-                Planning a trip should be very <br />
+                Planning a trip should be very{" "}
                 <span className="text-gradient-primary">exciting adventure</span>
               </h2>
             </div>
 
             <div className="space-y-6">
               <StaggerItem direction="right">
-              <div className="group flex gap-5 p-6 bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-primary/20 transition-all duration-500">
+              <div className="group flex flex-col sm:flex-row gap-5 p-6 bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-primary/20 transition-all duration-500">
                 <div className="flex-shrink-0 w-14 h-14 bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
                   <svg
                     className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-500"
@@ -73,7 +73,7 @@ export default function AboutSection() {
               </div>
               </StaggerItem>
               <StaggerItem direction="right">
-              <div className="group flex gap-5 p-6 bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-primary/20 transition-all duration-500">
+              <div className="group flex flex-col sm:flex-row gap-5 p-6 bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-primary/20 transition-all duration-500">
                 <div className="flex-shrink-0 w-14 h-14 bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
                   <svg
                     className="w-7 h-7 text-primary group-hover:text-white transition-colors duration-500"

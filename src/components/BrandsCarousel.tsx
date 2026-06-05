@@ -17,7 +17,7 @@ export default function BrandsCarousel() {
 
       <div className="relative overflow-hidden">
         <div
-          className="flex gap-16 lg:gap-24 animate-marquee items-center"
+          className="flex gap-8 sm:gap-16 lg:gap-24 animate-marquee items-center"
           style={{ width: "fit-content" }}
         >
           {[...brands, ...brands].map((brand, index) => (

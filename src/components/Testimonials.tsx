@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -59,7 +59,17 @@ const cardVariants = {
 
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
-  const itemsPerPage = 2;
+  const [itemsPerPage, setItemsPerPage] = useState(1);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      setItemsPerPage(window.innerWidth >= 768 ? 2 : 1);
+    };
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
+  }, []);
+
   const maxIndex = testimonials.length - itemsPerPage;
 
   const prev = () => {

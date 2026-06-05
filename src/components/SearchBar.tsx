@@ -86,7 +86,7 @@ export default function SearchBar() {
               </div>
 
               {showDestination && (
-                <div className="absolute top-full left-0 w-80 mt-2 bg-white rounded-xl shadow-2xl z-50 overflow-hidden animate-fadeIn">
+                <div className="absolute top-full left-0 sm:left-4 w-[calc(100vw-2rem)] sm:w-80 mt-2 bg-white rounded-xl shadow-2xl z-50 overflow-hidden animate-fadeIn">
                   <div className="p-4 border-b border-gray-100">
                     <div className="relative">
                       <svg className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -198,7 +198,7 @@ export default function SearchBar() {
               </div>
 
               {showPeople && (
-                <div className="absolute top-full right-0 w-64 mt-2 bg-white rounded-xl shadow-2xl z-50 p-5 animate-fadeIn">
+                <div className="absolute top-full right-0 sm:right-4 w-[calc(100vw-2rem)] sm:w-64 mt-2 bg-white rounded-xl shadow-2xl z-50 p-5 animate-fadeIn">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <span className="font-black text-gray-900 text-sm">Adults</span>

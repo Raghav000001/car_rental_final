@@ -66,7 +66,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section className="relative h-screen min-h-[700px] bg-secondary overflow-hidden">
+    <section className="relative min-h-[600px] lg:min-h-[700px] lg:h-screen bg-secondary overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
 
       <div className="absolute inset-0">

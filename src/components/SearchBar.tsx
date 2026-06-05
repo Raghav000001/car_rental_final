@@ -225,7 +225,7 @@ export default function SearchBar() {
             <div className="flex-none p-4">
               <button
                 onClick={() => router.push("/fleet")}
-                className="w-full lg:w-44 h-14 bg-primary hover:bg-primary-dark md:p-4 text-white font-black sm:p-1.5 rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 cursor-pointer text-lg"
+                className="w-full lg:w-44 h-14 bg-primary hover:bg-primary-dark p-3 md:p-4 text-white font-black rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 cursor-pointer text-lg"
               >
                 Search
               </button>

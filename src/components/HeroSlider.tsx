@@ -88,7 +88,7 @@ export default function HeroSlider() {
         <div className="absolute inset-0 bg-linear-to-t from-secondary/80 via-transparent to-secondary/40" />
       </div>
 
-      <div className="relative h-full flex items-center pt-20 sm:pt-40 lg:pt-44 pb-16 sm:pb-0">
+      <div className="relative h-full flex items-center pt-24 sm:pt-40 lg:pt-44 pb-16 sm:pb-0">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full">
           <div key={current} className="animate-fadeInUp max-w-full sm:max-w-3xl">
             <div className="flex items-center gap-3 mb-6">

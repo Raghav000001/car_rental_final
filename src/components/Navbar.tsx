@@ -44,14 +44,16 @@ const navItems: { label: string; links: NavLink[] }[] = [
   {
     label: "News",
     links: [
-      { label: "Blog Grid", href: "#" },
+      { label: "Blog Grid", href: "/news" },
       { label: "Blog Standard", href: "#" },
       { label: "Blog Details", href: "#" },
     ],
   },
   {
     label: "Contact",
-    links: [],
+    links: [
+      { label: "Contact Us", href: "/contact" },
+    ],
   },
 ];
 

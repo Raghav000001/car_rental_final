@@ -520,3 +520,18 @@ export const allTags: Array<{ id: string; label: string }> = [
 export const PRICE_RANGE: [number, number] = [5, 50];
 
 export const ITEMS_PER_PAGE = 6;
+
+export function getVehicleBySlug(slug: string): Vehicle | undefined {
+  return vehicles.find((v) => v.id === slug);
+}
+
+export function getRelatedVehicles(
+  slug: string,
+  count: number = 3
+): Vehicle[] {
+  const vehicle = getVehicleBySlug(slug);
+  if (!vehicle) return [];
+  return vehicles
+    .filter((v) => v.id !== slug && v.category === vehicle.category)
+    .slice(0, count);
+}

@@ -142,11 +142,12 @@ export default function VehicleCard({
           >
             Book Now
           </Link>
-          <button
-            className="flex-[0.6] border border-white/20 hover:border-primary text-body hover:text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all duration-300 cursor-pointer"
+          <Link
+            href={`/fleet/${vehicle.id}`}
+            className="flex-[0.6] border border-white/20 hover:border-primary text-body hover:text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all duration-300"
           >
             Details
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>

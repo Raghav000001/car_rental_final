@@ -4,6 +4,7 @@ import { StaggerItem } from "@/components/ScrollReveal";
 const cars = [
   {
     name: "Maruti Swift",
+    slug: "swift",
     image: "https://images.unsplash.com/photo-1718173402850-c20bb4ba3e2e?w=600&q=80",
     description: "India's favourite hatchback known for its peppy performance, sporty looks, and excellent fuel efficiency.",
     doors: "4 Doors",
@@ -14,6 +15,7 @@ const cars = [
   },
   {
     name: "Toyota Fortuner",
+    slug: "fortuner",
     image: "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=600&q=80",
     description: "India's most trusted full-size SUV with powerful engine, commanding road presence, and off-road capability.",
     doors: "4 Doors",
@@ -24,6 +26,7 @@ const cars = [
   },
   {
     name: "Toyota Innova",
+    slug: "ertiga",
     image: "https://images.unsplash.com/photo-1748215210950-536c6621629a?w=600&q=80",
     description: "The ultimate family MPV with spacious three-row seating, bulletproof reliability, and ride comfort.",
     doors: "4 Doors",
@@ -34,6 +37,7 @@ const cars = [
   },
   {
     name: "Maruti Baleno",
+    slug: "baleno",
     image: "https://images.unsplash.com/photo-1647242008102-81d25ba13aba?w=600&q=80",
     description: "Premium hatchback with a sleek design, feature-packed cabin, and class-leading boot space for city drives.",
     doors: "4 Doors",
@@ -44,6 +48,7 @@ const cars = [
   },
   {
     name: "Maruti Vitara Brezza",
+    slug: "creta",
     image: "https://images.unsplash.com/photo-1708589413831-8c24638bc0db?w=600&q=80",
     description: "India's best-selling compact SUV combining bold SUV styling with efficient engine and modern features.",
     doors: "4 Doors",
@@ -54,6 +59,7 @@ const cars = [
   },
   {
     name: "Hyundai Santro",
+    slug: "wagonr",
     image: "https://images.unsplash.com/photo-1748215041497-fdf9c4727681?w=600&q=80",
     description: "Compact city car with a tall-boy design, easy manoeuvrability, and great mileage for daily commuting.",
     doors: "4 Doors",
@@ -92,7 +98,7 @@ export default function CarFleet() {
               <span>6 Available Now</span>
             </div>
             <Link
-              href="#"
+              href="/fleet"
               className="group inline-flex items-center gap-3 font-black text-white hover:text-primary transition-colors uppercase tracking-widest text-sm"
             >
               <span>View All Cars</span>
@@ -253,9 +259,10 @@ export default function CarFleet() {
                       />
                     </svg>
                   </button>
-                  <button
-                    className="w-12 h-12 border-2 border-white/20 hover:border-primary hover:bg-primary/10 text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
-                    aria-label="Quick view"
+                  <Link
+                    href={`/fleet/${car.slug}`}
+                    className="w-12 h-12 border-2 border-white/20 hover:border-primary hover:bg-primary/10 text-white flex items-center justify-center transition-all duration-300"
+                    aria-label="View details"
                   >
                     <svg
                       className="w-5 h-5"
@@ -275,7 +282,7 @@ export default function CarFleet() {
                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                       />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

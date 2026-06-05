@@ -18,15 +18,9 @@ function tcpCheck(host: string, port: number): Promise<boolean> {
   });
 }
 
-// Next.js Turbopack bundling breaks `__dirname`, so we use process.cwd()
-// to construct the absolute path to Mailgen's bundled theme files.
-// See: https://github.com/eladnava/mailgen#next-js
+// Use built-in theme string (avoids filesystem path issues in Vercel serverless)
 const mailGenerator = new Mailgen({
-  theme: {
-    path: process.cwd() + "/node_modules/mailgen/themes/default/index.html",
-    plaintextPath:
-      process.cwd() + "/node_modules/mailgen/themes/default/index.txt",
-  },
+  theme: "default",
   product: {
     name: "Rohit Tour & Travel",
     link: "https://rohittour.in",

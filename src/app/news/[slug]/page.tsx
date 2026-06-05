@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ChevronLeft, Calendar, Clock, User, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -126,10 +127,12 @@ export default async function ArticlePage({
           <div className="max-w-5xl mx-auto px-4 lg:px-8">
             <ScrollReveal>
               <div className="relative rounded-2xl overflow-hidden aspect-[21/9] lg:aspect-[2.8/1] shadow-premium">
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
@@ -222,11 +225,12 @@ export default async function ArticlePage({
                     <ScrollReveal delay={i * 0.1}>
                       <article className="group glass rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 cursor-pointer h-full flex flex-col">
                         <div className="relative aspect-[16/10] overflow-hidden">
-                          <img
+                          <Image
                             src={rel.image}
                             alt={rel.title}
-                            loading="lazy"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                           <div className="absolute top-3 left-3">

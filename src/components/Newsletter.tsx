@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Mail,
   Loader2,
@@ -58,11 +59,12 @@ export default function Newsletter({
           animate={{ scale: 1.15 }}
           transition={{ duration: 12, ease: "easeOut", repeat: Infinity, repeatType: "reverse" }}
         >
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1624190094006-510057da58df?w=1600&q=85"
             alt=""
-            className="w-full h-full object-cover"
-            loading="lazy"
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
         </motion.div>
         {/* Lighter, more transparent overlays so the car is visible */}

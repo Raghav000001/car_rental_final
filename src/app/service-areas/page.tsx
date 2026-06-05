@@ -37,14 +37,6 @@ const cities = [
   { name: "Haridwar", state: "Uttarakhand", tier: "Tourist", isHQ: false, code: "TR" },
 ];
 
-const tierColors: Record<string, string> = {
-  "Headquarters": "bg-primary text-white border-primary",
-  "Tier 1": "bg-white/10 text-white border-white/20 group-hover:bg-primary/30 group-hover:border-primary/50",
-  "Tier 2": "bg-white/5 text-body border-white/10 group-hover:bg-primary/20 group-hover:border-primary/40 group-hover:text-white",
-  "Tier 3": "bg-white/5 text-body/70 border-white/10 group-hover:bg-primary/20 group-hover:border-primary/40 group-hover:text-white",
-  "Tourist": "bg-white/5 text-body border-white/10 group-hover:bg-primary/20 group-hover:border-primary/40 group-hover:text-white",
-};
-
 export default function ServiceAreasPage() {
   const [popupOpen, setPopupOpen] = useState(true);
 

@@ -46,3 +46,6 @@ next-env.d.ts
 .sisyphus/
 AGENTS.md
 CLAUDE.md
+
+# audit reports
+PRODUCTION_AUDIT.md

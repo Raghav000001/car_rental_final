@@ -369,11 +369,13 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {team.map((member) => (
                 <div key={member.name} className="group text-center">
-                  <div className="relative overflow-hidden mb-5">
-                    <img
+                  <div className="relative overflow-hidden mb-5 aspect-[3/4]">
+                    <Image
                       src={member.image}
                       alt={member.name}
-                      className="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-[1.15]"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.15]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 flex justify-center gap-2 translate-y-full group-hover:translate-y-0 transition-transform duration-500">

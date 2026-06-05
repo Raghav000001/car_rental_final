@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
@@ -106,11 +107,13 @@ export default function GalleryPage() {
                       className="group relative overflow-hidden rounded-2xl bg-secondary border border-white/5 cursor-pointer"
                       onClick={() => setActiveImage(idx)}
                     >
-                      <div className="aspect-[4/3] overflow-hidden">
-                        <img
+                      <div className="relative aspect-[4/3] overflow-hidden">
+                        <Image
                           src={item.src}
                           alt={item.label}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -202,9 +205,11 @@ export default function GalleryPage() {
             </svg>
           </button>
           <div className="relative max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
-            <img
+            <Image
               src={gallery[activeImage].src}
               alt={gallery[activeImage].label}
+              width={1200}
+              height={800}
               className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-premium"
             />
             <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-secondary to-transparent rounded-b-2xl">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { StaggerItem } from "@/components/ScrollReveal";
 import ParallaxSection from "@/components/ParallaxSection";
 
@@ -13,11 +14,12 @@ export default function AboutSection() {
           <ParallaxSection speed={0.2} offset={120}>
           <div className="relative">
             <div className="relative z-10">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1665206220348-0f5d49b5b8b5?w=600&q=80"
                 alt="Indian sedan car on city road"
+                width={600}
+                height={400}
                 className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                loading="lazy"
               />
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/40 -z-10" />
             </div>

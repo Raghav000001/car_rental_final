@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
@@ -144,11 +145,12 @@ export default function Testimonials() {
                       <div className="flex items-center gap-4 mb-6">
                         <div className="relative shrink-0">
                           <div className="absolute inset-0 rounded-full bg-primary/20 scale-0 group-hover:scale-110 transition-transform duration-500" />
-                          <img
+                          <Image
                             src={t.avatar}
                             alt={t.name}
-                            className="relative w-16 h-16 rounded-full object-cover border-2 border-white/10 group-hover:border-primary/60 transition-all duration-500"
-                            loading="lazy"
+                            width={64}
+                            height={64}
+                            className="w-16 h-16 rounded-full object-cover border-2 border-white/10 group-hover:border-primary/60 transition-all duration-500"
                           />
                         </div>
                         <div>

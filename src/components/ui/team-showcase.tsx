@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   FaLinkedinIn,
   FaTwitter,
@@ -165,10 +166,12 @@ function PhotoCard({
       onMouseEnter={() => onHover(member.id)}
       onMouseLeave={() => onHover(null)}
     >
-      <img
+      <Image
         src={member.image}
         alt={member.name}
-        className="w-full h-full object-cover transition-[filter] duration-500"
+        fill
+        sizes="400px"
+        className="object-cover transition-[filter] duration-500"
         style={{
           filter: isActive
             ? "grayscale(0) brightness(1)"

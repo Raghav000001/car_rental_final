@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { categoryLabels } from "@/app/fleet/vehicleData";
 import type { Vehicle, VehicleType } from "@/app/fleet/types";
 
@@ -57,11 +58,12 @@ export default function VehicleCard({
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
 
       <div className="relative aspect-[16/11] overflow-hidden">
-        <img
+        <Image
           src={vehicle.image}
           alt={vehicle.name}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-secondary via-transparent to-transparent" />
 
@@ -137,7 +139,7 @@ export default function VehicleCard({
 
         <div className="flex gap-2">
           <Link
-            href="#"
+            href="/contact"
             className="flex-1 bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all duration-300 shadow-glow-red hover:shadow-glow-red-strong"
           >
             Book Now

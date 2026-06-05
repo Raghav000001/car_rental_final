@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import {
   ArrowUpRight,
   Car,
@@ -124,27 +125,32 @@ export default function TimeLine_01({
   useEffect(() => {
     if (!sentinelRefs.current.length) return;
 
-    let frame = 0;
-    const updateActiveByProximity = () => {
-      frame = requestAnimationFrame(updateActiveByProximity);
-      const centerY = window.innerHeight / 3;
-      let bestIndex = 0;
-      let bestDist = Infinity;
-      sentinelRefs.current.forEach((node, i) => {
-        if (!node) return;
-        const rect = node.getBoundingClientRect();
-        const mid = rect.top + rect.height / 2;
-        const dist = Math.abs(mid - centerY);
-        if (dist < bestDist) {
-          bestDist = dist;
-          bestIndex = i;
-        }
-      });
-      setActiveIndex(bestIndex);
-    };
+    const observer = new IntersectionObserver(
+      () => {
+        let bestIndex = 0;
+        let bestDist = Infinity;
+        const centerY = window.innerHeight / 3;
 
-    frame = requestAnimationFrame(updateActiveByProximity);
-    return () => cancelAnimationFrame(frame);
+        sentinelRefs.current.forEach((node, i) => {
+          if (!node) return;
+          const rect = node.getBoundingClientRect();
+          const mid = rect.top + rect.height / 2;
+          const dist = Math.abs(mid - centerY);
+          if (dist < bestDist) {
+            bestDist = dist;
+            bestIndex = i;
+          }
+        });
+        setActiveIndex(bestIndex);
+      },
+      { threshold: 0, rootMargin: "-33% 0px -33% 0px" },
+    );
+
+    sentinelRefs.current.forEach((node) => {
+      if (node) observer.observe(node);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -213,11 +219,12 @@ export default function TimeLine_01({
                   }`}
                 >
                   {entry.image && (
-                    <img
+                    <Image
                       src={entry.image}
                       alt={`${entry.title}`}
+                      width={800}
+                      height={288}
                       className="mb-4 w-full h-72 rounded-lg object-cover"
-                      loading="lazy"
                     />
                   )}
                   <div className="space-y-4">

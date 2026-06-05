@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Map, MapControls, MapMarker, MarkerContent, MarkerPopup } from "@/components/ui/mapcn-map-arc";
 
 const locations = [
@@ -109,7 +110,7 @@ export default function ServiceLocations() {
                           key={i}
                           className="w-9 h-9 rounded-full border-2 border-white bg-gray-700 overflow-hidden ring-2 ring-primary/20 hover:ring-primary transition-all"
                         >
-                          <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
+                          <Image src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" width={36} height={36} className="w-full h-full object-cover" />
                         </div>
                       ))}
                     </div>

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 import {
@@ -69,11 +70,12 @@ export default function NewsFeed() {
                 <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[400px]">
-                  <img
+                  <Image
                     src={featured.image}
                     alt={featured.title}
-                    loading="eager"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -186,11 +188,12 @@ export default function NewsFeed() {
                       className="flex flex-col flex-1"
                     >
                     <div className="relative aspect-[16/10] overflow-hidden">
-                      <img
+                      <Image
                         src={article.image}
                         alt={article.title}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                       <div className="absolute top-3 left-3">

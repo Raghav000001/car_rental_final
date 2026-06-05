@@ -1,6 +1,5 @@
 "use client";
 
-import { useMemo } from "react";
 import type { FilterState, VehicleType, Transmission, FuelType, SeatingCapacity, AcType, PopularTag, SortOption } from "@/app/fleet/types";
 import { categoryLabels, fuelLabels, allTags, PRICE_RANGE } from "@/app/fleet/vehicleData";
 

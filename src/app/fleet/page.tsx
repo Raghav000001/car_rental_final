@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal, { StaggerItem } from "@/components/ScrollReveal";
@@ -147,15 +148,12 @@ export default function FleetPage() {
     return result;
   }, [filters, sort]);
 
-  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+  const safePage = Math.min(currentPage, totalPages);
   const paginated = filtered.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE,
+    (safePage - 1) * ITEMS_PER_PAGE,
+    safePage * ITEMS_PER_PAGE,
   );
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [filters, sort]);
 
   const handleCompare = useCallback(
     (id: string) => {
@@ -204,11 +202,12 @@ export default function FleetPage() {
       <main>
         <section className="relative pt-44 pb-24 lg:pt-52 lg:pb-28 overflow-hidden bg-secondary">
           <div className="absolute inset-0">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1600&q=80"
               alt=""
-              className="w-full h-full object-cover opacity-50"
-              loading="lazy"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-50"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-secondary/30 to-secondary/60" />
@@ -269,7 +268,7 @@ export default function FleetPage() {
                 </svg>
               </a>
               <Link
-                href="#"
+                href="/contact"
                 className="group inline-flex items-center gap-3 border-2 border-white/20 hover:border-primary bg-white/5 backdrop-blur-sm hover:bg-primary/10 text-white font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 uppercase tracking-wider text-xs sm:text-sm cursor-pointer"
               >
                 Book Your Vehicle
@@ -490,12 +489,13 @@ export default function FleetPage() {
                         >
                           <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
                           <div className="flex flex-col sm:flex-row">
-                            <div className="sm:w-2/5 aspect-[4/3] sm:aspect-auto overflow-hidden">
-                              <img
+                            <div className="sm:w-2/5 aspect-[4/3] sm:aspect-auto overflow-hidden relative">
+                              <Image
                                 src={v.image}
                                 alt={v.name}
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                loading="lazy"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                                className="object-cover transition-transform duration-700 group-hover:scale-110"
                               />
                             </div>
                             <div className="sm:w-3/5 p-6 lg:p-8 flex flex-col justify-center">
@@ -525,7 +525,7 @@ export default function FleetPage() {
                                 </div>
                               </div>
                               <Link
-                                href="#"
+                                href="/contact"
                                 className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition-all duration-300 shadow-glow-red w-fit"
                               >
                                 Book Now
@@ -595,7 +595,7 @@ export default function FleetPage() {
               </div>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                {whyChooseUs.map((item, i) => (
+                {whyChooseUs.map((item) => (
                   <StaggerItem key={item.title} direction="up">
                     <div className="group relative bg-gradient-to-b from-white/[0.04] to-white/[0.01] border border-white/10 hover:border-primary/40 rounded-2xl p-6 lg:p-8 transition-all duration-500 h-full">
                       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -616,11 +616,12 @@ export default function FleetPage() {
 
         <section className="py-20 lg:py-24 bg-secondary relative overflow-hidden">
           <div className="absolute inset-0">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80"
               alt=""
-              className="w-full h-full object-cover opacity-40"
-              loading="lazy"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-40"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 via-secondary/30 to-secondary/60" />
@@ -668,7 +669,7 @@ export default function FleetPage() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <Link
-                href="#"
+                href="/contact"
                 className="group relative inline-flex items-center gap-3 bg-primary hover:bg-white text-secondary font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 overflow-hidden cursor-pointer shadow-glow-red hover:shadow-glow-red-strong"
               >
                 <span className="relative z-10 uppercase tracking-wider text-xs sm:text-sm">

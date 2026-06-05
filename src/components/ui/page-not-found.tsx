@@ -35,20 +35,20 @@ function MessageDisplay() {
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h1 className="text-[35px] font-semibold text-black m-[1%]">
+        <h1 className="text-[35px] font-semibold m-[1%]">
           Page Not Found
         </h1>
-        <div className="text-[80px] font-bold text-black m-[1%]">
+        <div className="text-[80px] font-bold text-primary m-[1%]">
           404
         </div>
-        <p className="text-[15px] w-1/2 min-w-[40%] text-center text-black m-[1%]">
+        <p className="text-[15px] w-1/2 min-w-[40%] text-center text-body m-[1%]">
           The page you are looking for might have been removed, had its name
           changed, or is temporarily unavailable.
         </p>
         <div className="flex gap-6 mt-8">
           <button
             onClick={() => router.back()}
-            className="group text-black border-2 border-black hover:bg-black hover:text-white transition-all duration-300 ease-in-out px-6 py-2 h-auto text-base font-medium flex items-center gap-2 hover:scale-105 cursor-pointer"
+            className="group text-white border-2 border-white/30 hover:bg-white hover:text-secondary transition-all duration-300 ease-in-out px-6 py-2 h-auto text-base font-medium flex items-center gap-2 hover:scale-105 cursor-pointer"
           >
             <ArrowLeft
               size={20}

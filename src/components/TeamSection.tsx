@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { StaggerItem } from "@/components/ScrollReveal";
 
 const teamMembers = [
@@ -44,11 +45,12 @@ export default function TeamSection() {
             <div className="text-center group">
               <div className="relative mb-6 mx-auto w-44 h-44 lg:w-48 lg:h-48">
                 <div className="absolute inset-0 rounded-full bg-primary/10 scale-0 group-hover:scale-110 transition-transform duration-500" />
-                <img
+                <Image
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-full rounded-full object-cover border-[3px] border-white/10 group-hover:border-primary transition-all duration-500"
-                  loading="lazy"
+                  fill
+                  sizes="192px"
+                  className="rounded-full object-cover border-[3px] border-white/10 group-hover:border-primary transition-all duration-500"
                 />
               </div>
               <h5 className="text-xl font-black text-heading mb-1">

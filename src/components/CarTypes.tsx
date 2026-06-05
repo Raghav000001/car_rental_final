@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { StaggerItem } from "@/components/ScrollReveal";
 
 const carTypes = [
@@ -58,11 +59,12 @@ export default function CarTypes() {
               <div className="relative mb-6">
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative aspect-square rounded-full overflow-hidden border-2 border-white/10 transition-all duration-500 group-hover:border-primary group-hover:rotate-6 shadow-lg group-hover:shadow-glow-red">
-                  <img
+                  <Image
                     src={type.image}
                     alt={type.label}
-                    className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-125"
-                    loading="lazy"
+                    fill
+                    sizes="200px"
+                    className="object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-125"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-secondary/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
                   <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-primary text-white flex flex-col items-center justify-center shadow-lg transform scale-0 group-hover:scale-100 transition-transform duration-500 z-10 border-2 border-white/20">

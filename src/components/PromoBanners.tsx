@@ -42,7 +42,7 @@ export default function PromoBanners() {
             <div className="w-12 h-[2px] bg-primary" />
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter">
-            Today's <span className="text-gradient-primary">Best Deals</span>
+            Today&apos;s <span className="text-gradient-primary">Best Deals</span>
           </h2>
         </div>
 

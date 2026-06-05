@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export default function ReviewForm() {
   const [name, setName] = useState("");
@@ -9,12 +9,21 @@ export default function ReviewForm() {
   const [hoverRating, setHoverRating] = useState(0);
   const [review, setReview] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (resetTimerRef.current) {
+        clearTimeout(resetTimerRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !review.trim() || rating === 0) return;
     setSubmitted(true);
-    setTimeout(() => {
+    resetTimerRef.current = setTimeout(() => {
       setSubmitted(false);
       setName("");
       setEmail("");

@@ -101,6 +101,7 @@ export const Map = forwardRef<MapLibreMap, MapProps>(function Map(
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
   const [ready, setReady] = useState(false);
+  const [mapInstance, setMapInstance] = useState<MapLibreMap | null>(null);
   const markersRef = useRef<MarkerRegistry>({} as MarkerRegistry);
 
   const registerMarker = useCallback((id: string, marker: MapLibreMarker) => {
@@ -153,12 +154,14 @@ export const Map = forwardRef<MapLibreMap, MapProps>(function Map(
     }
 
     mapRef.current = instance;
+    setMapInstance(instance);
 
     return () => {
       Object.values(markersRef.current).forEach((m) => m.remove());
       markersRef.current = {} as MarkerRegistry;
       instance.remove();
       mapRef.current = null;
+      setMapInstance(null);
       setReady(false);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -176,16 +179,16 @@ export const Map = forwardRef<MapLibreMap, MapProps>(function Map(
     m.setStyle(resolvedStyle);
   }, [resolvedStyle]);
 
-  useImperativeHandle(ref, () => mapRef.current as MapLibreMap, [ready]);
+  useImperativeHandle(ref, () => mapInstance as MapLibreMap, [mapInstance]);
 
   const ctxValue = useMemo<MapContextValue>(
     () => ({
-      map: mapRef.current,
+      map: mapInstance,
       registerMarker,
       unregisterMarker,
       getMarker,
     }),
-    [ready, registerMarker, unregisterMarker, getMarker],
+    [mapInstance, registerMarker, unregisterMarker, getMarker],
   );
 
   return (
@@ -224,29 +227,34 @@ export function MapMarker({
   className,
 }: MapMarkerProps) {
   const { map, registerMarker, unregisterMarker } = useMapContext("MapMarker");
-  const idRef = useRef<string>("");
   const markerRef = useRef<MapLibreMarker | null>(null);
-  const [target, setTarget] = useState<HTMLElement | null>(null);
 
-  if (!idRef.current) {
-    idRef.current = `marker-${++markerIdCounter}`;
-  }
-  const id = idRef.current;
+  const id = useMemo(() => `marker-${++markerIdCounter}`, []);
+  // Stable DOM element for the marker wrapper. Created once with lazy useState
+  // initializer so it survives renders without ref-in-render issues.
+  const [markerEl] = useState(() => {
+    const el = document.createElement("div");
+    el.style.position = "relative";
+    return el;
+  });
 
+  // DOM element mutation below is for a third-party map library (MapLibre).
+  // The react-hooks/immutability rule flags these DOM API calls as state
+  // mutation, but className/addEventListener on an off-DOM element are
+  // legitimate operations not covered by the rule's intent.
+  /* eslint-disable react-hooks/immutability */
   useEffect(() => {
     if (!map) return;
 
-    const el = document.createElement("div");
-    el.className = className ?? "";
-    el.style.position = "relative";
-
-    const marker = new MapLibreMarkerCtor({ element: el, draggable })
-      .setLngLat([longitude, latitude])
-      .addTo(map);
+    markerEl.className = className ?? "";
 
     if (onClick) {
-      el.addEventListener("click", onClick);
+      markerEl.addEventListener("click", onClick);
     }
+
+    const marker = new MapLibreMarkerCtor({ element: markerEl, draggable })
+      .setLngLat([longitude, latitude])
+      .addTo(map);
 
     if (draggable && onDragEnd) {
       marker.on("dragend", () => {
@@ -257,22 +265,24 @@ export function MapMarker({
 
     markerRef.current = marker;
     registerMarker(id, marker);
-    setTarget(el);
 
     return () => {
+      if (onClick) {
+        markerEl.removeEventListener("click", onClick);
+      }
       marker.remove();
       unregisterMarker(id);
       markerRef.current = null;
-      setTarget(null);
     };
-  }, [map, longitude, latitude, draggable]);
+  }, [map, id, registerMarker, unregisterMarker, longitude, latitude, draggable, onClick, onDragEnd, markerEl, className]);
+  /* eslint-enable react-hooks/immutability */
 
   useEffect(() => {
     if (!markerRef.current) return;
     markerRef.current.setLngLat([longitude, latitude]);
   }, [longitude, latitude]);
 
-  if (!map || !target) return null;
+  if (!map) return null;
 
   const childArray = Children.toArray(children);
 
@@ -287,11 +297,11 @@ export function MapMarker({
           boxShadow: "0 0 0 4px rgba(220,38,38,0.25)",
         }}
       />,
-      target,
+      markerEl,
     );
   }
 
-  return createPortal(<>{children}</>, target);
+  return createPortal(<>{children}</>, markerEl);
 }
 
 export type MarkerContentProps = {

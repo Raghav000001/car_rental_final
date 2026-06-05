@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   ChevronLeft,
@@ -167,10 +168,12 @@ export default async function VehicleDetailPage({
               {/* ── Image ── */}
               <ScrollReveal>
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-[5/4] shadow-premium">
-                  <img
+                  <Image
                     src={vehicle.image}
                     alt={vehicle.name}
-                    className="w-full h-full object-cover"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute top-4 left-4 flex flex-wrap gap-2">
@@ -490,11 +493,12 @@ export default async function VehicleDetailPage({
                     <ScrollReveal delay={i * 0.1}>
                       <article className="group glass rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-500 cursor-pointer h-full flex flex-col">
                         <div className="relative aspect-[4/3] overflow-hidden">
-                          <img
+                          <Image
                             src={rel.image}
                             alt={rel.name}
-                            loading="lazy"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                            fill
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                           <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">

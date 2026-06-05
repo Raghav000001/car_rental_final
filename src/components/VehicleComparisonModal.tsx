@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import type { CompareVehicle } from "@/app/fleet/types";
 import { categoryLabels, fuelLabels } from "@/app/fleet/vehicleData";
@@ -116,11 +117,12 @@ export default function VehicleComparisonModal({
               {vehicles.map((v) => (
                 <div key={v.id} className="text-center">
                   <div className="aspect-[4/3] rounded-xl overflow-hidden bg-white/5 mb-3">
-                    <img
+                    <Image
                       src={v.image}
                       alt={v.name}
-                      className="w-full h-full object-cover"
-                      loading="lazy"
+                      fill
+                      sizes="200px"
+                      className="object-cover"
                     />
                   </div>
                   <h3 className="text-white font-black text-sm leading-tight">{v.name}</h3>

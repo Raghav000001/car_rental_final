@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { StaggerItem } from "@/components/ScrollReveal";
 
 const cars = [
@@ -89,7 +90,7 @@ export default function CarFleet() {
               Our Car <span className="text-gradient-primary">Fleet</span>
             </h2>
             <p className="text-body mt-4 max-w-md font-medium">
-              India's favourite cars — from hatchbacks to SUVs — at budget-friendly prices.
+              India&apos;s favourite cars — from hatchbacks to SUVs — at budget-friendly prices.
             </p>
           </div>
           <div className="flex items-center gap-4">
@@ -124,11 +125,12 @@ export default function CarFleet() {
               className="group relative bg-bg-light overflow-hidden shadow-premium hover:shadow-glow-red border border-white/5 hover:border-primary/30 transition-all duration-500 shine-effect"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <img
+                <Image
                   src={car.image}
                   alt={car.name}
-                  className="w-full h-full object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-light via-bg-light/30 to-transparent opacity-60" />
 

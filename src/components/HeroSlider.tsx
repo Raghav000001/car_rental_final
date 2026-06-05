@@ -66,7 +66,7 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] lg:h-screen bg-secondary overflow-hidden">
+    <section className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] lg:h-screen bg-secondary overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
 
       <div className="absolute inset-0">
@@ -88,9 +88,9 @@ export default function HeroSlider() {
         <div className="absolute inset-0 bg-linear-to-t from-secondary/80 via-transparent to-secondary/40" />
       </div>
 
-      <div className="relative h-full flex items-center pt-36 sm:pt-40 lg:pt-44 xl:pt-48">
+      <div className="relative h-full flex items-center pt-20 sm:pt-40 lg:pt-44 pb-16 sm:pb-0">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full">
-          <div key={current} className="max-w-3xl animate-fadeInUp">
+          <div key={current} className="animate-fadeInUp max-w-full sm:max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-16 h-[2px] bg-primary" />
               <span className="text-primary text-sm font-black uppercase tracking-[0.3em]">
@@ -98,7 +98,7 @@ export default function HeroSlider() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.05] mb-6 md:mb-8 tracking-tighter">
+            <h1 className="text-[clamp(1.75rem,7vw,2.5rem)] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6 md:mb-8 tracking-tighter break-words overflow-hidden">
               {slide.title.split(" ").map((word, i) => (
                 <span key={i}>
                   <span
@@ -164,10 +164,10 @@ export default function HeroSlider() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 md:gap-10 max-w-xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-10 max-w-xl">
               {slide.stats.map((stat, i) => (
                 <div key={`${current}-${i}`} className="relative">
-                  <div className="text-2xl md:text-3xl font-black text-white mb-1">
+                  <div className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-1">
                     {stat.value}
                   </div>
                   <div className="text-[10px] md:text-xs font-bold text-body uppercase tracking-widest">

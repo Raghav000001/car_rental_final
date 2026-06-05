@@ -1,31 +1,10 @@
+import Link from "next/link";
+import Image from "next/image";
 import { StaggerItem } from "@/components/ScrollReveal";
+import { vehicles, serviceTypeLabels } from "@/app/fleet/vehicleData";
+import { formatPrice } from "@/lib/utils";
 
-const promos = [
-  {
-    smallText: "Discount up to",
-    largeText: "40%",
-    subText: "For First-time Order",
-    image:
-      "https://images.unsplash.com/photo-1647242008102-81d25ba13aba?w=600&q=80",
-    accent: "Limited Time",
-  },
-  {
-    smallText: "Exclusive Deal",
-    largeText: "Top Indian Models",
-    subText: "Starting from cheap Pricing",
-    image:
-      "https://images.unsplash.com/photo-1708589413831-8c24638bc0db?w=600&q=80",
-    accent: "Best Seller",
-  },
-  {
-    smallText: "Get Secure Fleet",
-    largeText: "Family SUVs",
-    subText: "With Safety Guarantee",
-    image:
-      "https://images.unsplash.com/photo-1638299638532-8795cb0440a8?w=600&q=80",
-    accent: "Popular Choice",
-  },
-];
+const bestDeals = vehicles.slice(0, 3);
 
 export default function PromoBanners() {
   return (
@@ -47,24 +26,28 @@ export default function PromoBanners() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {promos.map((promo, index) => (
-            <StaggerItem key={index} direction="fade">
+          {bestDeals.map((vehicle, index) => (
+            <StaggerItem key={vehicle.id} direction="fade">
+            <Link href={`/fleet/${vehicle.id}`}>
             <div
               className="group relative h-[440px] overflow-hidden cursor-pointer shadow-premium border border-white/5 hover:border-primary/30 transition-all duration-500 shine-effect"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-1500 ease-out group-hover:scale-110"
-                style={{ backgroundImage: `url(${promo.image})` }}
+              <Image
+                src={vehicle.image}
+                alt={vehicle.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover transition-transform duration-1500 ease-out group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-linear-to-t from-secondary via-secondary/60 to-secondary/20 transition-all duration-500 group-hover:from-secondary/95" />
               <div className="absolute inset-0 bg-linear-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="absolute top-6 left-6 right-6 flex items-start justify-between">
                 <div className="bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] px-3.5 py-1.5 shadow-glow-red">
-                  {promo.smallText}
+                  {serviceTypeLabels[vehicle.serviceType]}
                 </div>
                 <div className="glass border border-white/10 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-                  {promo.accent}
+                  {vehicle.seating} Seats
                 </div>
               </div>
 
@@ -89,16 +72,16 @@ export default function PromoBanners() {
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="w-0 h-[2px] bg-primary mb-5 group-hover:w-16 transition-all duration-500" />
                 <h3 className="text-white text-3xl md:text-4xl font-black mb-2 leading-tight tracking-tighter group-hover:text-primary transition-colors duration-500">
-                  {promo.largeText}
+                  {vehicle.name}
                 </h3>
                 <p className="text-gray-300 text-sm mb-6 font-medium italic">
-                  {promo.subText}
+                  {formatPrice(vehicle.price)} &middot;{" "}
+                  {vehicle.fuel.charAt(0).toUpperCase() + vehicle.fuel.slice(1)}{" "}
+                  &middot;{" "}
+                  {vehicle.transmission === "automatic" ? "Automatic" : "Manual"}
                 </p>
 
-                <a
-                  href="#"
-                  className="group/btn inline-flex items-center gap-3 text-white font-black text-xs uppercase tracking-widest"
-                >
+                <span className="group/btn inline-flex items-center gap-3 text-white font-black text-xs uppercase tracking-widest">
                   <span className="relative">
                     View Details
                     <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover/btn:scale-x-100 transition-transform duration-300 origin-left" />
@@ -118,11 +101,12 @@ export default function PromoBanners() {
                       />
                     </svg>
                   </div>
-                </a>
+                </span>
               </div>
 
               <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
+            </Link>
             </StaggerItem>
           ))}
         </div>

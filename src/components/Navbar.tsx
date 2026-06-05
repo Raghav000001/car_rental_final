@@ -92,7 +92,7 @@ export default function Navbar() {
                 </span>
               </div>
               <a
-                href="tel:+912136660027"
+                href="tel:+918708765123"
                 className="flex items-center gap-2 text-body hover:text-primary transition-colors duration-200 group"
               >
                 <svg
@@ -113,7 +113,7 @@ export default function Navbar() {
                 </span>
               </a>
               <a
-                href="mailto:info@rohittour.in"
+                href="mailto:rohit1998raman@gmail.com"
                 className="flex items-center gap-2 text-body hover:text-primary transition-colors duration-200 group"
               >
                 <svg
@@ -130,7 +130,7 @@ export default function Navbar() {
                   />
                 </svg>
                 <span className="font-semibold tracking-wide">
-                  info@rohittour.in
+                  rohit1998raman@gmail.com
                 </span>
               </a>
             </div>
@@ -196,10 +196,10 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-[72px]">
+          <div className="flex items-center justify-between h-20 lg:h-24">
             <Link href="/" className="flex items-center group shrink-0">
-              <div className="relative w-12 h-12 md:w-14 md:h-14">
-                <Image src="/logo.png" alt="Rohit Tour & Travel" fill className="object-contain" priority />
+              <div className="relative w-20 h-20 md:w-24 md:h-24">
+                <Image src="/logo2.png" alt="Rohit Tour & Travel" fill className="object-contain" priority />
               </div>
             </Link>
 
@@ -332,8 +332,8 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[70] flex flex-col bg-black/95 backdrop-blur-xl animate-fadeIn">
           <div className="flex items-center justify-between max-w-7xl mx-auto w-full px-4 lg:px-8 py-6">
             <Link href="/" className="flex items-center">
-              <div className="relative w-11 h-11">
-                <Image src="/logo.png" alt="Rohit Tour & Travel" fill className="object-contain" />
+              <div className="relative w-20 h-20">
+                <Image src="/logo2.png" alt="Rohit Tour & Travel" fill className="object-contain" />
               </div>
             </Link>
             <button
@@ -406,8 +406,8 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between p-6 border-b border-white/10">
           <Link href="/" className="flex items-center">
-            <div className="relative w-11 h-11">
-              <Image src="/logo.png" alt="Rohit Tour & Travel" fill className="object-contain" />
+            <div className="relative w-20 h-20">
+              <Image src="/logo2.png" alt="Rohit Tour & Travel" fill className="object-contain" />
             </div>
           </Link>
           <button
@@ -531,7 +531,7 @@ export default function Navbar() {
               />
             </svg>
             <a
-              href="tel:+912136660027"
+              href="tel:+918708765123"
               className="hover:text-primary transition-colors"
             >
               +91-213-666-0027
@@ -552,10 +552,10 @@ export default function Navbar() {
               />
             </svg>
             <a
-              href="mailto:info@rohittour.in"
+              href="mailto:rohit1998raman@gmail.com"
               className="hover:text-primary transition-colors"
             >
-              info@rohittour.in
+              rohit1998raman@gmail.com
             </a>
           </div>
         </div>

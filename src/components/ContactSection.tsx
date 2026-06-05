@@ -30,7 +30,7 @@ const contactInfo = [
     ),
     label: "Phone",
     value: "+91-213-666-0027",
-    href: "tel:+912136660027",
+    href: "tel:+918708765123",
   },
   {
     icon: (
@@ -39,8 +39,8 @@ const contactInfo = [
       </svg>
     ),
     label: "Email",
-    value: "info@rohittour.in",
-    href: "mailto:info@rohittour.in",
+    value: "rohit1998raman@gmail.com",
+    href: "mailto:rohit1998raman@gmail.com",
   },
   {
     icon: (

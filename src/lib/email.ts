@@ -6,7 +6,7 @@ import fs from "fs";
 const PRODUCT = {
   name: "Rohit Tour & Travel",
   link: "https://rohittour.in",
-  logo: "https://rohittour.in/logo.png",
+  logo: "https://rohittour.in/logo2.png",
 };
 
 let mailGenerator: Mailgen | null = null;
@@ -107,6 +107,104 @@ export interface ContactFormData {
   phone: string;
   subject: string;
   message: string;
+}
+
+export interface BookingFormData {
+  vehicleName: string;
+  serviceType: string;
+  price: string;
+  pickupDate: string;
+  returnDate?: string;
+  pickupTime: string;
+  pickupLocation?: string;
+  dropLocation?: string;
+  fullName: string;
+  mobile: string;
+  email: string;
+  city: string;
+  specialRequirements?: string;
+}
+
+function buildBookingAdminHtml(data: BookingFormData): string {
+  return `<!DOCTYPE html><html><body style="font-family:sans-serif;background:#111;color:#f3f4f6;padding:40px">
+<div style="max-width:560px;margin:auto;background:#1a1a1a;border-radius:12px;padding:32px;border:1px solid #27272a">
+<h2 style="color:#dc2626;margin:0 0 24px">New Booking Inquiry</h2>
+<h3 style="color:#f3f4f6;margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:1px">Vehicle Details</h3>
+<table style="width:100%;border-collapse:collapse;margin-bottom:24px">
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Vehicle</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a;font-weight:bold">${data.vehicleName}</td></tr>
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Service Type</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.serviceType}</td></tr>
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Price</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a;font-weight:bold">${data.price}</td></tr>
+</table>
+<h3 style="color:#f3f4f6;margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:1px">Trip Details</h3>
+<table style="width:100%;border-collapse:collapse;margin-bottom:24px">
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Pickup Date</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.pickupDate}</td></tr>
+${data.returnDate ? `<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Return Date</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.returnDate}</td></tr>` : ""}
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Pickup Time</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.pickupTime}</td></tr>
+${data.pickupLocation ? `<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Pickup Location</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.pickupLocation}</td></tr>` : ""}
+${data.dropLocation ? `<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Drop Location</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.dropLocation}</td></tr>` : ""}
+</table>
+<h3 style="color:#f3f4f6;margin:0 0 12px;font-size:14px;text-transform:uppercase;letter-spacing:1px">Customer Details</h3>
+<table style="width:100%;border-collapse:collapse;margin-bottom:24px">
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Name</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a;font-weight:bold">${data.fullName}</td></tr>
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Mobile</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.mobile}</td></tr>
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Email</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.email}</td></tr>
+<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">City</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.city}</td></tr>
+${data.specialRequirements ? `<tr><td style="padding:8px 0;color:#9ca3af;border-bottom:1px solid #27272a">Special Requirements</td><td style="padding:8px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.specialRequirements}</td></tr>` : ""}
+</table>
+<p style="color:#9ca3af;font-size:11px;margin-top:24px;padding-top:16px;border-top:1px solid #27272a">Submitted on ${new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })}</p>
+<a href="mailto:${data.email}" style="display:inline-block;margin-top:16px;padding:12px 24px;background:#dc2626;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold">Reply to ${data.fullName}</a>
+<p style="margin-top:32px;color:#9ca3af;font-size:12px">Rohit Tour &amp; Travel</p>
+</div></body></html>`;
+}
+
+export async function sendBookingNotification(data: BookingFormData): Promise<void> {
+  const transporter = getTransporter();
+  if (!transporter) {
+    console.warn("SMTP not configured — skipping booking notification", data);
+    return;
+  }
+
+  const html = buildBookingAdminHtml(data);
+
+  await transporter.sendMail({
+    from: `"Rohit Tour & Travel" <${FROM_EMAIL}>`,
+    to: ADMIN_EMAIL,
+    replyTo: data.email,
+    subject: `New Booking Inquiry — ${data.vehicleName} (${data.fullName})`,
+    html,
+  });
+}
+
+export async function sendBookingAcknowledgment(data: BookingFormData): Promise<void> {
+  const transporter = getTransporter();
+  if (!transporter) {
+    console.warn("SMTP not configured — skipping booking ack", data);
+    return;
+  }
+
+  const html = `<!DOCTYPE html><html><body style="font-family:sans-serif;background:#111;color:#f3f4f6;padding:40px">
+<div style="max-width:560px;margin:auto;background:#1a1a1a;border-radius:12px;padding:32px;border:1px solid #27272a">
+<h2 style="color:#dc2626;margin:0 0 16px">Inquiry Sent Successfully!</h2>
+<p>Hi ${data.fullName},</p>
+<p>Thank you for your inquiry regarding the <strong>${data.vehicleName}</strong>. We have received your booking request and our team will review it shortly.</p>
+<p>Here is a summary of your inquiry:</p>
+<table style="width:100%;border-collapse:collapse;margin:16px 0">
+<tr><td style="padding:6px 0;color:#9ca3af;border-bottom:1px solid #27272a">Vehicle</td><td style="padding:6px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.vehicleName}</td></tr>
+<tr><td style="padding:6px 0;color:#9ca3af;border-bottom:1px solid #27272a">Pickup Date</td><td style="padding:6px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.pickupDate}</td></tr>
+${data.returnDate ? `<tr><td style="padding:6px 0;color:#9ca3af;border-bottom:1px solid #27272a">Return Date</td><td style="padding:6px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.returnDate}</td></tr>` : ""}
+<tr><td style="padding:6px 0;color:#9ca3af;border-bottom:1px solid #27272a">Pickup Time</td><td style="padding:6px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.pickupTime}</td></tr>
+</table>
+<p>We aim to respond to all inquiries within 24 hours. For urgent requests, call us at <strong>+91-213-666-0027</strong>.</p>
+<a href="https://rohittour.in/fleet" style="display:inline-block;margin-top:16px;padding:12px 24px;background:#dc2626;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold">Browse More Vehicles</a>
+<p style="margin-top:32px;color:#9ca3af;font-size:12px">Rohit Tour &amp; Travel</p>
+</div></body></html>`;
+
+  await transporter.sendMail({
+    from: `"Rohit Tour & Travel" <${FROM_EMAIL}>`,
+    to: data.email,
+    subject: `Booking Inquiry Received — ${data.vehicleName}`,
+    html,
+  });
 }
 
 export async function sendContactNotification(data: ContactFormData): Promise<void> {

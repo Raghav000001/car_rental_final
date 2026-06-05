@@ -51,8 +51,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Link href="/" className="inline-flex items-center mb-5">
-              <div className="relative w-14 h-14">
-                <Image src="/logo.png" alt="Rohit Tour & Travel" fill className="object-contain" />
+              <div className="relative w-36 h-36">
+                <Image src="/logo2.png" alt="Rohit Tour & Travel" fill className="object-contain" />
               </div>
             </Link>
             <p className="text-body text-sm leading-relaxed mb-6">
@@ -156,7 +156,7 @@ export default function Footer() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                <span className="text-body text-sm">info@rohittour.in</span>
+                <span className="text-body text-sm">rohit1998raman@gmail.com</span>
               </li>
               <li className="flex gap-3 items-center">
                 <svg
@@ -186,21 +186,21 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 text-sm text-body">
             <Link
-              href="#"
+              href="/contact"
               className="hover:text-primary transition-colors duration-200"
             >
               Privacy Policy
             </Link>
             <span className="text-white/10">|</span>
             <Link
-              href="#"
+              href="/contact"
               className="hover:text-primary transition-colors duration-200"
             >
               Terms of Service
             </Link>
             <span className="text-white/10">|</span>
             <Link
-              href="#"
+              href="/contact"
               className="hover:text-primary transition-colors duration-200"
             >
               Sitemap

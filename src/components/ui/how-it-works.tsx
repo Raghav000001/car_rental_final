@@ -60,7 +60,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({
       icon: <Search className="h-6 w-6" />,
       title: "Choose Your Vehicle",
       description:
-        "Browse our premium fleet of 19 Indian vehicles with detailed specs, transparent pricing, and real photos.",
+        "Browse our premium fleet of self-drive cars, airport taxis, and local rental packages with detailed specs and transparent pricing.",
       benefits: [
         "Smart filters by type, seating & budget",
         "Real-time availability & transparent pricing",

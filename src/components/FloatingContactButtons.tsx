@@ -3,8 +3,8 @@
 import { Phone } from "lucide-react";
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "912136660027";
-const PHONE_NUMBER = "+912136660027";
+const WHATSAPP_NUMBER = "918708765123";
+const PHONE_NUMBER = "+918708765123";
 
 export default function FloatingContactButtons() {
   const [waHover, setWaHover] = useState(false);

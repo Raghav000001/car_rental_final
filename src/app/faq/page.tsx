@@ -220,7 +220,7 @@ export default function FAQPage() {
                     </div>
                     <div>
                       <p className="text-xs text-body font-semibold tracking-wide uppercase">Call Us</p>
-                      <a href="tel:+919999999999" className="text-white font-bold hover:text-primary transition-colors">+91 99999 99999</a>
+                      <a href="tel:+918708765123" className="text-white font-bold hover:text-primary transition-colors">+91 87087 65123</a>
                     </div>
                   </div>
                   <div className="flex items-center gap-3">

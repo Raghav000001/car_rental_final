@@ -1,7 +1,7 @@
 "use client";
 
-import type { FilterState, VehicleType, Transmission, FuelType, SeatingCapacity, AcType, PopularTag, SortOption } from "@/app/fleet/types";
-import { categoryLabels, fuelLabels, allTags, PRICE_RANGE } from "@/app/fleet/vehicleData";
+import type { FilterState, ServiceType, SortOption } from "@/app/fleet/types";
+import { serviceTypeLabels } from "@/app/fleet/vehicleData";
 
 interface FleetFiltersProps {
   filters: FilterState;
@@ -11,11 +11,7 @@ interface FleetFiltersProps {
   totalResults: number;
 }
 
-const vehicleTypes: VehicleType[] = ["hatchback", "sedan", "suv", "muv", "luxury", "tempo-traveller"];
-const seatOptions: SeatingCapacity[] = [4, 5, 6, 7, 9, 12, 17];
-const transmissions: Transmission[] = ["manual", "automatic"];
-const fuelOptions: FuelType[] = ["petrol", "diesel", "cng", "ev"];
-const acOptions: AcType[] = ["ac", "non-ac"];
+const serviceTypes: ServiceType[] = ["self-drive", "airport-drop"];
 
 const sortOptions: { value: SortOption; label: string }[] = [
   { value: "popular", label: "Most Popular" },
@@ -23,8 +19,6 @@ const sortOptions: { value: SortOption; label: string }[] = [
   { value: "price-high", label: "Price: High to Low" },
   { value: "rating", label: "Highest Rated" },
 ];
-
-type FilterKey = keyof FilterState;
 
 function ToggleChip({
   label,
@@ -56,35 +50,18 @@ export default function FleetFilters({
   onSortChange,
   totalResults,
 }: FleetFiltersProps) {
-  const toggleMulti = (key: FilterKey, value: string, field: "types" | "seating" | "transmission" | "fuel" | "ac" | "tags") => {
-    const arr = filters[field] as string[];
-    const next = arr.includes(value) ? arr.filter((v) => v !== value) : [...arr, value];
-    onChange({ ...filters, [field]: next });
+  const toggleType = (type: ServiceType) => {
+    const next = filters.types.includes(type)
+      ? filters.types.filter((t) => t !== type)
+      : [...filters.types, type];
+    onChange({ ...filters, types: next });
   };
 
-  const setPriceRange = (min: number, max: number) => {
-    onChange({ ...filters, priceRange: [min, max] });
-  };
-
-  const hasAnyFilter =
-    filters.types.length > 0 ||
-    filters.seating.length > 0 ||
-    filters.transmission.length > 0 ||
-    filters.fuel.length > 0 ||
-    filters.ac.length > 0 ||
-    filters.tags.length > 0 ||
-    filters.priceRange[0] > PRICE_RANGE[0] ||
-    filters.priceRange[1] < PRICE_RANGE[1];
+  const hasAnyFilter = filters.types.length > 0;
 
   const clearAll = () => {
     onChange({
       types: [],
-      seating: [],
-      transmission: [],
-      fuel: [],
-      ac: [],
-      tags: [],
-      priceRange: PRICE_RANGE,
       search: "",
     });
   };
@@ -121,112 +98,14 @@ export default function FleetFilters({
         </div>
       </div>
 
-      <FilterGroup label="Vehicle Type">
+      <FilterGroup label="Service Type">
         <div className="flex flex-wrap gap-2">
-          {vehicleTypes.map((type) => (
+          {serviceTypes.map((type) => (
             <ToggleChip
               key={type}
-              label={categoryLabels[type]}
+              label={serviceTypeLabels[type]}
               active={filters.types.includes(type)}
-              onClick={() => toggleMulti("types", type, "types")}
-            />
-          ))}
-        </div>
-      </FilterGroup>
-
-      <FilterGroup label="Seating Capacity">
-        <div className="flex flex-wrap gap-2">
-          {seatOptions.map((seat) => (
-            <ToggleChip
-              key={seat}
-              label={`${seat} Seater`}
-              active={filters.seating.includes(seat)}
-              onClick={() => toggleMulti("seating", String(seat), "seating")}
-            />
-          ))}
-        </div>
-      </FilterGroup>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <FilterGroup label="Transmission">
-          <div className="flex flex-wrap gap-2">
-            {transmissions.map((t) => (
-              <ToggleChip
-                key={t}
-                label={t.charAt(0).toUpperCase() + t.slice(1)}
-                active={filters.transmission.includes(t)}
-                onClick={() => toggleMulti("transmission", t, "transmission")}
-              />
-            ))}
-          </div>
-        </FilterGroup>
-
-        <FilterGroup label="Fuel Type">
-          <div className="flex flex-wrap gap-2">
-            {fuelOptions.map((f) => (
-              <ToggleChip
-                key={f}
-                label={fuelLabels[f]}
-                active={filters.fuel.includes(f)}
-                onClick={() => toggleMulti("fuel", f, "fuel")}
-              />
-            ))}
-          </div>
-        </FilterGroup>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <FilterGroup label="AC Type">
-          <div className="flex flex-wrap gap-2">
-            {acOptions.map((a) => (
-              <ToggleChip
-                key={a}
-                label={a === "ac" ? "AC" : "Non AC"}
-                active={filters.ac.includes(a)}
-                onClick={() => toggleMulti("ac", a, "ac")}
-              />
-            ))}
-          </div>
-        </FilterGroup>
-
-        <FilterGroup label={`Price per km (₹${filters.priceRange[0]} — ₹${filters.priceRange[1]})`}>
-          <div className="px-2">
-            <input
-              type="range"
-              min={PRICE_RANGE[0]}
-              max={PRICE_RANGE[1]}
-              step={1}
-              value={filters.priceRange[0]}
-              onChange={(e) => setPriceRange(Number(e.target.value), filters.priceRange[1])}
-              className="w-full accent-primary h-1.5 bg-white/10 rounded-full appearance-none cursor-pointer"
-              aria-label="Min price per km"
-            />
-            <input
-              type="range"
-              min={PRICE_RANGE[0]}
-              max={PRICE_RANGE[1]}
-              step={1}
-              value={filters.priceRange[1]}
-              onChange={(e) => setPriceRange(filters.priceRange[0], Number(e.target.value))}
-              className="w-full accent-primary h-1.5 bg-white/10 rounded-full appearance-none cursor-pointer mt-1"
-              aria-label="Max price per km"
-            />
-            <div className="flex justify-between text-[10px] text-body/50 font-bold mt-1">
-              <span>₹{PRICE_RANGE[0]}</span>
-              <span>₹{PRICE_RANGE[1]}</span>
-            </div>
-          </div>
-        </FilterGroup>
-      </div>
-
-      <FilterGroup label="Popular Uses">
-        <div className="flex flex-wrap gap-2">
-          {allTags.map((tag) => (
-            <ToggleChip
-              key={tag.id}
-              label={tag.label}
-              active={filters.tags.includes(tag.id as PopularTag)}
-              onClick={() => toggleMulti("tags", tag.id, "tags")}
+              onClick={() => toggleType(type)}
             />
           ))}
         </div>

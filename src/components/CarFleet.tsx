@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { StaggerItem } from "@/components/ScrollReveal";
+import { formatPrice } from "@/lib/utils";
 
 const cars = [
   {
     name: "Maruti Swift",
     slug: "swift",
-    image: "https://images.unsplash.com/photo-1718173402850-c20bb4ba3e2e?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1663852397535-18292e115327?w=800&q=80",
     description: "India's favourite hatchback known for its peppy performance, sporty looks, and excellent fuel efficiency.",
     doors: "4 Doors",
     suitcase: "1 Large, 2 Small",
@@ -15,31 +16,31 @@ const cars = [
     tag: "Popular",
   },
   {
-    name: "Toyota Fortuner",
-    slug: "fortuner",
-    image: "https://images.unsplash.com/photo-1670054953044-2605dbd0d747?w=600&q=80",
-    description: "India's most trusted full-size SUV with powerful engine, commanding road presence, and off-road capability.",
+    name: "Mahindra Scorpio",
+    slug: "scorpio",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Mahindra_Scorpio_GLX_2.6_m-Hawk_2011_%2836756517492%29.jpg/960px-Mahindra_Scorpio_GLX_2.6_m-Hawk_2011_%2836756517492%29.jpg",
+    description: "Built for tough roads and long drives. Commanding presence, powerful engine, and comfortable 7-seater cabin.",
     doors: "4 Doors",
     suitcase: "2 Large, 2 Small",
     passengers: "07",
-    price: 69,
+    price: 3500,
     tag: "SUV",
   },
   {
-    name: "Toyota Innova",
-    slug: "ertiga",
-    image: "https://images.unsplash.com/photo-1748215210950-536c6621629a?w=600&q=80",
-    description: "The ultimate family MPV with spacious three-row seating, bulletproof reliability, and ride comfort.",
+    name: "Toyota Innova Crysta",
+    slug: "innova",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Toyota_Innova_Crysta_2.4_Z_front_right.jpg/960px-Toyota_Innova_Crysta_2.4_Z_front_right.jpg",
+    description: "The ultimate family MPV with spacious three-row seating, bulletproof reliability, and unmatched ride comfort.",
     doors: "4 Doors",
     suitcase: "2 Large, 3 Small",
     passengers: "07",
-    price: 49,
+    price: 4000,
     tag: "Family",
   },
   {
     name: "Maruti Baleno",
     slug: "baleno",
-    image: "https://images.unsplash.com/photo-1647242008102-81d25ba13aba?w=600&q=80",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/2022_Maruti_Suzuki_Baleno_Alpha_%28India%29_front_view_02.jpg/960px-2022_Maruti_Suzuki_Baleno_Alpha_%28India%29_front_view_02.jpg",
     description: "Premium hatchback with a sleek design, feature-packed cabin, and class-leading boot space for city drives.",
     doors: "4 Doors",
     suitcase: "1 Large, 2 Small",
@@ -48,26 +49,26 @@ const cars = [
     tag: "Premium",
   },
   {
-    name: "Maruti Vitara Brezza",
-    slug: "creta",
-    image: "https://images.unsplash.com/photo-1708589413831-8c24638bc0db?w=600&q=80",
-    description: "India's best-selling compact SUV combining bold SUV styling with efficient engine and modern features.",
+    name: "Maruti Dzire",
+    slug: "dzire",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Maruti_Suzuki_Dzire_VXi_VVT_-_Subcompact_Car_-_Kolkata_2018-01-17_7574.JPG/960px-Maruti_Suzuki_Dzire_VXi_VVT_-_Subcompact_Car_-_Kolkata_2018-01-17_7574.JPG",
+    description: "India's best-selling sedan. Comfortable, fuel-efficient, and perfect for daily commutes and airport transfers.",
     doors: "4 Doors",
     suitcase: "1 Large, 2 Small",
     passengers: "05",
-    price: 39,
+    price: 2000,
     tag: "Best Value",
   },
   {
-    name: "Hyundai Santro",
-    slug: "wagonr",
-    image: "https://images.unsplash.com/photo-1748215041497-fdf9c4727681?w=600&q=80",
-    description: "Compact city car with a tall-boy design, easy manoeuvrability, and great mileage for daily commuting.",
+    name: "Mahindra Thar",
+    slug: "thar",
+    image: "https://images.unsplash.com/photo-1710225427267-d21102737ad1?w=800&q=80",
+    description: "Conquer every terrain with the rugged Mahindra Thar. Off-road capable, stylish, and adventure-ready.",
     doors: "4 Doors",
     suitcase: "1 Large, 1 Small",
-    passengers: "05",
-    price: 22,
-    tag: "Economy",
+    passengers: "04",
+    price: 3500,
+    tag: "Adventure",
   },
 ];
 
@@ -177,7 +178,7 @@ export default function CarFleet() {
                   </h3>
                   <div className="text-right">
                     <div className="flex items-baseline gap-1">
-                      <span className="text-3xl font-black text-primary">${car.price}</span>
+                      <span className="text-3xl font-black text-primary">{formatPrice(car.price)}</span>
                       <span className="text-xs text-body font-bold uppercase">/Day</span>
                     </div>
                   </div>

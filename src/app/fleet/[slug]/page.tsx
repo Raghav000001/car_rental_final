@@ -10,12 +10,8 @@ import {
   Luggage,
   Star,
   Gauge,
-  Award,
-  TrendingUp,
-  Crown,
   CheckCircle,
   ArrowRight,
-  Phone,
   MessageCircle,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -24,13 +20,14 @@ import Newsletter from "@/components/Newsletter";
 import ScrollReveal from "@/components/ScrollReveal";
 import {
   vehicles,
-  categoryLabels,
+  serviceTypeLabels,
   fuelLabels,
-  tagLabels,
   getVehicleBySlug,
   getRelatedVehicles,
 } from "@/app/fleet/vehicleData";
 import type { Vehicle } from "@/app/fleet/types";
+import { formatPrice } from "@/lib/utils";
+import BookVehicleButton from "@/components/BookVehicleButton";
 
 export async function generateStaticParams() {
   return vehicles.map((v) => ({ slug: v.id }));
@@ -51,7 +48,6 @@ export async function generateMetadata({
   };
 }
 
-// ───────── Specs data for icons ─────────
 const specsConfig: Array<{
   label: string;
   getValue: (v: Vehicle) => string;
@@ -90,44 +86,10 @@ const specsConfig: Array<{
   },
 ];
 
-// ───────── Badge definitions ─────────
-const badgeDefinitions = [
-  {
-    key: "isMostBooked" as const,
-    label: "Most Booked",
-    color:
-      "bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
-    icon: <TrendingUp className="w-3.5 h-3.5" />,
-  },
-  {
-    key: "isBestRated" as const,
-    label: "Best Rated",
-    color: "bg-blue-500/15 text-blue-400 border-blue-500/30",
-    icon: <Award className="w-3.5 h-3.5" />,
-  },
-  {
-    key: "isPremiumChoice" as const,
-    label: "Premium Choice",
-    color:
-      "bg-amber-500/15 text-amber-400 border-amber-500/30",
-    icon: <Crown className="w-3.5 h-3.5" />,
-  },
-  {
-    key: "isFeatured" as const,
-    label: "Featured",
-    color: "bg-primary/15 text-primary border-primary/30",
-    icon: <CheckCircle className="w-3.5 h-3.5" />,
-  },
-];
-
-// ───────── Category badge color ─────────
 const categoryBadgeColor: Record<string, string> = {
-  hatchback: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  sedan: "bg-purple-500/20 text-purple-400 border-purple-500/30",
-  suv: "bg-orange-500/20 text-orange-400 border-orange-500/30",
-  muv: "bg-green-500/20 text-green-400 border-green-500/30",
-  luxury: "bg-amber-500/20 text-amber-400 border-amber-500/30",
-  "tempo-traveller": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+  "self-drive": "bg-blue-500/20 text-blue-400 border-blue-500/30",
+  "airport-drop": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+  "local-rental": "bg-green-500/20 text-green-400 border-green-500/30",
 };
 
 export default async function VehicleDetailPage({
@@ -140,13 +102,11 @@ export default async function VehicleDetailPage({
   if (!vehicle) notFound();
 
   const related = getRelatedVehicles(slug, 3);
-  const activeBadges = badgeDefinitions.filter((b) => vehicle[b.key]);
 
   return (
     <>
       <Navbar />
       <main>
-        {/* ───────── Hero ───────── */}
         <section className="relative pt-36 pb-12 lg:pt-44 lg:pb-16 overflow-hidden bg-secondary">
           <div className="absolute inset-0 grid-pattern opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary via-secondary/95 to-bg-dark" />
@@ -165,7 +125,6 @@ export default async function VehicleDetailPage({
             </ScrollReveal>
 
             <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-              {/* ── Image ── */}
               <ScrollReveal>
                 <div className="relative rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-[5/4] shadow-premium">
                   <Image
@@ -179,17 +138,16 @@ export default async function VehicleDetailPage({
                   <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                     <span
                       className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.15em] border ${
-                        categoryBadgeColor[vehicle.category] ||
+                        categoryBadgeColor[vehicle.serviceType] ||
                         "bg-white/10 text-white border-white/20"
                       }`}
                     >
-                      {categoryLabels[vehicle.category] || vehicle.category}
+                      {serviceTypeLabels[vehicle.serviceType] || vehicle.serviceType}
                     </span>
                   </div>
                 </div>
               </ScrollReveal>
 
-              {/* ── Hero Info ── */}
               <div className="space-y-6">
                 <ScrollReveal>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.05] tracking-tight">
@@ -203,29 +161,27 @@ export default async function VehicleDetailPage({
                   </p>
                 </ScrollReveal>
 
-                {/* Price row */}
                 <ScrollReveal>
                   <div className="flex flex-wrap items-end gap-6">
                     <div>
                       <p className="text-[10px] text-body/60 font-bold uppercase tracking-[0.15em] mb-1">
-                        Starting from
+                        {vehicle.serviceType === "self-drive" ? "Rent for" : "Flat Rate"}
                       </p>
                       <p className="text-4xl md:text-5xl font-black text-white italic tracking-tighter">
-                        ₹{vehicle.startingPrice.toLocaleString()}
+                        {formatPrice(vehicle.price)}
                       </p>
                     </div>
                     <div className="pb-1">
                       <p className="text-[10px] text-body/60 font-bold uppercase tracking-[0.15em] mb-0.5">
-                        Per Kilometer
+                        {vehicle.priceLabel}
                       </p>
                       <p className="text-2xl md:text-3xl font-black text-primary italic">
-                        ₹{vehicle.pricePerKm}
+                        {vehicle.serviceType === "self-drive" ? "Self Drive" : "With Driver"}
                       </p>
                     </div>
                   </div>
                 </ScrollReveal>
 
-                {/* Rating */}
                 <ScrollReveal>
                   <div className="flex items-center gap-3">
                     <div className="flex items-center gap-1">
@@ -249,40 +205,18 @@ export default async function VehicleDetailPage({
                   </div>
                 </ScrollReveal>
 
-                {/* Badges */}
-                {activeBadges.length > 0 && (
-                  <ScrollReveal>
-                    <div className="flex flex-wrap gap-2">
-                      {activeBadges.map((badge) => (
-                        <span
-                          key={badge.key}
-                          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-[0.12em] border ${badge.color}`}
-                        >
-                          {badge.icon}
-                          {badge.label}
-                        </span>
-                      ))}
-                    </div>
-                  </ScrollReveal>
-                )}
-
-                {/* CTA buttons */}
                 <ScrollReveal>
                   <div className="flex flex-wrap gap-3 pt-2">
-                    <Link
-                      href="#"
-                      className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-black text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-300 shadow-glow-red hover:shadow-glow-red-strong"
-                    >
-                      <Phone className="w-4 h-4" />
-                      Book Now
-                    </Link>
-                    <Link
-                      href="#"
+                    <BookVehicleButton vehicleId={vehicle.id} />
+                    <a
+                      href="https://wa.me/918708765123"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 border border-white/20 hover:border-primary text-body hover:text-white font-black text-sm uppercase tracking-wider px-8 py-4 rounded-xl transition-all duration-300"
                     >
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp Inquiry
-                    </Link>
+                    </a>
                   </div>
                 </ScrollReveal>
               </div>
@@ -290,7 +224,6 @@ export default async function VehicleDetailPage({
           </div>
         </section>
 
-        {/* ───────── Specs Grid ───────── */}
         <section className="relative -mt-10 pb-16 lg:pb-24">
           <div className="max-w-7xl mx-auto px-4 lg:px-8">
             <ScrollReveal>
@@ -323,14 +256,12 @@ export default async function VehicleDetailPage({
           </div>
         </section>
 
-        {/* ───────── Pricing & Features ───────── */}
         <section className="relative pb-16 lg:pb-24">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[100px]" />
           </div>
           <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-10">
-              {/* ── Pricing Breakdown ── */}
               <div className="lg:col-span-2 space-y-8">
                 <ScrollReveal>
                   <div className="glass rounded-3xl p-6 md:p-10">
@@ -341,14 +272,14 @@ export default async function VehicleDetailPage({
 
                     <div className="grid md:grid-cols-2 gap-4">
                       <PricingCard
-                        label="Starting Price"
-                        value={`₹${vehicle.startingPrice.toLocaleString()}`}
-                        note="Base fare for standard trip"
+                        label={vehicle.serviceType === "self-drive" ? "Daily Rate" : "Flat Price"}
+                        value={formatPrice(vehicle.price)}
+                        note={vehicle.priceLabel}
                       />
                       <PricingCard
-                        label="Per Kilometer"
-                        value={`₹${vehicle.pricePerKm}`}
-                        note="Charged per km driven"
+                        label={vehicle.serviceType === "self-drive" ? "Rental Type" : "Service Type"}
+                        value={vehicle.serviceType === "self-drive" ? "Self Drive" : "With Driver"}
+                        note={vehicle.serviceType === "self-drive" ? "No driver needed" : "Professional driver included"}
                       />
                       <PricingCard
                         label="Seating Capacity"
@@ -369,8 +300,8 @@ export default async function VehicleDetailPage({
                       <ul className="space-y-1.5">
                         {[
                           "Clean & sanitized vehicle",
-                          "Professional driver",
-                          "Fuel charges (for rental packages)",
+                          vehicle.serviceType !== "self-drive" ? "Professional driver" : "Self-drive pickup",
+                          vehicle.serviceType === "self-drive" ? "Fuel not included" : "Fuel charges included",
                           "24/7 roadside assistance",
                           "GST included",
                         ].map((item) => (
@@ -386,31 +317,8 @@ export default async function VehicleDetailPage({
                     </div>
                   </div>
                 </ScrollReveal>
-
-                {vehicle.popularTags.length > 0 && (
-                  <ScrollReveal>
-                    <div className="glass rounded-3xl p-6 md:p-10">
-                      <h2 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-6">
-                        Ideal For{" "}
-                        <span className="text-gradient-primary">Uses</span>
-                      </h2>
-                      <div className="flex flex-wrap gap-2">
-                        {vehicle.popularTags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs font-bold uppercase tracking-wider"
-                          >
-                            <CheckCircle className="w-3.5 h-3.5" />
-                            {tagLabels[tag] || tag.replace("-", " ")}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                )}
               </div>
 
-              {/* ── Sidebar — Quick Summary ── */}
               <div className="space-y-6">
                 <ScrollReveal>
                   <div className="glass rounded-3xl p-6 md:p-8 sticky top-28">
@@ -438,16 +346,10 @@ export default async function VehicleDetailPage({
                     </div>
 
                     <div className="mt-6 pt-6 border-t border-white/10">
-                      <Link
-                        href="#"
-                        className="flex items-center justify-center gap-2 w-full bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl transition-all duration-300 shadow-glow-red hover:shadow-glow-red-strong"
-                      >
-                        <Phone className="w-4 h-4" />
-                        Book This Vehicle
-                      </Link>
+                      <BookVehicleButton vehicleId={vehicle.id} />
                       <p className="text-center text-[10px] text-body/40 mt-2 font-bold uppercase tracking-wider">
                         Or call{" "}
-                        <span className="text-primary">+91 98765 43210</span>
+                        <span className="text-primary">+91 87087 65123</span>
                       </p>
                     </div>
                   </div>
@@ -457,7 +359,6 @@ export default async function VehicleDetailPage({
           </div>
         </section>
 
-        {/* ───────── Similar Vehicles ───────── */}
         {related.length > 0 && (
           <section className="relative pb-16 lg:pb-24">
             <div className="absolute inset-0 pointer-events-none">
@@ -472,9 +373,9 @@ export default async function VehicleDetailPage({
                       <span className="text-gradient-primary">Vehicles</span>
                     </h2>
                     <p className="text-body text-sm mt-1">
-                      More from the{" "}
-                      {categoryLabels[vehicle.category] || vehicle.category}{" "}
-                      category
+                      More{" "}
+                      {serviceTypeLabels[vehicle.serviceType] || vehicle.serviceType}{" "}
+                      options
                     </p>
                   </div>
                   <Link
@@ -507,7 +408,7 @@ export default async function VehicleDetailPage({
                                 {rel.name}
                               </p>
                               <p className="text-[10px] text-body/70 font-bold uppercase tracking-wider mt-0.5">
-                                {categoryLabels[rel.category]}
+                                {serviceTypeLabels[rel.serviceType]}
                               </p>
                             </div>
                           </div>
@@ -521,10 +422,10 @@ export default async function VehicleDetailPage({
                         <div className="p-4 flex-1 flex flex-col">
                           <div className="flex items-center justify-between mb-3">
                             <p className="text-xs text-body/60 font-bold uppercase tracking-wider">
-                              Starting from
+                              {rel.serviceType === "self-drive" ? "Rent for" : "Flat Rate"}
                             </p>
                             <p className="text-lg font-black text-primary italic">
-                              ₹{rel.startingPrice.toLocaleString()}
+                              {formatPrice(rel.price)}
                             </p>
                           </div>
                           <div className="grid grid-cols-3 gap-1.5 mt-auto">
@@ -564,8 +465,6 @@ export default async function VehicleDetailPage({
     </>
   );
 }
-
-// ───────── Sub-components ─────────
 
 function PricingCard({
   label,

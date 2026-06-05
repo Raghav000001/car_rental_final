@@ -1,10 +1,4 @@
-export type VehicleType =
-  | "hatchback"
-  | "sedan"
-  | "suv"
-  | "muv"
-  | "luxury"
-  | "tempo-traveller";
+export type ServiceType = "self-drive" | "airport-drop" | "local-rental";
 
 export type Transmission = "manual" | "automatic";
 
@@ -14,44 +8,36 @@ export type SeatingCapacity = 4 | 5 | 6 | 7 | 8 | 9 | 12 | 17;
 
 export type AcType = "ac" | "non-ac";
 
-export type PopularTag =
-  | "airport-transfer"
-  | "outstation"
-  | "local-rental"
-  | "wedding"
-  | "corporate"
-  | "family-trip";
-
 export interface Vehicle {
   id: string;
   name: string;
-  category: VehicleType;
+  serviceType: ServiceType;
   image: string;
   seating: SeatingCapacity;
   fuel: FuelType;
   transmission: Transmission;
   ac: AcType;
   luggage: string;
-  pricePerKm: number;
-  startingPrice: number;
+  /** Display price — daily rate for self-drive, flat price for airport-drop */
+  price: number;
+  /** Label shown next to price (e.g. "Per Day", "Airport Drop") */
+  priceLabel: string;
   rating: number;
   reviewCount: number;
-  popularTags: PopularTag[];
-  isFeatured: boolean;
-  isMostBooked: boolean;
-  isBestRated: boolean;
-  isPremiumChoice: boolean;
   description: string;
 }
 
+export interface LocalRentalPackage {
+  id: string;
+  name: string;
+  duration: string;
+  distance: string;
+  price: number;
+  features: string[];
+}
+
 export interface FilterState {
-  types: VehicleType[];
-  seating: SeatingCapacity[];
-  transmission: Transmission[];
-  fuel: FuelType[];
-  ac: AcType[];
-  tags: PopularTag[];
-  priceRange: [number, number];
+  types: ServiceType[];
   search: string;
 }
 
@@ -61,13 +47,13 @@ export interface CompareVehicle {
   id: string;
   name: string;
   image: string;
-  category: VehicleType;
+  serviceType: ServiceType;
   seating: SeatingCapacity;
   fuel: FuelType;
   transmission: Transmission;
   ac: AcType;
   luggage: string;
-  pricePerKm: number;
-  startingPrice: number;
+  price: number;
+  priceLabel: string;
   rating: number;
 }

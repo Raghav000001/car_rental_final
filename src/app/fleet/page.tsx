@@ -9,26 +9,29 @@ import Footer from "@/components/Footer";
 import ScrollReveal, { StaggerItem } from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import VehicleCard from "@/components/VehicleCard";
-import FleetFilters from "@/components/FleetFilters";
 import FleetPagination from "@/components/FleetPagination";
 import VehicleComparisonModal from "@/components/VehicleComparisonModal";
+import BookingModal from "@/components/BookingModal";
 import Testimonials from "@/components/Testimonials";
-import { vehicles, categoryLabels, ITEMS_PER_PAGE } from "@/app/fleet/vehicleData";
-import type { FilterState, SortOption, CompareVehicle } from "@/app/fleet/types";
+import Newsletter from "@/components/Newsletter";
+import {
+  vehicles,
+  localRentalPackages,
+  serviceTypeLabels,
+} from "@/app/fleet/vehicleData";
+import { formatPrice } from "@/lib/utils";
+import type { CompareVehicle } from "@/app/fleet/types";
 
-const defaultFilters: FilterState = {
-  types: [],
-  seating: [],
-  transmission: [],
-  fuel: [],
-  ac: [],
-  tags: [],
-  priceRange: [5, 50],
-  search: "",
-};
+type TabId = "self-drive" | "airport-drop" | "local-rental";
+
+const tabs: { id: TabId; label: string }[] = [
+  { id: "self-drive", label: "Self Drive Cars" },
+  { id: "airport-drop", label: "Airport Drop Service" },
+  { id: "local-rental", label: "Local Rental" },
+];
 
 const stats = [
-  { to: 19, label: "Premium Vehicles", prefix: "", suffix: "+" },
+  { to: 8, label: "Premium Vehicles", prefix: "", suffix: "+" },
   { to: 32, label: "Cities Served", prefix: "", suffix: "+" },
   { to: 50000, label: "Happy Customers", prefix: "", suffix: "+" },
   { to: 12, label: "Years of Service", prefix: "", suffix: "+" },
@@ -91,75 +94,36 @@ const whyChooseUs = [
   },
 ];
 
-
-
 export default function FleetPage() {
   const prefersReducedMotion = useReducedMotion();
-  const [filters, setFilters] = useState<FilterState>(defaultFilters);
-  const [sort, setSort] = useState<SortOption>("popular");
+  const [activeTab, setActiveTab] = useState<TabId>("self-drive");
   const [currentPage, setCurrentPage] = useState(1);
   const [compareIds, setCompareIds] = useState<string[]>([]);
   const [showCompare, setShowCompare] = useState(false);
-  const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const [showBooking, setShowBooking] = useState(false);
+  const [bookingVehicleId, setBookingVehicleId] = useState<string | undefined>(undefined);
   const featuredRef = useRef<HTMLDivElement>(null);
   const [featuredIndex, setFeaturedIndex] = useState(0);
+  const gridRef = useRef<HTMLDivElement>(null);
 
   const filtered = useMemo(() => {
-    let result = [...vehicles];
+    return vehicles.filter((v) => v.serviceType === activeTab);
+  }, [activeTab]);
 
-    if (filters.types.length > 0) {
-      result = result.filter((v) => filters.types.includes(v.category));
-    }
-    if (filters.seating.length > 0) {
-      result = result.filter((v) => filters.seating.includes(v.seating));
-    }
-    if (filters.transmission.length > 0) {
-      result = result.filter((v) => filters.transmission.includes(v.transmission));
-    }
-    if (filters.fuel.length > 0) {
-      result = result.filter((v) => filters.fuel.includes(v.fuel));
-    }
-    if (filters.ac.length > 0) {
-      result = result.filter((v) => filters.ac.includes(v.ac));
-    }
-    if (filters.tags.length > 0) {
-      result = result.filter((v) =>
-        v.popularTags.some((t) => filters.tags.includes(t)),
-      );
-    }
-    result = result.filter(
-      (v) => v.pricePerKm >= filters.priceRange[0] && v.pricePerKm <= filters.priceRange[1],
-    );
-
-    switch (sort) {
-      case "price-low":
-        result.sort((a, b) => a.startingPrice - b.startingPrice);
-        break;
-      case "price-high":
-        result.sort((a, b) => b.startingPrice - a.startingPrice);
-        break;
-      case "rating":
-        result.sort((a, b) => b.rating - a.rating);
-        break;
-      default:
-        result.sort((a, b) => (b.isMostBooked ? 1 : 0) - (a.isMostBooked ? 1 : 0));
-    }
-
-    return result;
-  }, [filters, sort]);
-
-  const totalPages = Math.max(1, Math.ceil(filtered.length / ITEMS_PER_PAGE));
+  // Only paginate self-drive and airport-drop tabs
+  const itemsPerPage = 4;
+  const totalPages = Math.max(1, Math.ceil(filtered.length / itemsPerPage));
   const safePage = Math.min(currentPage, totalPages);
   const paginated = filtered.slice(
-    (safePage - 1) * ITEMS_PER_PAGE,
-    safePage * ITEMS_PER_PAGE,
+    (safePage - 1) * itemsPerPage,
+    safePage * itemsPerPage,
   );
 
   const handleCompare = useCallback(
     (id: string) => {
       setCompareIds((prev) => {
         if (prev.includes(id)) return prev.filter((i) => i !== id);
-        if (prev.length >= 3) return prev;
+        if (prev.length >= 4) return prev;
         return [...prev, id];
       });
     },
@@ -175,7 +139,7 @@ export default function FleetPage() {
   );
 
   const featuredVehicles = useMemo(
-    () => vehicles.filter((v) => v.isFeatured),
+    () => vehicles.filter((v) => v.serviceType === "self-drive"),
     [],
   );
 
@@ -187,6 +151,16 @@ export default function FleetPage() {
     return () => clearInterval(timer);
   }, [featuredVehicles.length]);
 
+  const handleBook = useCallback((id: string) => {
+    setBookingVehicleId(id);
+    setShowBooking(true);
+  }, []);
+
+  const handleCloseBooking = useCallback(() => {
+    setShowBooking(false);
+    setBookingVehicleId(undefined);
+  }, []);
+
   const featuredPrev = () => {
     setFeaturedIndex((prev) =>
       prev <= 0 ? featuredVehicles.length - 1 : prev - 1,
@@ -196,10 +170,15 @@ export default function FleetPage() {
     setFeaturedIndex((prev) => (prev + 1) % featuredVehicles.length);
   };
 
+  const scrollToGrid = () => {
+    gridRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <Navbar />
       <main>
+        {/* ───────── Hero ───────── */}
         <section className="relative pt-44 pb-24 lg:pt-52 lg:pb-28 overflow-hidden bg-secondary">
           <div className="absolute inset-0">
             <Image
@@ -246,8 +225,8 @@ export default function FleetPage() {
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="text-body text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
             >
-              Explore our diverse fleet of 19 premium Indian vehicles — from
-              compact hatchbacks to luxury sedans and spacious tempo travellers.
+              Choose from our premium fleet of self-drive cars, airport taxi
+              service, and local rental packages — all available in Rohtak.
             </motion.p>
 
             <motion.div
@@ -256,8 +235,8 @@ export default function FleetPage() {
               transition={{ duration: 0.5, delay: 0.45, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <a
-                href="#fleet-grid"
+              <button
+                onClick={scrollToGrid}
                 className="group relative inline-flex items-center gap-3 bg-primary hover:bg-white text-secondary font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 overflow-hidden cursor-pointer shadow-glow-red hover:shadow-glow-red-strong"
               >
                 <span className="relative z-10 uppercase tracking-wider text-xs sm:text-sm">
@@ -266,17 +245,18 @@ export default function FleetPage() {
                 <svg className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
-              <Link
-                href="/contact"
+              </button>
+              <button
+                onClick={() => { setBookingVehicleId(undefined); setShowBooking(true); }}
                 className="group inline-flex items-center gap-3 border-2 border-white/20 hover:border-primary bg-white/5 backdrop-blur-sm hover:bg-primary/10 text-white font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 uppercase tracking-wider text-xs sm:text-sm cursor-pointer"
               >
                 Book Your Vehicle
-              </Link>
+              </button>
             </motion.div>
           </div>
         </section>
 
+        {/* ───────── Stats ───────── */}
         <section className="py-16 lg:py-20 bg-bg-dark relative overflow-hidden">
           <div className="absolute inset-0 grid-pattern opacity-[0.03]" />
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -306,123 +286,185 @@ export default function FleetPage() {
           </div>
         </section>
 
-        <section id="fleet-grid" className="py-20 lg:py-24 bg-secondary relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.05)_0%,transparent_60%)]" />
-          <div className="max-w-7xl mx-auto px-4 lg:px-8 relative">
-            <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
-              {/* Sidebar filters - desktop */}
-              <aside className="hidden lg:block w-72 shrink-0 sticky top-28">
-                <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-6">
-                  <div className="flex items-center justify-between mb-5">
-                    <h3 className="text-white font-black text-sm uppercase tracking-wider">
-                      Filters
-                    </h3>
-                    <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                    </svg>
-                  </div>
-                  <FleetFilters
-                    filters={filters}
-                    onChange={(f) => { setFilters(f); }}
-                    sort={sort}
-                    onSortChange={setSort}
-                    totalResults={filtered.length}
-                  />
-                </div>
-              </aside>
-
-              {/* Mobile filter toggle */}
-              <div className="lg:hidden w-full">
+        {/* ───────── Tab Navigation ───────── */}
+        <section className="pt-12 pb-0 bg-secondary relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 lg:px-8">
+            <div className="flex flex-wrap items-center gap-2 border-b border-white/10 pb-0">
+              {tabs.map((tab) => (
                 <button
-                  onClick={() => setShowMobileFilters(!showMobileFilters)}
-                  className="w-full flex items-center justify-between gap-3 bg-white/[0.04] border border-white/10 rounded-xl px-5 py-3.5 text-white font-bold text-sm transition-all duration-300 hover:border-primary/40 cursor-pointer"
+                  key={tab.id}
+                  onClick={() => {
+                    setActiveTab(tab.id);
+                    setCurrentPage(1);
+                    setCompareIds([]);
+                  }}
+                  className={`relative px-6 py-3.5 text-sm font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                    activeTab === tab.id
+                      ? "text-white"
+                      : "text-body/50 hover:text-body"
+                  }`}
                 >
-                  <span className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
-                    </svg>
-                    Filters & Sort
-                  </span>
-                  <svg className={`w-4 h-4 transition-transform duration-300 ${showMobileFilters ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                <AnimatePresence>
-                  {showMobileFilters && (
+                  {tab.label}
+                  {activeTab === tab.id && (
                     <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
+                      layoutId="activeTab"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
                       transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 mt-3">
-                        <FleetFilters
-                          filters={filters}
-                          onChange={(f) => { setFilters(f); }}
-                          sort={sort}
-                          onSortChange={setSort}
-                          totalResults={filtered.length}
-                        />
-                      </div>
-                    </motion.div>
+                    />
                   )}
-                </AnimatePresence>
-              </div>
-
-              {/* Vehicle grid */}
-              <div className="flex-1 min-w-0">
-                {paginated.length === 0 ? (
-                  <div className="text-center py-20">
-                    <div className="w-20 h-20 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
-                      <svg className="w-10 h-10 text-primary/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-white font-black text-xl italic tracking-tighter mb-2">
-                      No Vehicles Found
-                    </h3>
-                    <p className="text-body text-sm max-w-md mx-auto mb-6">
-                      Try adjusting your filters to see more vehicles.
-                    </p>
-                    <button
-                      onClick={() => setFilters(defaultFilters)}
-                      className="px-6 py-3 rounded-xl bg-primary text-white font-black text-xs uppercase tracking-wider hover:bg-primary-dark transition-all duration-300 cursor-pointer"
-                    >
-                      Reset Filters
-                    </button>
-                  </div>
-                ) : (
-                  <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6">
-                      {paginated.map((vehicle, i) => (
-                        <VehicleCard
-                          key={vehicle.id}
-                          vehicle={vehicle}
-                          index={i}
-                          onCompare={handleCompare}
-                          compareIds={compareIds}
-                        />
-                      ))}
-                    </div>
-
-                    <div className="mt-10 border-t border-white/5 pt-6">
-                      <FleetPagination
-                        currentPage={currentPage}
-                        totalPages={totalPages}
-                        totalItems={filtered.length}
-                        itemsPerPage={ITEMS_PER_PAGE}
-                        onPageChange={setCurrentPage}
-                      />
-                    </div>
-                  </>
-                )}
-              </div>
+                </button>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* ───────── Fleet Grid / Local Rental ───────── */}
+        <section
+          id="fleet-grid"
+          ref={gridRef}
+          className="py-12 lg:py-16 bg-secondary relative overflow-hidden"
+        >
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(220,38,38,0.05)_0%,transparent_60%)]" />
+          <div className="max-w-7xl mx-auto px-4 lg:px-8 relative">
+            <AnimatePresence mode="wait">
+              {activeTab === "local-rental" ? (
+                <motion.div
+                  key="local-rental"
+                  initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <div className="text-center mb-12">
+                    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-4">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                      Dzire Local Rental
+                    </span>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter italic leading-[0.95] mt-3 pr-1">
+                      Local Rental{" "}
+                      <span className="text-gradient-primary">Packages</span>
+                    </h2>
+                    <p className="text-body text-base md:text-lg mt-4 max-w-2xl mx-auto">
+                      Maruti Dzire — perfect for local travel in and around
+                      Rohtak. Choose the package that fits your needs.
+                    </p>
+                  </div>
+
+                  <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
+                    {localRentalPackages.map((pkg, i) => (
+                      <motion.div
+                        key={pkg.id}
+                        initial={prefersReducedMotion ? {} : { opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: i * 0.12, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="group relative bg-gradient-to-b from-white/[0.05] to-white/[0.02] border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:border-primary/40 hover:shadow-[0_0_40px_-10px_rgba(220,38,38,0.25)] shine-effect"
+                      >
+                        <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+                        <div className="p-6 lg:p-8 text-center">
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.15em] border bg-green-500/20 text-green-400 border-green-500/30 mb-4">
+                            Dzire
+                          </span>
+                          <h3 className="text-2xl lg:text-3xl font-black text-white italic tracking-tighter mb-2">
+                            {pkg.name}
+                          </h3>
+                          <div className="flex items-center justify-center gap-4 mb-4">
+                            <div className="flex items-center gap-1.5 text-body">
+                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span className="text-xs font-bold">{pkg.duration}</span>
+                            </div>
+                            <div className="flex items-center gap-1.5 text-body">
+                              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                              </svg>
+                              <span className="text-xs font-bold">{pkg.distance}</span>
+                            </div>
+                          </div>
+                          <div className="text-5xl lg:text-6xl font-black text-primary italic tracking-tighter mb-6">
+                            {formatPrice(pkg.price)}
+                          </div>
+                          <ul className="space-y-2 mb-6 text-left max-w-xs mx-auto">
+                            {pkg.features.map((feature) => (
+                              <li key={feature} className="flex items-start gap-2 text-body text-xs">
+                                <svg className="w-4 h-4 text-primary shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                          <Link
+                            href="/contact"
+                            className="block w-full bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl text-center transition-all duration-300 shadow-glow-red hover:shadow-glow-red-strong"
+                          >
+                            Book This Package
+                          </Link>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  key={activeTab}
+                  initial={prefersReducedMotion ? {} : { opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={prefersReducedMotion ? {} : { opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <div>
+                    {paginated.length === 0 ? (
+                      <div className="text-center py-20">
+                        <div className="w-20 h-20 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-5">
+                          <svg className="w-10 h-10 text-primary/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                          </svg>
+                        </div>
+                        <h3 className="text-white font-black text-xl italic tracking-tighter mb-2">
+                          No Vehicles Found
+                        </h3>
+                        <p className="text-body text-sm max-w-md mx-auto mb-6">
+                          No vehicles available in this category.
+                        </p>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+                          {paginated.map((vehicle, i) => (
+                            <VehicleCard
+                              key={vehicle.id}
+                              vehicle={vehicle}
+                              index={i}
+                              onCompare={handleCompare}
+                              compareIds={compareIds}
+                              onBook={handleBook}
+                            />
+                          ))}
+                        </div>
+
+                        {totalPages > 1 && (
+                          <div className="mt-10 border-t border-white/5 pt-6">
+                            <FleetPagination
+                              currentPage={currentPage}
+                              totalPages={totalPages}
+                              totalItems={filtered.length}
+                              itemsPerPage={itemsPerPage}
+                              onPageChange={setCurrentPage}
+                            />
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </section>
+
+        {/* ───────── Compare Bar ───────── */}
         {compareIds.length > 0 && (
           <div className="sticky bottom-0 z-50 bg-gradient-to-b from-bg-dark/95 to-bg-dark border-t border-white/10 backdrop-blur-md">
             <div className="max-w-7xl mx-auto px-4 lg:px-8 py-3 flex items-center justify-between">
@@ -447,6 +489,7 @@ export default function FleetPage() {
           </div>
         )}
 
+        {/* ───────── Featured Fleet ───────── */}
         <ScrollReveal direction="up">
           <section className="py-20 lg:py-24 bg-bg-dark relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -458,13 +501,13 @@ export default function FleetPage() {
                     Featured Fleet
                   </span>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter italic leading-[0.95] mt-3 pr-1">
-                    Our <span className="text-gradient-primary">Premium</span>{" "}
+                    Our <span className="text-gradient-primary">Self Drive</span>{" "}
                     Selection
                   </h2>
                 </div>
                 <p className="text-body text-sm md:max-w-md leading-relaxed">
-                  Handpicked vehicles that offer the best value, comfort, and
-                  driving experience for every occasion.
+                  Handpicked self-drive vehicles that offer the best value,
+                  comfort, and driving experience.
                 </p>
               </div>
 
@@ -500,7 +543,7 @@ export default function FleetPage() {
                             </div>
                             <div className="sm:w-3/5 p-6 lg:p-8 flex flex-col justify-center">
                               <span className="text-[9px] font-black uppercase tracking-[0.2em] text-primary/80 mb-1">
-                                {categoryLabels[v.category]}
+                                {serviceTypeLabels[v.serviceType]}
                               </span>
                               <h3 className="text-xl lg:text-2xl font-black text-white italic tracking-tighter mb-2">
                                 {v.name}
@@ -510,12 +553,12 @@ export default function FleetPage() {
                               </p>
                               <div className="flex items-center gap-4 mb-4">
                                 <div>
-                                  <p className="text-[9px] text-body/50 font-bold uppercase tracking-wider">Starting</p>
-                                  <p className="text-xl font-black text-primary italic">₹{v.startingPrice.toLocaleString()}</p>
+                                  <p className="text-[9px] text-body/50 font-bold uppercase tracking-wider">Rent for</p>
+                                  <p className="text-xl font-black text-primary italic">{formatPrice(v.price)}</p>
                                 </div>
                                 <div>
-                                  <p className="text-[9px] text-body/50 font-bold uppercase tracking-wider">Per km</p>
-                                  <p className="text-lg font-black text-white italic">₹{v.pricePerKm}</p>
+                                  <p className="text-[9px] text-body/50 font-bold uppercase tracking-wider">{v.priceLabel}</p>
+                                  <p className="text-lg font-black text-white italic">Self Drive</p>
                                 </div>
                                 <div className="flex items-center gap-1 ml-auto">
                                   <svg className="w-4 h-4 text-star" viewBox="0 0 20 20" fill="currentColor">
@@ -524,12 +567,12 @@ export default function FleetPage() {
                                   <span className="text-white font-bold text-sm">{v.rating}</span>
                                 </div>
                               </div>
-                              <Link
-                                href="/contact"
-                                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition-all duration-300 shadow-glow-red w-fit"
+                              <button
+                                onClick={() => handleBook(v.id)}
+                                className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider px-6 py-3 rounded-xl transition-all duration-300 shadow-glow-red w-fit cursor-pointer"
                               >
                                 Book Now
-                              </Link>
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -538,7 +581,6 @@ export default function FleetPage() {
                   </motion.div>
                 </AnimatePresence>
 
-                {/* Featured carousel controls */}
                 <div className="flex items-center justify-center gap-4 mt-8">
                   <button
                     onClick={featuredPrev}
@@ -578,6 +620,7 @@ export default function FleetPage() {
           </section>
         </ScrollReveal>
 
+        {/* ───────── Why Choose Us ───────── */}
         <ScrollReveal direction="up">
           <section className="py-20 lg:py-24 bg-secondary relative overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
@@ -614,6 +657,7 @@ export default function FleetPage() {
 
         <Testimonials />
 
+        {/* ───────── CTA ───────── */}
         <section className="py-20 lg:py-24 bg-secondary relative overflow-hidden">
           <div className="absolute inset-0">
             <Image
@@ -668,8 +712,8 @@ export default function FleetPage() {
               transition={{ duration: 0.5, delay: 0.45, ease: "easeOut" }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Link
-                href="/contact"
+              <button
+                onClick={() => { setBookingVehicleId(undefined); setShowBooking(true); }}
                 className="group relative inline-flex items-center gap-3 bg-primary hover:bg-white text-secondary font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 overflow-hidden cursor-pointer shadow-glow-red hover:shadow-glow-red-strong"
               >
                 <span className="relative z-10 uppercase tracking-wider text-xs sm:text-sm">
@@ -678,7 +722,7 @@ export default function FleetPage() {
                 <svg className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </Link>
+              </button>
               <Link
                 href="/contact"
                 className="group inline-flex items-center gap-3 border-2 border-white/20 hover:border-primary bg-white/5 backdrop-blur-sm hover:bg-primary/10 text-white font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 uppercase tracking-wider text-xs sm:text-sm cursor-pointer"
@@ -689,6 +733,8 @@ export default function FleetPage() {
           </div>
         </section>
       </main>
+
+      <Newsletter />
       <Footer />
 
       {showCompare && (
@@ -698,6 +744,16 @@ export default function FleetPage() {
           onRemove={(id) => {
             setCompareIds((prev) => prev.filter((i) => i !== id));
           }}
+          onAdd={(id) => {
+            setCompareIds((prev) => (prev.includes(id) ? prev : [...prev, id]));
+          }}
+        />
+      )}
+
+      {showBooking && (
+        <BookingModal
+          onClose={handleCloseBooking}
+          initialVehicleId={bookingVehicleId}
         />
       )}
     </>

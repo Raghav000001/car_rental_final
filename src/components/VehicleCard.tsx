@@ -3,14 +3,16 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { categoryLabels } from "@/app/fleet/vehicleData";
-import type { Vehicle, VehicleType } from "@/app/fleet/types";
+import { serviceTypeLabels } from "@/app/fleet/vehicleData";
+import { formatPrice } from "@/lib/utils";
+import type { Vehicle, ServiceType } from "@/app/fleet/types";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
   index: number;
   onCompare: (id: string) => void;
   compareIds: string[];
+  onBook: (id: string) => void;
 }
 
 function StarRating({ rating, count }: { rating: number; count: number }) {
@@ -31,13 +33,10 @@ function StarRating({ rating, count }: { rating: number; count: number }) {
   );
 }
 
-const badgeColors: Record<VehicleType, string> = {
-  hatchback: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  sedan: "bg-purple-500/20 text-purple-400 border-purple-500/30",
-  suv: "bg-orange-500/20 text-orange-400 border-orange-500/30",
-  muv: "bg-green-500/20 text-green-400 border-green-500/30",
-  luxury: "bg-amber-500/20 text-amber-400 border-amber-500/30",
-  "tempo-traveller": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
+const badgeColors: Record<ServiceType, string> = {
+  "self-drive": "bg-blue-500/20 text-blue-400 border-blue-500/30",
+  "airport-drop": "bg-purple-500/20 text-purple-400 border-purple-500/30",
+  "local-rental": "bg-green-500/20 text-green-400 border-green-500/30",
 };
 
 export default function VehicleCard({
@@ -45,6 +44,7 @@ export default function VehicleCard({
   index,
   onCompare,
   compareIds,
+  onBook,
 }: VehicleCardProps) {
   const isComparing = compareIds.includes(vehicle.id);
 
@@ -69,9 +69,11 @@ export default function VehicleCard({
 
         <div className="absolute top-4 left-4">
           <span
-            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.15em] border ${badgeColors[vehicle.category]}`}
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-[0.15em] border ${
+              badgeColors[vehicle.serviceType] || "bg-white/10 text-white border-white/20"
+            }`}
           >
-            {categoryLabels[vehicle.category]}
+            {serviceTypeLabels[vehicle.serviceType] || vehicle.serviceType}
           </span>
         </div>
 
@@ -92,20 +94,25 @@ export default function VehicleCard({
 
         <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">
           <div>
-            <p className="text-[10px] text-body font-bold uppercase tracking-wider">Starting from</p>
+            <p className="text-[10px] text-body font-bold uppercase tracking-wider">
+              {vehicle.serviceType === "self-drive" ? "Rent for" : "Flat Rate"}
+            </p>
             <p className="text-2xl font-black text-white italic tracking-tighter">
-              ₹{vehicle.startingPrice.toLocaleString()}
+              {formatPrice(vehicle.price)}
             </p>
           </div>
           <div className="text-right">
-            <p className="text-[10px] text-body font-bold uppercase tracking-wider">Per km</p>
-            <p className="text-lg font-black text-primary italic">₹{vehicle.pricePerKm}</p>
+            <p className="text-[10px] text-body font-bold uppercase tracking-wider">
+              {vehicle.priceLabel}
+            </p>
+            <p className="text-lg font-black text-primary italic">
+              {vehicle.serviceType === "self-drive" ? "Self Drive" : "With Driver"}
+            </p>
           </div>
         </div>
       </div>
 
       <div className="p-5 lg:p-6">
-        {/* Name & rating */}
         <div className="flex items-start justify-between gap-3 mb-3">
           <h3 className="text-white group-hover:text-primary font-black text-lg leading-tight transition-colors duration-300">{vehicle.name}</h3>
           <StarRating rating={vehicle.rating} count={vehicle.reviewCount} />
@@ -124,26 +131,13 @@ export default function VehicleCard({
           <SpecItem label="Rating" value={`${vehicle.rating}★`} />
         </div>
 
-        {vehicle.popularTags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 mb-5">
-            {vehicle.popularTags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2 py-0.5 rounded-full text-[8px] font-bold uppercase tracking-wider bg-primary/10 text-primary/80 border border-primary/20"
-              >
-                {tag.replace("-", " ")}
-              </span>
-            ))}
-          </div>
-        )}
-
         <div className="flex gap-2">
-          <Link
-            href="/contact"
-            className="flex-1 bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all duration-300 shadow-glow-red hover:shadow-glow-red-strong"
+          <button
+            onClick={() => onBook(vehicle.id)}
+            className="flex-1 bg-primary hover:bg-primary-dark text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all duration-300 shadow-glow-red hover:shadow-glow-red-strong cursor-pointer"
           >
             Book Now
-          </Link>
+          </button>
           <Link
             href={`/fleet/${vehicle.id}`}
             className="flex-[0.6] border border-white/20 hover:border-primary text-body hover:text-white font-black text-xs uppercase tracking-wider py-3.5 rounded-xl text-center transition-all duration-300"

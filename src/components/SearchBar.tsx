@@ -48,7 +48,7 @@ export default function SearchBar() {
   );
 
   return (
-    <section className="relative z-30 pt-20 lg:pt-32 px-4 lg:px-8 bg-secondary">
+    <section className="relative z-30 pt-36 lg:pt-32 px-4 lg:px-8 bg-secondary">
       <div className="max-w-7xl mx-auto mb-10 text-center">
         <div className="inline-flex items-center gap-3 mb-3">
           <span className="w-8 h-[2px] bg-primary/60" />
@@ -225,7 +225,7 @@ export default function SearchBar() {
             <div className="flex-none p-4">
               <button
                 onClick={() => router.push("/fleet")}
-                className="w-full lg:w-44 h-14 bg-primary hover:bg-primary-dark p-3 md:p-4 text-white font-black rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 cursor-pointer text-lg"
+                className="w-full lg:w-44 h-14 bg-primary hover:bg-primary-dark px-6 py-3 text-white font-black rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 cursor-pointer text-lg"
               >
                 Search
               </button>

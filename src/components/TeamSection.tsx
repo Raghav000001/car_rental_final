@@ -61,7 +61,9 @@ export default function TeamSection() {
               </span>
               <div className="flex items-center justify-center gap-3 mt-5">
                 <a
-                  href="#"
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                   className="w-9 h-9 rounded-full bg-white/5 hover:bg-primary border border-white/10 hover:border-primary flex items-center justify-center transition-all duration-300 cursor-pointer"
                 >
@@ -74,7 +76,9 @@ export default function TeamSection() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className="w-9 h-9 rounded-full bg-white/5 hover:bg-primary border border-white/10 hover:border-primary flex items-center justify-center transition-all duration-300 cursor-pointer"
                 >
@@ -87,7 +91,9 @@ export default function TeamSection() {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://behance.net"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Behance"
                   className="w-9 h-9 rounded-full bg-white/5 hover:bg-primary border border-white/10 hover:border-primary flex items-center justify-center transition-all duration-300 cursor-pointer"
                 >

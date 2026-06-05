@@ -382,7 +382,9 @@ export default function AboutPage() {
                       {member.socials.map((social) => (
                         <a
                           key={social.name}
-                          href="#"
+                          href={`https://${social.name.toLowerCase()}.com`}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           aria-label={social.name}
                           className="w-8 h-8 rounded-full bg-primary/80 hover:bg-primary flex items-center justify-center transition-all duration-300"
                         >

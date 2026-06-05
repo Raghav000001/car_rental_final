@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Map, MapControls, MapMarker, MarkerContent, MarkerPopup } from "@/components/ui/mapcn-map-arc";
 
 const locations = [
@@ -42,8 +43,8 @@ export default function ServiceLocations() {
               With 32+ strategic locations worldwide, we bring premium car rental to your doorstep.
             </p>
           </div>
-          <a
-            href="#"
+          <Link
+            href="/service-areas"
             className="group inline-flex items-center gap-3 glass border border-white/10 hover:border-primary hover:bg-primary px-6 py-3.5 transition-all duration-300 cursor-pointer self-start md:self-end"
           >
             <svg
@@ -67,7 +68,7 @@ export default function ServiceLocations() {
             <span className="text-white font-black text-sm uppercase tracking-widest">
               Find Location
             </span>
-          </a>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

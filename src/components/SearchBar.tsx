@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const destinations = [
   { city: "Gurugram", details: "Cyber Hub, Leisure Valley, Kingdom of Dreams", tours: 50 },
@@ -16,6 +17,7 @@ const destinations = [
 ];
 
 export default function SearchBar() {
+  const router = useRouter();
   const [selectedDestination, setSelectedDestination] = useState("Gurugram");
   const [startDate, setStartDate] = useState("2026-06-02");
   const [endDate, setEndDate] = useState("2026-06-20");
@@ -221,7 +223,10 @@ export default function SearchBar() {
 
             {/* Search Button */}
             <div className="flex-none p-3 lg:p-4">
-              <button className="w-full lg:w-44 h-14 bg-primary hover:bg-primary-dark text-white font-black rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 cursor-pointer text-lg">
+              <button
+                onClick={() => router.push("/fleet")}
+                className="w-full lg:w-44 h-14 bg-primary hover:bg-primary-dark text-white font-black rounded-xl transition-all duration-300 shadow-lg shadow-primary/30 flex items-center justify-center gap-2 cursor-pointer text-lg"
+              >
                 Search
               </button>
             </div>

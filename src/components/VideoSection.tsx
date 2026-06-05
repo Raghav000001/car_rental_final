@@ -21,6 +21,7 @@ export default function VideoSection() {
   return (
     <>
       <section
+        id="video-section"
         ref={sectionRef}
         className="relative h-[500px] lg:h-[600px] overflow-hidden group"
       >

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { StaggerItem } from "@/components/ScrollReveal";
 
 const carTypes = [
@@ -32,8 +33,8 @@ export default function CarTypes() {
               Choose from our diverse fleet, tailored to fit every journey and lifestyle.
             </p>
           </div>
-          <a
-            href="#"
+          <Link
+            href="/fleet"
             className="group inline-flex items-center gap-2 font-black text-white hover:text-primary transition-colors uppercase tracking-widest text-sm self-start md:self-end"
           >
             <span>View All Types</span>
@@ -48,7 +49,7 @@ export default function CarTypes() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </span>
-          </a>
+          </Link>
         </div>
 
 

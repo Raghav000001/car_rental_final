@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const slides = [
   {
@@ -119,8 +120,8 @@ export default function HeroSlider() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 md:mb-12">
-              <a
-                href="#"
+              <Link
+                href="/fleet"
                 className="group relative inline-flex items-center justify-center gap-3 bg-primary hover:bg-white text-secondary font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 overflow-hidden cursor-pointer shadow-glow-red hover:shadow-glow-red-strong"
               >
                 <span className="relative z-10 uppercase tracking-wider text-xs sm:text-sm">
@@ -135,10 +136,10 @@ export default function HeroSlider() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
-              </a>
+              </Link>
 
-              <a
-                href="#"
+              <Link
+                href="/#video-section"
                 className="group inline-flex items-center justify-center gap-3 border-2 border-white/20 hover:border-primary bg-white/5 backdrop-blur-sm hover:bg-primary/10 text-white font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 uppercase tracking-wider text-xs sm:text-sm cursor-pointer"
               >
                 <svg
@@ -160,7 +161,7 @@ export default function HeroSlider() {
                   />
                 </svg>
                 Watch Video
-              </a>
+              </Link>
             </div>
 
             <div className="grid grid-cols-3 gap-6 md:gap-10 max-w-xl">

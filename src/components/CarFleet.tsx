@@ -49,7 +49,7 @@ const cars = [
     doors: "4 Doors",
     suitcase: "1 Large, 2 Small",
     passengers: "05",
-    price: 3500,
+    price: 1500,
     tag: "Premium",
   },
   {

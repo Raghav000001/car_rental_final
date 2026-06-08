@@ -1,20 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const footerResources = [
-  { name: "About Team", href: "/team" },
-  { name: "Policies", href: "/contact" },
-  { name: "Careers", href: "/contact" },
-  { name: "Press", href: "/news" },
-  { name: "Open Road", href: "/news" },
+const footerQuickLinks = [
+  { name: "Our Fleet", href: "/fleet" },
+  { name: "About Us", href: "/about" },
+  { name: "Service Areas", href: "/service-areas" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "FAQ", href: "/faq" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
-const footerCommunity = [
-  { name: "Newsletter", href: "/contact" },
-  { name: "Reviews", href: "/testimonials" },
+const footerMore = [
   { name: "Testimonials", href: "/testimonials" },
-  { name: "Social Group", href: "#" }, // TODO: add actual social group link
-  { name: "Helpdesk", href: "/contact" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "News", href: "/news" },
 ];
 
 const socialIcons = [
@@ -85,9 +84,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-base mb-6">Resources</h3>
+            <h3 className="text-white font-bold text-base mb-6">Quick Links</h3>
             <ul className="space-y-3">
-              {footerResources.map((link) => (
+              {footerQuickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -101,9 +100,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-bold text-base mb-6">Community</h3>
+            <h3 className="text-white font-bold text-base mb-6">More</h3>
             <ul className="space-y-3">
-              {footerCommunity.map((link) => (
+              {footerMore.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}

@@ -3,12 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { HowItWorks } from "@/components/ui/how-it-works";
 import BrandsCarousel from "@/components/BrandsCarousel";
-import JourneySection from "@/components/ui/journey-section";
 import Newsletter from "@/components/Newsletter";
 import OwnerSection from "@/components/OwnerSection";
-import Testimonials from "@/components/Testimonials";
 
 export const metadata: Metadata = {
   title: "About Us - Rohit Tour & Travel Premium Car Rental",

@@ -135,7 +135,9 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
 export const StaggerTestimonials: React.FC = () => {
   const [cardSize, setCardSize] = useState(365);
-  const [testimonialsList, setTestimonialsList] = useState(testimonials);
+  const [testimonialsList, setTestimonialsList] = useState(
+    () => testimonials.map((t) => ({ ...t, _key: Math.random() }))
+  );
 
   const handleMove = (steps: number) => {
     const newList = [...testimonialsList];
@@ -143,13 +145,13 @@ export const StaggerTestimonials: React.FC = () => {
       for (let i = steps; i > 0; i--) {
         const item = newList.shift();
         if (!item) return;
-        newList.push(item);
+        newList.push({ ...item, _key: Math.random() });
       }
     } else {
       for (let i = steps; i < 0; i++) {
         const item = newList.pop();
         if (!item) return;
-        newList.unshift(item);
+        newList.unshift({ ...item, _key: Math.random() });
       }
     }
     setTestimonialsList(newList);
@@ -177,7 +179,7 @@ export const StaggerTestimonials: React.FC = () => {
           : index - testimonialsList.length / 2;
         return (
           <TestimonialCard
-            key={index}
+            key={testimonial._key}
             testimonial={testimonial}
             handleMove={handleMove}
             position={position}

@@ -66,39 +66,53 @@ export default function HeroSlider() {
   const slide = slides[current];
 
   return (
-    <section className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] md:mt-20 sm:mt-16 lg:h-screen bg-secondary overflow-hidden">
+    // FIX #2: Changed min-h to ensure enough vertical space on all screens.
+    // Using min-h-screen on mobile too so content never gets crushed.
+    // overflow-hidden here also handles the blob negative-margin scroll issue (Fix #6).
+    <section className="relative min-h-screen md:mt-20 sm:mt-16 bg-secondary overflow-hidden">
       <div className="absolute inset-0 grid-pattern opacity-30 pointer-events-none" />
 
+      {/* Background images */}
       <div className="absolute inset-0">
         {slides.map((s, index) => (
           <div
             key={`bg-${index}`}
             className={`absolute inset-0 bg-cover bg-center ${
-              index === current ? "opacity-100 scale-100" : "opacity-0 scale-110"
+              index === current ? "opacity-100" : "opacity-0"
             }`}
             style={{
               backgroundImage: `url(${s.image})`,
-              transition:
-                "opacity 900ms ease-out, transform 7000ms linear",
-              transform: index === current ? "scale(1)" : "scale(1.1)",
+              transition: "opacity 900ms ease-out, transform 7000ms linear",
+              // FIX #9: Added will-change for GPU compositing — smoother Ken Burns on mobile
+              willChange: "transform",
+              transform: index === current ? "scale(1)" : "scale(1.08)",
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-linear-to-r from-secondary via-secondary/70 to-secondary/30" />
-        <div className="absolute inset-0 bg-linear-to-t from-secondary/80 via-transparent to-secondary/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary via-secondary/75 to-secondary/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-secondary/40" />
       </div>
 
-      <div className="relative h-full flex items-center pt-36 sm:pt-40 lg:pt-44 pb-16 sm:pb-0">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full">
+      {/* Main content */}
+      {/* FIX #4: Added pr-12 sm:pr-16 lg:pr-0 so text never goes behind the right-side indicators */}
+      <div className="relative h-full flex items-center pt-28 sm:pt-36 lg:pt-44 pb-16">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full pr-12 sm:pr-16 lg:pr-8">
           <div key={current} className="animate-fadeInUp max-w-full sm:max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-16 h-[2px] bg-primary" />
-              <span className="text-primary text-sm font-black uppercase tracking-[0.3em]">
+
+            {/* Badge */}
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+              <div className="w-12 sm:w-16 h-[2px] bg-primary" />
+              <span className="text-primary text-xs sm:text-sm font-black uppercase tracking-[0.2em] sm:tracking-[0.3em]">
                 {slide.badge}
               </span>
             </div>
 
-            <h1 className="text-[clamp(1.75rem,7vw,2.5rem)] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] mb-6 md:mb-8 tracking-tighter break-words overflow-hidden">
+            {/* FIX #1: Smoother clamp so there's no abrupt jump at sm breakpoint.
+                clamp(1.6rem, 6vw, 4.5rem) scales naturally across all widths. */}
+            <h1
+              className="font-black text-white leading-[1.1] mb-5 sm:mb-8 tracking-tighter break-words"
+              style={{ fontSize: "clamp(1.6rem, 6vw, 4.5rem)" }}
+            >
               {slide.title.split(" ").map((word, i) => (
                 <span key={i}>
                   <span
@@ -115,14 +129,15 @@ export default function HeroSlider() {
               ))}
             </h1>
 
-            <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 md:mb-10 leading-relaxed max-w-xl font-medium">
+            <p className="text-gray-300 text-sm sm:text-lg md:text-xl mb-7 sm:mb-10 leading-relaxed max-w-xl font-medium">
               {slide.subtitle}
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10 md:mb-12">
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
               <Link
                 href="/fleet"
-                className="group relative inline-flex items-center justify-center gap-3 bg-primary hover:bg-white text-secondary font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 overflow-hidden cursor-pointer shadow-glow-red hover:shadow-glow-red-strong"
+                className="group relative inline-flex items-center justify-center gap-3 bg-primary hover:bg-white text-secondary font-black px-8 sm:px-10 py-3.5 sm:py-5 transition-all duration-300 overflow-hidden cursor-pointer shadow-glow-red hover:shadow-glow-red-strong"
               >
                 <span className="relative z-10 uppercase tracking-wider text-xs sm:text-sm">
                   Explore Cars
@@ -140,7 +155,7 @@ export default function HeroSlider() {
 
               <Link
                 href="/#video-section"
-                className="group inline-flex items-center justify-center gap-3 border-2 border-white/20 hover:border-primary bg-white/5 backdrop-blur-sm hover:bg-primary/10 text-white font-black px-8 sm:px-10 py-4 sm:py-5 transition-all duration-300 uppercase tracking-wider text-xs sm:text-sm cursor-pointer"
+                className="group inline-flex items-center justify-center gap-3 border-2 border-white/20 hover:border-primary bg-white/5 backdrop-blur-sm hover:bg-primary/10 text-white font-black px-8 sm:px-10 py-3.5 sm:py-5 transition-all duration-300 uppercase tracking-wider text-xs sm:text-sm cursor-pointer"
               >
                 <svg
                   className="w-4 h-4 text-primary group-hover:scale-110 transition-transform"
@@ -164,17 +179,19 @@ export default function HeroSlider() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6 md:gap-10 max-w-xl">
+            {/* FIX #3: Always grid-cols-3 so no orphan stat on a new row.
+                Reduced text sizes slightly on mobile to fit comfortably. */}
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-10 max-w-xs sm:max-w-sm md:max-w-xl">
               {slide.stats.map((stat, i) => (
                 <div key={`${current}-${i}`} className="relative">
-                  <div className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-1">
+                  <div className="text-lg sm:text-2xl md:text-3xl font-black text-white mb-0.5 sm:mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-[10px] md:text-xs font-bold text-body uppercase tracking-widest">
+                  <div className="text-[9px] sm:text-[10px] md:text-xs font-bold text-body uppercase tracking-widest leading-tight">
                     {stat.label}
                   </div>
                   {i < slide.stats.length - 1 && (
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-10 bg-linear-to-b from-transparent via-white/20 to-transparent" />
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-8 sm:h-10 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
                   )}
                 </div>
               ))}
@@ -183,22 +200,25 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      <div className="absolute top-1/2 -translate-y-1/2 right-4 lg:right-12 z-20">
-        <div className="flex flex-col items-center gap-6">
-          <span className="text-white/30 text-xs font-mono tracking-widest select-none [writing-mode:vertical-lr] rotate-180">
+      {/* Slide indicators — right side */}
+      <div className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-5 lg:right-12 z-20">
+        <div className="flex flex-col items-center gap-4 sm:gap-6">
+          {/* FIX #7: Counter text hidden on mobile, shown sm+ */}
+          <span className="hidden sm:block text-white/30 text-xs font-mono tracking-widest select-none [writing-mode:vertical-lr] rotate-180">
             {String(current + 1).padStart(2, "0")} / {String(slides.length).padStart(2, "0")}
           </span>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3 sm:gap-4">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className="group cursor-pointer py-2"
+                className="group cursor-pointer py-1.5 sm:py-2"
                 aria-label={`Go to slide ${index + 1}`}
               >
-                <div className="relative w-1 h-12 bg-white/10 overflow-hidden rounded-full">
+                {/* Slightly thinner bars on mobile so they don't feel oversized */}
+                <div className="relative w-0.5 sm:w-1 h-8 sm:h-12 bg-white/10 overflow-hidden rounded-full">
                   <div
-                    className={`absolute inset-x-0 top-0 bg-linear-to-b from-primary to-red-400 transition-all duration-700 rounded-full ${
+                    className={`absolute inset-x-0 top-0 bg-gradient-to-b from-primary to-red-400 transition-all duration-700 rounded-full ${
                       index === current ? "h-full" : "h-0 group-hover:h-1/2"
                     }`}
                   />
@@ -209,6 +229,7 @@ export default function HeroSlider() {
         </div>
       </div>
 
+      {/* Decorative blobs — pointer-events-none already set, overflow-hidden on section handles scroll (Fix #6) */}
       <div className="absolute right-0 bottom-0 w-40 h-40 bg-primary/20 backdrop-blur-3xl rounded-full -mr-20 -mb-20 z-10 animate-float pointer-events-none" />
       <div className="absolute right-1/4 top-1/4 w-2 h-2 bg-primary rounded-full z-10 hidden lg:block pointer-events-none" />
       <div className="absolute right-1/3 top-1/3 w-1.5 h-1.5 bg-white/30 rounded-full z-10 hidden lg:block pointer-events-none" />

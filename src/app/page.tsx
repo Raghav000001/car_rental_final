@@ -9,7 +9,7 @@ import BrandsCarousel from "@/components/BrandsCarousel";
 import VideoSection from "@/components/VideoSection";
 import TeamSection from "@/components/TeamSection";
 import ServiceLocations from "@/components/ServiceLocations";
-import Testimonials from "@/components/Testimonials";
+import OwnerSection from "@/components/OwnerSection";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -32,7 +32,7 @@ export default function Home() {
       <ScrollReveal direction="scale"><VideoSection /></ScrollReveal>
       <ScrollReveal direction="up" stagger staggerDelay={0.12}><TeamSection /></ScrollReveal>
       <ScrollReveal direction="up"><ServiceLocations /></ScrollReveal>
-      <ScrollReveal direction="up"><Testimonials /></ScrollReveal>
+      <ScrollReveal direction="left"><OwnerSection /></ScrollReveal>
       <ScrollReveal direction="up"><Newsletter /></ScrollReveal>
       <Footer />
     </main>

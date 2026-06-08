@@ -5,8 +5,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { HowItWorks } from "@/components/ui/how-it-works";
 import BrandsCarousel from "@/components/BrandsCarousel";
-import TimeLine_01 from "@/components/ui/release-time-line";
+import JourneySection from "@/components/ui/journey-section";
 import Newsletter from "@/components/Newsletter";
+import OwnerSection from "@/components/OwnerSection";
+import Testimonials from "@/components/Testimonials";
 
 export const metadata: Metadata = {
   title: "About Us - Rohit Tour & Travel Premium Car Rental",
@@ -147,35 +149,8 @@ export default function AboutPage() {
       <Navbar />
       <main>
         {/* 1. Hero — Breadcrumb */}
-        <section className="relative h-[55vh] min-h-[420px] flex items-center justify-center overflow-hidden bg-secondary">
-          <div className="absolute inset-0">
-            <Image
-              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80"
-              alt="Luxury sports car on road"
-              fill
-              className="object-cover opacity-30"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-secondary" />
-            <div className="absolute inset-0 dot-pattern opacity-40" />
-          </div>
-          <div className="relative z-10 text-center px-4">
-            <nav className="flex items-center justify-center gap-2 text-sm text-body mb-5">
-              <Link href="/" className="hover:text-primary transition-colors duration-500">
-                Home
-              </Link>
-              <span className="text-body/30">/</span>
-              <span className="text-primary font-semibold">About Us</span>
-            </nav>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black italic text-white tracking-tighter leading-[0.85] pr-1">
-              About <span className="text-gradient-primary">Us</span>
-            </h1>
-            <p className="text-body text-base md:text-lg mt-6 max-w-xl mx-auto leading-relaxed">
-              From a two-car garage in Rohtak to North India&apos;s most trusted premium car rental brand — driven by passion, built on trust.
-            </p>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-bg-dark to-transparent" />
-        </section>
+        <OwnerSection/>
+
 
         {/* 2. About Section — Two Columns */}
         <section className="py-24 bg-bg-dark relative overflow-hidden">
@@ -276,8 +251,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 4. How It Works */}
-        <HowItWorks />
 
         {/* 5. Brands */}
         <BrandsCarousel />
@@ -314,126 +287,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 7. Values */}
-        <section className="py-24 bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 grid-pattern opacity-20" />
-          <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
-                Our Values
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] pr-1">
-                What We <span className="text-gradient-primary">Stand For</span>
-              </h2>
-              <p className="text-body text-sm mt-4 max-w-lg mx-auto">
-                Four principles guide every decision, every vehicle, every interaction.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {values.map((v) => (
-                <div
-                  key={v.title}
-                  className="group p-8 bg-bg-dark border border-white/5 hover:border-primary/40 transition-all duration-500 hover:shadow-glow-red"
-                >
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="w-14 h-14 shrink-0 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                      {v.icon}
-                    </div>
-                    <h3 className="text-xl font-black text-white italic tracking-tight pr-1">{v.title}</h3>
-                  </div>
-                  <p className="text-body text-sm leading-relaxed">{v.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 8. Timeline / Journey */}
-        <TimeLine_01 />
-
-        {/* 9. Team */}
-        <section className="py-24 bg-secondary relative overflow-hidden">
-          <div className="absolute inset-0 grid-pattern opacity-20" />
-          <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
-                Our Team
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] pr-1">
-                Meet the <span className="text-gradient-primary">Drivers</span> Behind Rohit Tour &amp; Travel
-              </h2>
-              <p className="text-body text-sm mt-4 max-w-lg mx-auto">
-                Passionate people dedicated to making every journey extraordinary.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member) => (
-                <div key={member.name} className="group text-center">
-                  <div className="relative overflow-hidden mb-5 aspect-[3/4]">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.15]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute bottom-0 left-0 right-0 p-4 flex justify-center gap-2 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                      {member.socials.map((social) => (
-                        <a
-                          key={social.name}
-                          href={`https://${social.name.toLowerCase()}.com`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={social.name}
-                          className="w-8 h-8 rounded-full bg-primary/80 hover:bg-primary flex items-center justify-center transition-all duration-300"
-                        >
-                          <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d={social.path} />
-                          </svg>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-black text-white italic tracking-tight pr-1">{member.name}</h3>
-                  <p className="text-primary text-xs font-bold uppercase tracking-widest mt-1">{member.role}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 10. Testimonials */}
-        <section className="py-24 bg-bg-dark relative overflow-hidden">
-          <div className="absolute inset-0 dot-pattern opacity-20" />
-          <div className="relative max-w-7xl mx-auto px-4 lg:px-8">
-            <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[10px] font-black tracking-[0.2em] uppercase text-primary bg-primary/10 border border-primary/30 mb-6">
-                Testimonials
-              </span>
-              <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter italic leading-[0.95] pr-1">
-                What Our <span className="text-gradient-primary">Customers</span> Say
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {testimonials.map((t) => (
-                <div
-                  key={t.name}
-                  className="group p-8 bg-secondary/50 border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-glow-red flex flex-col"
-                >
-                  <StarRating rating={t.rating} />
-                  <p className="text-body text-sm leading-relaxed mt-5 mb-6 flex-1">
-                    &ldquo;{t.text}&rdquo;
-                  </p>
-                  <div className="pt-5 border-t border-white/5">
-                    <p className="text-white font-bold text-sm">{t.name}</p>
-                    <p className="text-body text-xs mt-0.5">{t.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* 11. Map */}
         <section className="h-[400px] relative overflow-hidden">

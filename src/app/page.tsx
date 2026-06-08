@@ -30,7 +30,7 @@ export default function Home() {
       <ScrollReveal direction="scale" stagger staggerDelay={0.1}><CarFleet /></ScrollReveal>
       <ScrollReveal direction="fade"><BrandsCarousel /></ScrollReveal>
       <ScrollReveal direction="scale"><VideoSection /></ScrollReveal>
-      <ScrollReveal direction="up" stagger staggerDelay={0.12}><TeamSection /></ScrollReveal>
+      {/* <ScrollReveal direction="up" stagger staggerDelay={0.12}><TeamSection /></ScrollReveal> */}
       <ScrollReveal direction="up"><ServiceLocations /></ScrollReveal>
       <ScrollReveal direction="left"><OwnerSection /></ScrollReveal>
       <ScrollReveal direction="up"><Newsletter /></ScrollReveal>

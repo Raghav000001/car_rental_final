@@ -6,7 +6,7 @@ import fs from "fs";
 const PRODUCT = {
   name: "Rohit Tour & Travel",
   link: "https://rohittour.in",
-  logo: "https://rohittour.in/logo2.png",
+  logo: "https://rohittour.in/favicon.jpeg",
 };
 
 let mailGenerator: Mailgen | null = null;

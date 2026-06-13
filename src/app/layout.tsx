@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "Self Drive Cars in Rohtak",
     "Rohit Tour and Travel",
   ],
-  icons: [{ rel: "icon", url: "/logo2.png" }],
+  icons: [{ rel: "icon", url: "/favicon.jpeg" }],
   openGraph: {
     title: "Rohit Tour & Travel - Self Drive Car Rental & Taxi Service in Rohtak",
     description:
       "Self drive car rental, airport taxi service, and outstation taxi service in Rohtak. Book Maruti Swift, Baleno, Scorpio, Thar for self drive.",
     url: "https://rohittour.in",
     siteName: "Rohit Tour & Travel",
-    images: [{ url: "/logo2.png", width: 512, height: 512 }],
+    images: [{ url: "/favicon.jpeg", width: 512, height: 512 }],
     locale: "en_US",
     type: "website",
   },

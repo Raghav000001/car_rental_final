@@ -224,7 +224,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center group shrink-0">
               <div className="relative w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24">
                 <Image
-                  src="/logo2.png"
+                  src="/favicon.jpeg"
                   alt="Rohit Tour & Travel"
                   fill
                   sizes="(max-width: 640px) 56px, (max-width: 1024px) 80px, 96px"
@@ -335,7 +335,7 @@ export default function Navbar() {
             <Link href="/">
               <div className="relative w-14 h-14 sm:w-20 sm:h-20">
                 {/* FIX #1: sizes added here too */}
-                <Image src="/logo2.png" alt="Rohit Tour & Travel" fill sizes="(max-width: 640px) 56px, 80px" className="object-contain" />
+                <Image src="/favicon.jpeg" alt="Rohit Tour & Travel" fill sizes="(max-width: 640px) 56px, 80px" className="object-contain" />
               </div>
             </Link>
             <button
@@ -392,7 +392,7 @@ export default function Navbar() {
           <Link href="/">
             <div className="relative w-14 h-14 sm:w-20 sm:h-20">
               {/* FIX #1: sizes added here too */}
-              <Image src="/logo2.png" alt="Rohit Tour & Travel" fill sizes="(max-width: 640px) 56px, 80px" className="object-contain" />
+              <Image src="/favicon.jpeg" alt="Rohit Tour & Travel" fill sizes="(max-width: 640px) 56px, 80px" className="object-contain" />
             </div>
           </Link>
           <button

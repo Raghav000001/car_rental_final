@@ -51,7 +51,7 @@ export default function Footer() {
           <div>
             <Link href="/" className="inline-flex items-center mb-5">
               <div className="relative w-36 h-36">
-                <Image src="/logo2.png" alt="Rohit Tour & Travel" fill className="object-contain" />
+                <Image src="/favicon.jpeg" alt="Rohit Tour & Travel" fill className="object-contain" />
               </div>
             </Link>
             <p className="text-body text-sm leading-relaxed mb-6">

@@ -19,28 +19,28 @@ const footerMore = [
 const socialIcons = [
   {
     name: "Facebook",
-    href: "https://facebook.com/rohittourtravel",
+    href: "https://www.facebook.com/rohit.raman.969300?rdid=HNHq9e6VxHoyCGgG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Br44gkYwT%2F#",
     viewBox: "0 0 24 24",
     path: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
   },
   {
-    name: "Twitter",
-    href: "https://twitter.com/rohittourtravel",
+    name: "Instagram",
+    href: "https://www.instagram.com/selfd_rivecarrohtak",
     viewBox: "0 0 24 24",
     path: "M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z",
   },
-  {
-    name: "LinkedIn",
-    href: "https://linkedin.com/company/rohittourtravel",
-    viewBox: "0 0 24 24",
-    path: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
-  },
-  {
-    name: "Dribbble",
-    href: "#", // TODO: replace with actual social URL
-    viewBox: "0 0 24 24",
-    path: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.6 5.5c.74 1.07 1.2 2.33 1.3 3.7-.16-.02-.34-.03-.52-.03-2.28 0-4.37.78-6.04 2.08l-1.5-2.8c2.28-1.34 4.93-2.15 7.78-2.15.33 0 .66.02.98.06zM12 3.8c2.68 0 5.1.97 6.97 2.57-2.85.18-5.5 1.08-7.8 2.5l-1.5-2.78C11.4 4.3 11.68 3.8 12 3.8zm-4.2 2.1l1.5 2.8c-2.2 1.56-3.8 3.8-4.5 6.4l-2.63-.86C3.5 11.4 5.6 6.7 7.8 5.9zm-3.7 9.2l2.64.86c.76 2.3 2.5 4.1 4.8 4.9l-.98 2.52c-3.16-.8-5.7-3.2-6.46-6.28zm9.9 5.98l.98-2.52c1.2-.4 2.3-1.02 3.24-1.82.36-.3.7-.62 1-.96.4.52.76 1.07 1.06 1.66-1.46 1.9-3.68 3.2-6.2 3.56h-.08z",
-  },
+  // {
+  //   name: "LinkedIn",
+  //   href: "https://linkedin.com/company/rohittourtravel",
+  //   viewBox: "0 0 24 24",
+  //   path: "M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
+  // },
+  // {
+  //   name: "Dribbble",
+  //   href: "#", // TODO: replace with actual social URL
+  //   viewBox: "0 0 24 24",
+  //   path: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.6 5.5c.74 1.07 1.2 2.33 1.3 3.7-.16-.02-.34-.03-.52-.03-2.28 0-4.37.78-6.04 2.08l-1.5-2.8c2.28-1.34 4.93-2.15 7.78-2.15.33 0 .66.02.98.06zM12 3.8c2.68 0 5.1.97 6.97 2.57-2.85.18-5.5 1.08-7.8 2.5l-1.5-2.78C11.4 4.3 11.68 3.8 12 3.8zm-4.2 2.1l1.5 2.8c-2.2 1.56-3.8 3.8-4.5 6.4l-2.63-.86C3.5 11.4 5.6 6.7 7.8 5.9zm-3.7 9.2l2.64.86c.76 2.3 2.5 4.1 4.8 4.9l-.98 2.52c-3.16-.8-5.7-3.2-6.46-6.28zm9.9 5.98l.98-2.52c1.2-.4 2.3-1.02 3.24-1.82.36-.3.7-.62 1-.96.4.52.76 1.07 1.06 1.66-1.46 1.9-3.68 3.2-6.2 3.56h-.08z",
+  // },
 ];
 
 export default function Footer() {

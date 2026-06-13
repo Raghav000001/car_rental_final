@@ -29,7 +29,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Phone",
-    value: "+91-213-666-0027",
+    value: "+91 870 876 5123",
     href: "tel:+918708765123",
   },
   {

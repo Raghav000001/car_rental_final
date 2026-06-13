@@ -77,7 +77,7 @@ function buildUserHtml(name: string): string {
 <h2 style="color:#dc2626;margin:0 0 16px">Thank You for Reaching Out!</h2>
 <p>Hi ${name},</p>
 <p>Thank you for contacting Rohit Tour &amp; Travel. We have received your inquiry and our team will review it shortly.</p>
-<p>We aim to respond to all inquiries within 24 hours. For urgent requests, call us at <strong>+91-213-666-0027</strong>.</p>
+<p>We aim to respond to all inquiries within 24 hours. For urgent requests, call us at <strong>+91 870 876 5123</strong>.</p>
 <a href="https://rohittour.in/fleet" style="display:inline-block;margin-top:16px;padding:12px 24px;background:#dc2626;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold">Browse Our Fleet</a>
 <p style="margin-top:32px;color:#9ca3af;font-size:12px">Rohit Tour &amp; Travel</p>
 </div></body></html>`;
@@ -194,7 +194,7 @@ export async function sendBookingAcknowledgment(data: BookingFormData): Promise<
 ${data.returnDate ? `<tr><td style="padding:6px 0;color:#9ca3af;border-bottom:1px solid #27272a">Return Date</td><td style="padding:6px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.returnDate}</td></tr>` : ""}
 <tr><td style="padding:6px 0;color:#9ca3af;border-bottom:1px solid #27272a">Pickup Time</td><td style="padding:6px 0;color:#f3f4f6;border-bottom:1px solid #27272a">${data.pickupTime}</td></tr>
 </table>
-<p>We aim to respond to all inquiries within 24 hours. For urgent requests, call us at <strong>+91-213-666-0027</strong>.</p>
+<p>We aim to respond to all inquiries within 24 hours. For urgent requests, call us at <strong>+91 870 876 5123</strong>.</p>
 <a href="https://rohittour.in/fleet" style="display:inline-block;margin-top:16px;padding:12px 24px;background:#dc2626;color:#fff;text-decoration:none;border-radius:8px;font-weight:bold">Browse More Vehicles</a>
 <p style="margin-top:32px;color:#9ca3af;font-size:12px">Rohit Tour &amp; Travel</p>
 </div></body></html>`;
@@ -285,7 +285,7 @@ export async function sendSubmissionAcknowledgment(data: ContactFormData): Promi
             },
           },
           outro:
-            "If you have any urgent queries, call us at +91-213-666-0027 or reply to this email.",
+            "If you have any urgent queries, call us at +91 870 876 5123 or reply to this email.",
           signature: "Best regards",
         },
       })

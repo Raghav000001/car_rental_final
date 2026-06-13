@@ -438,7 +438,7 @@ export default function BookingFlow({
                     </div>
                     <div>
                       <label className={labelClasses}>Mobile Number <span className="text-primary">*</span></label>
-                      <input type="tel" value={form.mobile} onChange={(e) => setForm((p) => ({ ...p, mobile: e.target.value }))} placeholder="+91 8708765123" className={`${inputClasses} ${errors.mobile ? "border-red-500/50" : ""}`} />
+                      <input type="tel" value={form.mobile} onChange={(e) => setForm((p) => ({ ...p, mobile: e.target.value }))} placeholder="+91 870 876 5123" className={`${inputClasses} ${errors.mobile ? "border-red-500/50" : ""}`} />
                       {errors.mobile && <p className={errorClasses}>{errors.mobile}</p>}
                     </div>
                   </div>

@@ -65,7 +65,7 @@ export default function ReviewForm() {
                 </div>
                 <div>
                   <p className="text-xs text-body font-semibold tracking-wide uppercase">Call Us</p>
-                  <a href="tel:+918708765123" className="text-white font-bold hover:text-primary transition-colors">+91 87087 65123</a>
+                  <a href="tel:+918708765123" className="text-white font-bold hover:text-primary transition-colors">+91 870 876 5123</a>
                 </div>
               </div>
               <div className="flex items-center gap-3">

@@ -41,15 +41,15 @@ const socialLinks = [
       </svg>
     ),
   },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/rohittourtravel",
-    icon: (
-      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-      </svg>
-    ),
-  },
+  // {
+  //   name: "Twitter",
+  //   url: "https://twitter.com/rohittourtravel",
+  //   icon: (
+  //     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+  //       <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+  //     </svg>
+  //   ),
+  // },
   {
     name: "Instagram",
     url: "https://instagram.com/rohittourtravel",
@@ -61,27 +61,27 @@ const socialLinks = [
       </svg>
     ),
   },
-  {
-    name: "LinkedIn",
-    url: "https://linkedin.com/company/rohittourtravel",
-    icon: (
-      <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
-      </svg>
-    ),
-  },
+  // {
+  //   name: "LinkedIn",
+  //   url: "https://linkedin.com/company/rohittourtravel",
+  //   icon: (
+  //     <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+  //       <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z" />
+  //     </svg>
+  //   ),
+  // },
 ];
 
 const mobileSocialLinks = [
-  {
-    name: "Twitter",
-    url: "https://twitter.com/rohittourtravel",
-    icon: (
-      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-      </svg>
-    ),
-  },
+  // {
+  //   name: "Twitter",
+  //   url: "https://twitter.com/rohittourtravel",
+  //   icon: (
+  //     <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+  //       <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+  //     </svg>
+  //   ),
+  // },
   {
     name: "Facebook",
     url: "https://www.facebook.com/rohit.raman.969300",
